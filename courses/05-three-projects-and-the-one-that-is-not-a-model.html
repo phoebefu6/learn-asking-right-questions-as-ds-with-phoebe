@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- social:start -->
+<meta name="description" content="Session 5 of 6. Turning what the operations director said into a tree with her outcome at the top, pruning it to three joint projects of which the first is a daily stock-out log and not a model, scoring them with a combination rule you write down, and shaping the winner into a four-outlet pilot with two partners, her own test and a date.">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Learn with Phoebe">
+<meta property="og:title" content="Three projects, and the one that is not a model - learn asking the right questions as a data scientist with phoebe">
+<meta property="og:description" content="Session 5 of 6. Her answers as a tree, three candidates scored with the rule written down, a model parked until there is something to learn from, and a pilot in four outlets.">
+<meta property="og:url" content="https://phoebefu6.github.io/learn-asking-right-questions-as-ds-with-phoebe/courses/05-three-projects-and-the-one-that-is-not-a-model.html">
+<meta property="og:image" content="https://phoebefu6.github.io/learn-asking-right-questions-as-ds-with-phoebe/assets/og-cover.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Three projects, and the one that is not a model - learn asking the right questions as a data scientist with phoebe">
+<meta name="twitter:description" content="Session 5 of 6. The tree, the three, and why the first one records a stock-out instead of predicting it.">
+<meta name="twitter:image" content="https://phoebefu6.github.io/learn-asking-right-questions-as-ds-with-phoebe/assets/og-cover.png">
+<!-- social:end -->
+<title>Session 5 · Three projects, and the one that is not a model - learn asking the right questions as a data scientist with phoebe</title>
+<link rel="stylesheet" href="../assets/style.css?v=1">
+</head>
+<body>
+
+<div class="toolbar">
+  <div class="wrap">
+    <span class="crumb"><a href="../index.html">learn-asking-right-questions-as-ds-with-phoebe</a> / Session 5 of 6</span>
+    <button class="btn" id="toggle-all" type="button">Expand all</button>
+    <button class="btn primary" id="zoom-toggle" type="button">Projector zoom: off</button>
+  </div>
+</div>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="eyebrow">Learn Asking the Right Questions as a Data Scientist with Phoebe · Session 5 of 6</div>
+    <h1>Three projects, and the one that is <span class="accent">not a model</span></h1>
+    <p class="sub">You walked out of the meeting with a page of her answers: about 40 chronic-medication products that run out, roughly 30 complaint calls a month, a Thursday van, a pharmacist who WhatsApps the area manager, a stock spreadsheet overwritten every Friday, three years of sales and not one recorded stock-out. That page is not a project. Left alone it becomes the thing she first asked for, a prediction, because "predict" is the only verb anyone wrote down. Tonight turns the answers into a tree with her outcome at the top, prunes it to three candidate projects with a first step each, scores them with a rule written where she can argue with it, and shapes the winner into a pilot that can start with no budget. The winner is not a model. It is the thing a model would need and nobody has: a record of the shelf being empty.</p>
+    <div class="chip-row">
+      <span class="chip level">🟡 Core</span>
+      <span class="chip audience">Data scientists, and anyone asked for a prediction</span>
+      <span class="chip audience">No code. A pen.</span>
+      <span class="chip time">45 min</span>
+    </div>
+    <div class="agenda">
+      <span class="a1" style="flex:1">0-3 · Welcome</span>
+      <span class="a2" style="flex:4">3-18 · The tree, the three, the pilot</span>
+      <span class="a3" style="flex:5">18-40 · Build-along: your tree, your three, your first step</span>
+      <span class="a4" style="flex:1">40-45 · Q&amp;A</span>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="section" id="intro">
+    <div class="section-kicker">
+      <span class="klabel">Part 0</span>
+      <h2>Where we start</h2>
+    </div>
+    <p class="lede">Sessions 1 to 4 were about getting facts out of a person who did not know she had them. Adeline Tan, operations director of Harbourline, a constructed chain of 38 pharmacy and clinic outlets in Singapore and Malaysia, opened with "Can we predict which outlets are going to run out of stock?" and, if you walked the doors with <a href="https://phoebefu6.github.io/learn-asking-right-questions-as-da-with-phoebe/courses/01-why-the-gap-and-the-six-doors.html">Outcome, the first of the Six Doors</a>, widest, you left with 18 of her 24 facts and no wrong belief in your notes. The danger now is the opposite of the first meeting's. Then you had too little; now you have a page of pains and a request that already names its solution. Most scientists choose the project they know how to build, which is how the model comes back before there is anything for it to learn from. The move tonight is to let her outcome choose, and to write the choosing down so she can see it and disagree.</p>
+
+    <div class="legend">
+      <span class="pill">🎫 Clear all three quiz questions to stamp your passport</span>
+      <span class="pill">Live = presented in the 45 minutes</span>
+      <span class="pill">Self-study = the full depth, after class</span>
+      <span class="pill">★ Build-along = write it yourself</span>
+    </div>
+
+    <div class="callout win">
+      <p><strong>★ What you walk out with tonight.</strong> One page for a request you actually hold: her outcome in her words at the top of a tree, the pains she named as its branches, three candidate joint projects with a first step, a named person and what each needs, the model written as a fourth line with the condition that would let you score it, a grid with the combination rule written above it, and a five-line pilot with a scope, partners, a test and a date. Session 6 folds that page into the brief you send her within 24 hours.</p>
+    </div>
+  </section>
+
+  <section class="section" id="part-1">
+    <div class="section-kicker">
+      <span class="klabel">Part 1 · covers her answers as a tree</span>
+      <h2>Her answers, put back in order</h2>
+      <span class="tag concept">5 min live</span>
+    </div>
+    <p class="lede">Teresa Torres's opportunity solution tree, reported here from her 2021 book, has four layers: a desired outcome at the top, the opportunities underneath it, solutions under the opportunities, and assumption tests under the solutions. An opportunity is a need or a pain the customer voiced; a solution is a thing you could build; the outcome is what would be different if the pain went away. Adeline's meeting gave you all three layers, in her words, in the wrong order: she led with a solution, "predict", and the outcome only arrived behind door 6. The tree puts them back, and the moment it does, the model stops being the top box and becomes one leaf among several.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 372" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A hand-drawn opportunity solution tree built from Harbourline's facts. At the top, a mustard outcome box in the operations director's words: fewer complaint calls about empty shelves, counted by her, and write-off, which head office measures her on, no higher. Under it, six hatched opportunity boxes, the pains she named: nobody records a stock-out and only the calls exist, product codes differ by country, three versions of the stock spreadsheet, the Friday count overwritten every week, a WhatsApp from the pharmacist is the only warning, and area managers on phones in the van. Under the strongest opportunity, nobody records a stock-out, three white solution boxes: a daily stock-out log with a sheet per outlet, keeping every Friday count instead of overwriting it, and a model on sales history, which is what the vendor built. At the right, a box labelled the upside-down tree, use AI as the outcome.">
+        <defs>
+          <filter id="s5aSk" x="-3%" y="-3%" width="106%" height="106%"><feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="2" seed="53" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.4" xChannelSelector="R" yChannelSelector="G"/></filter>
+          <pattern id="s5aHc" patternUnits="userSpaceOnUse" width="7" height="7" patternTransform="rotate(-38)"><line x1="0" y1="0" x2="0" y2="7" stroke="#5B21B6" stroke-width="1" opacity=".5"/></pattern>
+          <marker id="s5aAr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M1 1 L9 5 L1 9" fill="none" stroke="#1E1B2E" stroke-width="1.6" stroke-linecap="round"/></marker>
+        </defs>
+        <style>
+          .s5aH { font: 800 12px Inter, sans-serif; fill: #1E1B2E; }
+          .s5aL { font: 600 12px Inter, sans-serif; fill: #1E1B2E; }
+          .s5aS { font: 400 11px Inter, sans-serif; fill: #4E4A66; }
+          .s5aB { font: 800 11px Inter, sans-serif; fill: #6B3F00; }
+          .s5aA { font: 700 11px Inter, sans-serif; fill: #5B21B6; letter-spacing: .05em; }
+          .s5aN { font: 400 12px Inter, sans-serif; fill: #4E4A66; }
+        </style>
+
+        <text class="s5aH" x="30" y="26">HER ANSWERS, PUT BACK IN ORDER</text>
+        <text class="s5aS" x="300" y="26">outcome on top, in her words · pains she named underneath · things to build come last</text>
+
+        <g filter="url(#s5aSk)" fill="none" stroke="#1E1B2E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <!-- Adeline, the doodle anchor -->
+          <circle cx="196" cy="66" r="12"/>
+          <path d="M176 100 C182 82 210 82 216 100"/>
+          <!-- the outcome box -->
+          <rect x="236" y="46" width="440" height="58" rx="8" transform="rotate(-0.4 456 75)" fill="#FBF1E0" stroke="#9A5B00"/>
+          <!-- trunk from outcome to the opportunity rail -->
+          <path d="M456 106 L456 132"/>
+          <path d="M95 132 L785 132" stroke="#CFC9E6"/>
+          <path d="M95 132 L95 150 M233 132 L233 150 M371 132 L371 150 M509 132 L509 150 M647 132 L647 150 M785 132 L785 150"/>
+          <!-- six opportunity boxes, 130 wide, 8 gap, from x=30 -->
+          <rect x="30" y="150" width="130" height="72" rx="6" transform="rotate(-0.5 95 186)" fill="url(#s5aHc)" stroke="#9A5B00" stroke-width="2.6"/>
+          <rect x="168" y="150" width="130" height="72" rx="6" transform="rotate(0.5 233 186)" fill="url(#s5aHc)"/>
+          <rect x="306" y="150" width="130" height="72" rx="6" transform="rotate(-0.4 371 186)" fill="url(#s5aHc)"/>
+          <rect x="444" y="150" width="130" height="72" rx="6" transform="rotate(0.5 509 186)" fill="url(#s5aHc)"/>
+          <rect x="582" y="150" width="130" height="72" rx="6" transform="rotate(-0.5 647 186)" fill="url(#s5aHc)"/>
+          <rect x="720" y="150" width="130" height="72" rx="6" transform="rotate(0.4 785 186)" fill="url(#s5aHc)"/>
+          <!-- branches from the strongest opportunity to three solutions -->
+          <path d="M95 224 L95 248"/>
+          <path d="M95 248 L524 248" stroke="#CFC9E6"/>
+          <path d="M124 248 L124 264 M324 248 L324 264 M524 248 L524 264"/>
+          <rect x="30" y="264" width="188" height="50" rx="6" transform="rotate(-0.5 124 289)" fill="#FFFFFF"/>
+          <rect x="230" y="264" width="188" height="50" rx="6" transform="rotate(0.4 324 289)" fill="#FFFFFF"/>
+          <rect x="430" y="264" width="188" height="50" rx="6" transform="rotate(-0.3 524 289)" fill="#FFFFFF"/>
+          <!-- the wrong tree, a small box on the right -->
+          <rect x="680" y="264" width="170" height="50" rx="6" transform="rotate(0.5 765 289)" fill="#FFFFFF" stroke="#CFC9E6"/>
+        </g>
+
+        <text class="s5aS" x="196" y="118" text-anchor="middle">Adeline</text>
+        <text class="s5aB" x="250" y="66">OUTCOME, in her words</text>
+        <text class="s5aS" x="250" y="82">fewer complaint calls about empty shelves, counted by her</text>
+        <text class="s5aS" x="250" y="97">and write-off, which head office measures her on, no higher</text>
+
+        <text class="s5aA" x="470" y="126">OPPORTUNITIES: THE PAINS SHE NAMED</text>
+
+        <text class="s5aB" x="40" y="168">nobody records</text>
+        <text class="s5aB" x="40" y="184">a stock-out;</text>
+        <text class="s5aB" x="40" y="200">only the calls</text>
+        <text class="s5aL" x="178" y="168">product codes</text>
+        <text class="s5aL" x="178" y="184">differ by</text>
+        <text class="s5aL" x="178" y="200">country</text>
+        <text class="s5aL" x="316" y="168">three versions</text>
+        <text class="s5aL" x="316" y="184">of the stock</text>
+        <text class="s5aL" x="316" y="200">spreadsheet</text>
+        <text class="s5aL" x="454" y="168">Friday count</text>
+        <text class="s5aL" x="454" y="184">overwritten</text>
+        <text class="s5aL" x="454" y="200">every week</text>
+        <text class="s5aL" x="592" y="168">a WhatsApp from</text>
+        <text class="s5aL" x="592" y="184">the pharmacist</text>
+        <text class="s5aL" x="592" y="200">is the warning</text>
+        <text class="s5aL" x="730" y="168">managers on</text>
+        <text class="s5aL" x="730" y="184">phones, in</text>
+        <text class="s5aL" x="730" y="200">the van</text>
+
+        <text class="s5aA" x="140" y="242">SOLUTIONS, MORE THAN ONE, UNDER THE STRONGEST</text>
+        <text class="s5aL" x="42" y="284">a daily stock-out log</text>
+        <text class="s5aS" x="42" y="300">a sheet per outlet</text>
+        <text class="s5aL" x="242" y="284">keep every Friday count</text>
+        <text class="s5aS" x="242" y="300">instead of overwriting it</text>
+        <text class="s5aL" x="442" y="284">a model on sales history</text>
+        <text class="s5aS" x="442" y="300">what the vendor built</text>
+        <text class="s5aB" x="692" y="284">the upside-down tree:</text>
+        <text class="s5aS" x="692" y="300">"use AI" as the outcome</text>
+
+        <text class="s5aN" x="30" y="344">Every box is something she said. The model sits in the bottom row, one solution among three, not in the top box.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - the mustard box came out of door 6, the hatched row is her pains as she said them, and the white boxes are the only layer you are allowed to invent</figcaption>
+    </figure>
+
+    <details class="card" open>
+      <summary><span class="mode live">Live</span>Outcome first, in her words<span class="mini">2 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>The top box is her test, and it is written in her words, not yours. At Harbourline it reads: fewer complaint calls about empty shelves, which she counts herself, and she said plainly that she does not care what the accuracy number is. The second half is the guard rail: an over-order costs expiry write-off, and head office measures her on write-off. Say that half back to her as your reading, because she named the cost and not a target; a project that cut the calls by stuffing every shelf would pass the first half and fail her review.</p>
+        <p>Test the top box by turning the tree over. If what sits at the top is "use AI" or "predict stock-outs", the tree is upside down: a solution is pretending to be an outcome, and every branch under it will be a feature of the model, a horizon, a threshold, a dashboard, rather than a pain of hers. The board wants the word AI on a slide; she wants fewer calls. Those are different projects, and only one of them is hers to sponsor.</p>
+        <p>Keeping her words is not politeness. "Fewer complaint calls" is a number she already collects, by hand, without you, so a project that points at it is one she can check without trusting your metric. The moment you rewrite it as "improve stock-out recall", it is your project again, judged by a number she cannot see.</p>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>Opportunities are pains she named<span class="mini">2 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>The second row is a transcript, not a brainstorm. Each box is a pain she voiced behind doors 3, 4 and 5: nobody records a stock-out anywhere, the only record is the complaint call; product codes differ between the two countries, and two outlets renamed products themselves last year; three versions of the stock spreadsheet are in circulation; the spreadsheet is overwritten every Friday, so last week's stock level does not exist; the warning today is the pharmacist looking at the shelf and sending a WhatsApp; the area managers read things on their phones, in the van. Six boxes, six things she said.</p>
+        <p>The discipline is to write nothing in this row she did not say. "No labelled training data" is your diagnosis; "nobody records a stock-out" is her pain. The first pulls a modelling project in behind it and a feature store behind that. Torres's rule, as reported, is that opportunities are framed from the customer's side, and the reason is practical: a pain in her words is one she will recognise on the page and fight for, and a diagnosis in yours is one she will nod at and forget.</p>
+        <p>Which opportunity is strongest is the first real judgement on the page, and for a scientist it is a judgement about what the outcome can be checked against. The missing record earns the mustard edge, because every other box, and every model you might build, needs to know when a shelf was empty, and today that fact lives only as a phone call to her.</p>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>Solutions come last, and the model is one of them<span class="mini">2 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Solutions are the only layer you invent, and the rule is at least two per opportunity you take seriously. Under "nobody records a stock-out": a daily log, one sheet per outlet, filled in by the person who sees the empty shelf; keeping each Friday count instead of overwriting it, so there is a stock history from next week on; and a model on the three years of sales history. Three shapes, from cheapest to dearest. Writing the model down here is the honest move, not the dangerous one: on the page, next to the log, anyone can see that it answers a different question.</p>
+        <p>Torres's fourth layer, assumption tests, is the one scientists skip and should not: under each solution, the thing that must be true for it to work, and the cheapest way to find out. Under the daily log the assumption is that someone will write a line on the day it happens; the test is the pharmacist in Johor, who has offered to do exactly that if someone gives her a sheet. Under the model on sales, the assumption is that sales predict empty shelves, and the vendor already tested it for you. The <a href="https://phoebefu6.github.io/learn-product-thinking-with-phoebe/">Product Thinking course</a> teaches the tree as a discipline, with the interviewing cadence around it; here it is borrowed for one job, ordering what she already told you.</p>
+      </div>
+    </details>
+
+    <div class="callout example">
+      <span class="ex-pill">Real world</span>
+      <p><strong>The forecast nobody used.</strong> A constructed case, but the shape is the common one. The year before your meeting, a vendor sold Harbourline an "AI demand forecast". It forecast sales. Nobody used it, because sales were never the problem: a patient does not complain that sales were lower than predicted, she complains that the shelf was empty. The vendor's tree had "AI forecast" in the top box and the branches were its features. Nothing on it pointed at a complaint call, so nothing built could move one, and the fact that predicted the failure, that no stock-out had ever been recorded to check the forecast against, was never on the page. It is also why the request reached you with the word "predict", and why she said the board wants the word AI before she said what she wants.</p>
+    </div>
+  </section>
+
+  <section class="section" id="part-2">
+    <div class="section-kicker">
+      <span class="klabel">Part 2 · covers pruning, scoring and the baseline</span>
+      <h2>Three candidates, and a fourth that waits</h2>
+      <span class="tag concept">5 min live</span>
+    </div>
+    <p class="lede">A tree with six branches and a row of leaves is a map, not a plan. The prune is to three candidate joint projects, one under each of the three strongest opportunities, never three solutions to the same one. At Harbourline: a daily stock-out log in four outlets, which creates the record nobody has; one product master for both countries, with an owner named; and a simple rule-based alert for the 40 chronic-medication products, which fires when the days of stock left fall under the supplier lead time. The model is written on the page as a fourth line, with the condition that would let you score it, and it is not scored tonight.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 378" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A hand-drawn scoring grid. The combination rule is written in a box above it: impact times confidence times ease, 1 to 10 each, we multiply. Three rows hold the three candidates with hand-written digits. Row 1, a daily stock-out log in four outlets, the Johor pharmacist first: 8, 9, 9, product 648, marked in mustard as the winner. Row 2, one product master for both countries with an owner named: 6, 8, 3, product 144. Row 3, a rule-based alert for the 40 products, days of cover under supplier lead time of five days in Singapore and nine in Malaysia: 7, 4, 6, product 168. A fourth row, a model of stock-outs, is left unscored because it needs eight weeks of logged stock-outs. A note says averaged, rows 2 and 3 tie at 5.7 and the winner holds either way.">
+        <defs>
+          <filter id="s5bSk" x="-3%" y="-3%" width="106%" height="106%"><feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="2" seed="59" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.4" xChannelSelector="R" yChannelSelector="G"/></filter>
+          <pattern id="s5bHc" patternUnits="userSpaceOnUse" width="7" height="7" patternTransform="rotate(-38)"><line x1="0" y1="0" x2="0" y2="7" stroke="#5B21B6" stroke-width="1" opacity=".5"/></pattern>
+          <marker id="s5bAr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M1 1 L9 5 L1 9" fill="none" stroke="#1E1B2E" stroke-width="1.6" stroke-linecap="round"/></marker>
+        </defs>
+        <style>
+          .s5bH { font: 800 12px Inter, sans-serif; fill: #1E1B2E; }
+          .s5bL { font: 600 12px Inter, sans-serif; fill: #1E1B2E; }
+          .s5bS { font: 400 11px Inter, sans-serif; fill: #4E4A66; }
+          .s5bB { font: 800 11px Inter, sans-serif; fill: #6B3F00; }
+          .s5bV { font: 800 18px Inter, sans-serif; fill: #4C1D95; }
+          .s5bA { font: 700 11px Inter, sans-serif; fill: #5B21B6; letter-spacing: .05em; }
+          .s5bN { font: 400 12px Inter, sans-serif; fill: #4E4A66; }
+        </style>
+
+        <text class="s5bH" x="30" y="26">THREE CANDIDATES, ONE GRID, THE RULE WRITTEN ABOVE IT</text>
+
+        <g filter="url(#s5bSk)" fill="none" stroke="#1E1B2E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <!-- the rule, written above the grid -->
+          <rect x="30" y="42" width="600" height="30" rx="6" transform="rotate(-0.4 330 57)" fill="#F5F3FF"/>
+          <!-- the log sheet, the doodle anchor -->
+          <rect x="792" y="30" width="38" height="48" rx="3" transform="rotate(0.8 811 54)" fill="#FFFFFF"/>
+          <path d="M800 44 L822 44 M800 54 L822 54 M800 64 L814 64"/>
+          <!-- the grid -->
+          <rect x="30" y="86" width="800" height="230" rx="6" transform="rotate(0.3 430 201)" fill="#FFFFFF"/>
+          <path d="M30 116 L830 116 M30 166 L830 166 M30 216 L830 216 M30 266 L830 266" stroke="#CFC9E6"/>
+          <path d="M390 86 L390 266 M470 86 L470 266 M580 86 L580 266 M660 86 L660 266" stroke="#CFC9E6" stroke-dasharray="4 4"/>
+          <!-- winner row highlight -->
+          <rect x="34" y="119" width="792" height="44" rx="4" transform="rotate(-0.2 430 141)" fill="#FBF1E0" stroke="#9A5B00"/>
+          <!-- the parked fourth row -->
+          <rect x="34" y="269" width="792" height="44" rx="4" transform="rotate(0.2 430 291)" fill="#F5F3FF" stroke="#CFC9E6" stroke-dasharray="6 5"/>
+          <!-- arrow from rule to result column -->
+          <path d="M636 57 C700 57 722 66 730 84" marker-end="url(#s5bAr)"/>
+        </g>
+
+        <text class="s5bB" x="42" y="62">RULE, written first: impact x confidence x ease, 1 to 10 each. We multiply.</text>
+
+        <text class="s5bA" x="40" y="106">CANDIDATE</text>
+        <text class="s5bA" x="400" y="106">IMPACT</text>
+        <text class="s5bA" x="482" y="106">CONFIDENCE</text>
+        <text class="s5bA" x="592" y="106">EASE</text>
+        <text class="s5bA" x="672" y="106">I x C x E</text>
+
+        <text class="s5bB" x="42" y="138">1  A daily stock-out log, four outlets,</text>
+        <text class="s5bB" x="42" y="154">the Johor pharmacist first</text>
+        <text class="s5bV" x="430" y="148" text-anchor="middle">8</text>
+        <text class="s5bV" x="525" y="148" text-anchor="middle">9</text>
+        <text class="s5bV" x="620" y="148" text-anchor="middle">9</text>
+        <text class="s5bV" x="720" y="148" text-anchor="middle">648</text>
+        <text class="s5bB" x="768" y="148">winner</text>
+
+        <text class="s5bL" x="42" y="188">2  One product master for both countries,</text>
+        <text class="s5bS" x="42" y="204">an owner named; nobody owns it today</text>
+        <text class="s5bV" x="430" y="198" text-anchor="middle">6</text>
+        <text class="s5bV" x="525" y="198" text-anchor="middle">8</text>
+        <text class="s5bV" x="620" y="198" text-anchor="middle">3</text>
+        <text class="s5bV" x="720" y="198" text-anchor="middle">144</text>
+
+        <text class="s5bL" x="42" y="238">3  A rule-based alert for the 40 products:</text>
+        <text class="s5bS" x="42" y="254">days of cover under supplier lead time, 5 SG, 9 MY</text>
+        <text class="s5bV" x="430" y="248" text-anchor="middle">7</text>
+        <text class="s5bV" x="525" y="248" text-anchor="middle">4</text>
+        <text class="s5bV" x="620" y="248" text-anchor="middle">6</text>
+        <text class="s5bV" x="720" y="248" text-anchor="middle">168</text>
+
+        <text class="s5bL" x="42" y="288">4  A model of stock-outs, per outlet per product</text>
+        <text class="s5bS" x="42" y="304">not scored now: it needs eight weeks of logged stock-outs to learn from, and the alert to beat</text>
+
+        <text class="s5bN" x="30" y="342">The digits are the scientist's judgement, written down so she can argue with them.</text>
+        <text class="s5bS" x="30" y="360">Averaged, rows 2 and 3 tie at 5.7 and the rule decides second place; the winner holds at 8.7 either way.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - the rule sits above the grid because a score whose rule is unwritten cannot be argued with, only accepted, and the model sits below it because it has nothing to learn from yet</figcaption>
+    </figure>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>From tree to three<span class="mini">2 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Pruning has one rule: one candidate under each of the three strongest opportunities, never three solutions to one. Three ways to predict a stock-out is a menu, and a menu makes her choose a build. Three projects under three different pains is a portfolio, and a portfolio lets her choose a problem, which is the choice she is qualified to make.</p>
+        <p>Each candidate is written the same way, in four lines: what it is, in words from her tree; the first step, something that can start this week; who does it, a named person on her side and on yours; and what it needs. "A daily stock-out log in four outlets, the Johor pharmacist first" is a candidate: she offered to log every day if someone gives her a sheet, and a sheet costs nothing. "Improve data readiness for ML" is a wish. The test is whether Priya in finance, who can give two hours a week, could read the four lines and know what she is doing on Monday.</p>
+        <p>Notice what the prune did to the request. "Predict which outlets will run out" is not one of the three. It is the fourth line, and it is honest about why: a model that predicts stock-outs needs to have seen stock-outs, and the only record of one today is a phone call to Adeline. Candidate 1 is the first project because it creates the label. Candidate 3 is on the list because it is the thing any model will later have to beat.</p>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>Score it, and write the rule down<span class="mini">2 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Sean Ellis and Morgan Brown's ICE score, reported here from <em>Hacking Growth</em>, rates each candidate on impact, confidence and ease, each from 1 to 10. How the three are combined is contested: some teams multiply, some average, and the summaries that quote the book describe its practice differently. So the honest move is not to pick the right rule. It is to write down which one you used, above the grid, before you fill in a digit.</p>
+        <p>The two rules can disagree, and on this grid they do, for second place. The product master scores 6, 8 and 3; the alert scores 7, 4 and 6. Averaged, both come to 5.7 and the grid cannot separate them. Multiplied, the product master falls to 144 and the alert rises to 168, because multiplying punishes the weakest leg and the product master's ease of 3, nobody owns it and two outlets renamed products themselves, is weaker than the alert's confidence of 4. The winner holds either way: the log multiplies to 648 and averages 8.7. Neither rule is wrong. An unwritten rule is.</p>
+        <p>The digits are yours, and that is the point rather than a weakness. A grid with the rule above it is a page she can argue with: "why is confidence only 4 on the alert?" is a conversation about the shop, and the answer, that the Friday count it reads is typed by hand and exists in three versions, usually ends with a better digit and a better project.</p>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>The simple fix first, and the baseline a model must beat<span class="mini">2 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Google's machine learning problem-framing course, read at source, makes two points that belong on this grid. Before building a model, check that the current non-ML solution is as good as it can be; and define how success will be measured before you build anything. At Harbourline the current solution is a pharmacist looking at a shelf and sending a WhatsApp, which catches most of them. Any model has to beat a person looking at a shelf, and before that it has to beat a rule anyone can read: if the days of stock left for a chronic product are fewer than the supplier lead time, five days in Singapore and nine in Malaysia, flag it for Thursday's van. The success measure is already written: her own count of complaint calls.</p>
+        <p>That is why the alert is candidate 3 and not a throwaway. It is the non-ML solution made explicit, so that eight weeks from now a model is scored against something rather than against nothing. A model that cannot beat "stock left under lead time" on the stock-outs the log recorded is not worth the POS export. And the export has its own assumption to test: Kenneth, the only IT person, holds the POS admin login, which is a question to ask by name before the alert depends on it. The <a href="https://phoebefu6.github.io/learn-decision-intelligence-with-phoebe/">Decision Intelligence course</a> owns the wider discipline of choosing under uncertainty; the grid here is a single page of it.</p>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>The fourth line: the model, with its condition<span class="mini">1 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Parking the model is not the same as dropping it. Write it on the page with the condition that would let you score it: eight weeks of logged stock-outs in the four outlets, and the alert's record over the same weeks. Then do the arithmetic out loud, because it is the base rate, and the base rate is the first number any prediction is judged against. About 30 stock-outs a month across 38 outlets is under one per outlet per month. Four average outlets over eight weeks would log roughly six. That figure is arithmetic on the constructed facts, not a finding, and it teaches the right thing: six events is enough to check an alert against and far too few to train a model on.</p>
+        <p>So the eight-week review asks a question rather than delivering a model: is the log telling us something the alert misses? If the four outlets are the ones that keep her up at night, the count will be higher than average, and that is a reason to choose them, not a trick. If the alert already catches what the log records, the best model on the page is the rule, and saying so is the most useful thing a scientist can put on a board slide.</p>
+      </div>
+    </details>
+
+    <div class="tryrow" data-fn="wordcount" data-multiline="1" data-title="Write your combination rule" data-hint="For a grid you would build this month: which three things do you score, from what to what, and how do they combine? One sentence, the kind that sits above the grid. If it takes two, you have not decided." data-seed="" data-cta="Count it"></div>
+  </section>
+
+  <section class="section" id="part-3">
+    <div class="section-kicker">
+      <span class="klabel">Part 3 · covers the pilot</span>
+      <h2>Four outlets, not 38</h2>
+      <span class="tag concept">4 min live</span>
+    </div>
+    <p class="lede">Door 6 is where a candidate becomes a pilot, and everything the pilot needs was in her answers. Her test: the complaint calls about empty shelves go down, and she counts them herself. Her partners: Priya in finance for two hours a week, and the pharmacist in Johor who offered to log stock-outs every day. Her scope: four outlets first, never all 38 at once. Her constraint: no budget this quarter, and a SGD 15,000 tooling budget in Q1. Her date: the board meets in six weeks and she wants one slide, not a demo. Five facts from doors 5 and 6, and the pilot writes itself.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 336" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A hand-drawn nine-week timeline for the winning candidate, with milestone boxes alternating above and below the week axis. Week 0, above: the brief, sent within 24 hours. Week 1, below: the log sheet starts in four outlets, the Johor one first. Week 2, above: the first count, set beside her own complaint calls. Week 4, below: the alert rule switched on for the 40 products before Thursday's van. Week 6, above, in mustard: one board slide with the logged stock-outs and her call count. Week 9, below: eight weeks logged, and only now the model question. At the top right, a phone drawn as her success test, her own count of complaint calls.">
+        <defs>
+          <filter id="s5cSk" x="-3%" y="-3%" width="106%" height="106%"><feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="2" seed="61" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.4" xChannelSelector="R" yChannelSelector="G"/></filter>
+          <pattern id="s5cHc" patternUnits="userSpaceOnUse" width="7" height="7" patternTransform="rotate(-38)"><line x1="0" y1="0" x2="0" y2="7" stroke="#5B21B6" stroke-width="1" opacity=".5"/></pattern>
+          <marker id="s5cAr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M1 1 L9 5 L1 9" fill="none" stroke="#1E1B2E" stroke-width="1.6" stroke-linecap="round"/></marker>
+        </defs>
+        <style>
+          .s5cH { font: 800 12px Inter, sans-serif; fill: #1E1B2E; }
+          .s5cL { font: 600 12px Inter, sans-serif; fill: #1E1B2E; }
+          .s5cS { font: 400 11px Inter, sans-serif; fill: #4E4A66; }
+          .s5cB { font: 800 11px Inter, sans-serif; fill: #6B3F00; }
+          .s5cA { font: 700 11px Inter, sans-serif; fill: #5B21B6; letter-spacing: .05em; }
+          .s5cW { font: 800 12px Inter, sans-serif; fill: #FFFFFF; }
+          .s5cN { font: 400 12px Inter, sans-serif; fill: #4E4A66; }
+        </style>
+
+        <text class="s5cH" x="30" y="26">NINE WEEKS, FOUR OUTLETS, ONE SLIDE AT WEEK 6</text>
+        <text class="s5cS" x="30" y="42">the constructed timeline for the winning candidate · no budget spent before Q1</text>
+
+        <g filter="url(#s5cSk)" fill="none" stroke="#1E1B2E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <!-- the week axis -->
+          <path d="M40 176 L860 176" stroke-width="3" marker-end="url(#s5cAr)"/>
+          <path d="M315 170 L315 182 M485 170 L485 182 M655 170 L655 182 M740 170 L740 182"/>
+          <!-- milestone boxes, alternating above and below the axis -->
+          <rect x="20" y="96" width="150" height="56" rx="6" transform="rotate(-0.5 95 124)" fill="#F5F3FF"/>
+          <rect x="70" y="216" width="150" height="56" rx="6" transform="rotate(0.4 145 244)" fill="#FFFFFF"/>
+          <rect x="185" y="96" width="150" height="56" rx="6" transform="rotate(-0.4 260 124)" fill="url(#s5cHc)"/>
+          <rect x="325" y="216" width="150" height="56" rx="6" transform="rotate(0.5 400 244)" fill="#FFFFFF"/>
+          <rect x="495" y="96" width="150" height="56" rx="6" transform="rotate(-0.4 570 124)" fill="#FBF1E0" stroke="#9A5B00"/>
+          <rect x="700" y="216" width="150" height="56" rx="6" transform="rotate(0.4 775 244)" fill="#F5F3FF"/>
+          <!-- connectors from each box to its week -->
+          <path d="M60 152 L60 165 M230 152 L230 165 M570 152 L570 165 M145 187 L145 216 M400 187 L400 216 M825 187 L825 216" stroke="#CFC9E6"/>
+          <!-- the phone, the doodle anchor: her success test -->
+          <rect x="690" y="34" width="34" height="56" rx="6" transform="rotate(0.8 707 62)" fill="#FFFFFF"/>
+          <path d="M700 82 L714 82"/>
+          <!-- badges for week numbers, on the axis -->
+          <circle cx="60" cy="176" r="11" fill="#5B21B6" stroke="#5B21B6"/>
+          <circle cx="145" cy="176" r="11" fill="#5B21B6" stroke="#5B21B6"/>
+          <circle cx="230" cy="176" r="11" fill="#5B21B6" stroke="#5B21B6"/>
+          <circle cx="400" cy="176" r="11" fill="#5B21B6" stroke="#5B21B6"/>
+          <circle cx="570" cy="176" r="11" fill="#9A5B00" stroke="#9A5B00"/>
+          <circle cx="825" cy="176" r="11" fill="#5B21B6" stroke="#5B21B6"/>
+        </g>
+
+        <text class="s5cW" x="60" y="180" text-anchor="middle">0</text>
+        <text class="s5cW" x="145" y="180" text-anchor="middle">1</text>
+        <text class="s5cW" x="230" y="180" text-anchor="middle">2</text>
+        <text class="s5cW" x="400" y="180" text-anchor="middle">4</text>
+        <text class="s5cW" x="570" y="180" text-anchor="middle">6</text>
+        <text class="s5cW" x="825" y="180" text-anchor="middle">9</text>
+        <text class="s5cA" x="20" y="204">WEEK</text>
+
+        <text class="s5cL" x="32" y="114">the brief</text>
+        <text class="s5cS" x="32" y="130">one page, sent</text>
+        <text class="s5cS" x="32" y="145">within 24 hours</text>
+        <text class="s5cL" x="82" y="234">log sheet starts</text>
+        <text class="s5cS" x="82" y="250">four outlets, the</text>
+        <text class="s5cS" x="82" y="265">Johor one first</text>
+        <text class="s5cL" x="197" y="114">first count, set</text>
+        <text class="s5cS" x="197" y="130">beside her own</text>
+        <text class="s5cS" x="197" y="145">complaint calls</text>
+        <text class="s5cL" x="337" y="234">alert rule on</text>
+        <text class="s5cS" x="337" y="250">40 products, days of</text>
+        <text class="s5cS" x="337" y="265">cover, Thursday van</text>
+        <text class="s5cB" x="507" y="114">one board slide</text>
+        <text class="s5cS" x="507" y="130">logged stock-outs</text>
+        <text class="s5cS" x="507" y="145">and her call count</text>
+        <text class="s5cL" x="712" y="234">eight weeks logged</text>
+        <text class="s5cS" x="712" y="250">now ask the model</text>
+        <text class="s5cS" x="712" y="265">question, not before</text>
+
+        <text class="s5cB" x="734" y="54">the test</text>
+        <text class="s5cS" x="734" y="69">her own count of</text>
+        <text class="s5cS" x="734" y="84">complaint calls</text>
+
+        <text class="s5cN" x="30" y="302">Nothing on the line costs money: the log is a sheet, the alert is a formula on the Friday count.</text>
+        <text class="s5cS" x="30" y="320">Empty weeks are on purpose: Priya has two hours a week, and a plan that fills every week cannot be kept.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - the slide is mustard because it is the only thing on the line she asked for by name, and the model question comes after it, at week 9, because that is when there is something to learn from</figcaption>
+    </figure>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>The pilot is the first step, not the plan<span class="mini">2 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>A pilot is the winning candidate with four things pinned to it: a scope, partners, a test and a date. All four came out of doors 5 and 6, so none of them is yours to invent. Scope: four outlets, because she said she would run a pilot in four first and never all 38. Partners: the Johor pharmacist, who logs, and Priya, who gives two hours a week. Test: her own count of complaint calls about empty shelves. Date: one slide for the board in six weeks.</p>
+        <p>Her test beats any score you could offer, and the reason is the whole of door 1. An accuracy number measures the model; her count measures the outcome. A model that says "no stock-out" every week is right almost every week, because most shelves are fine most weeks, and it leaves every complaint call exactly where it was. Her count cannot be gamed that way, and she already keeps it. Google's second point, define success before you build, is met the moment you write "her count of calls" on the pilot line.</p>
+        <p>The constraint shapes the first step more than the ambition does. No budget this quarter means the log is a sheet the pharmacist fills in on the day, and the alert, when it arrives in week 4, is a formula on the Friday count and three years of daily sales. When the SGD 15,000 opens in Q1, the pilot has produced the one thing a budget conversation needs: a record, from four of her own outlets, of when the shelf was empty and whether a plain rule saw it coming.</p>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>What the two partners change<span class="mini">2 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>The pharmacist in Johor is not a data source on the plan. She is the reason the label exists. The person who logs a stock-out becomes the person who owns the record of it, and she volunteered, which is Rob Fitzpatrick's test from door 6 already met: the other side gave up something before you asked. Put her outlet first because she offered, not because it is convenient, and design the sheet with her in the first week: one line per empty shelf, the product, the day, and whether a patient left without it. Anything longer than that will not be filled in on a busy day.</p>
+        <p>Priya is the reason the work survives you. Her two hours a week turn the four sheets into the count set beside Adeline's calls, and she is the person who will notice that the two countries use different product codes the first time she tries to add them up. That is candidate 2 arriving on its own schedule, with a named owner already sitting next to the problem. Torres's weekly contact, reported here, is the cadence: the same two hours every week, in the calendar.</p>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>Two pilot lines your notes may not hold<span class="mini">1 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Check the pilot against what you actually asked. On session 3's bench, the scientist-tuned order spends its 45 minutes on eleven open questions and stops at the one about where a prediction would be read. The supplier lead-time question and the "when do you next have to show something upward?" question are further down its list and never get asked. So a scientist who ran that order has her test, her partners, her four outlets and her Q1 budget in the notes, but not the five and nine days the alert depends on, and not the six-week board date the pilot is aimed at.</p>
+        <p>That is not a flaw in the order; 45 minutes is 45 minutes. It is the reason every line of the pilot is marked with where it came from. A line that came from her is written as a fact; a line you are assuming is written as a question, and session 6 sends those questions in the covering note with the brief.</p>
+      </div>
+    </details>
+
+    <div class="callout example">
+      <span class="ex-pill">Real world</span>
+      <p><strong>The sheet the area manager started reading.</strong> A constructed case, with the shape that recurs. By the third week, the Johor pharmacist's sheet showed the same two chronic products empty on more than one day, always late in the week. Nobody had built anything. The area manager, who already moves stock on Thursday's van run, began reading the sheet on his phone on Wednesday night and moving those two products before the shelf emptied. The alert in week 4 formalised what he was already doing, and the board slide in week 6 had a line no model could have written: the calls from that outlet, counted by Adeline, beside the days the sheet said the shelf was empty. The label came first, the baseline second, and the model question was still waiting at week 9, which is where it belongs.</p>
+    </div>
+  </section>
+
+  <section class="section" id="demo-1">
+    <div class="section-kicker">
+      <span class="klabel">Build-along</span>
+      <h2>Your tree, your three, your first step</h2>
+      <span class="tag demo">★ 22 min · everyone writes</span>
+    </div>
+    <p class="lede">One page, three columns. Take the answers you collected for your real request, or Adeline's if you have none yet, and build the page in six steps: the outcome in their words, the pains as they said them, solutions under the strongest with the assumption under each, three candidates and the parked model, the grid with its rule, and the pilot. Every line is written tonight; nothing on the page is a decision the business person has not already given you the facts for.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A hand-drawn one-page layout in three columns. Left, the tree: an outcome box at the top in mustard, a hatched row of three pains, and two small solution boxes under each. Middle, three candidate cards with what, first step, who and needs, the second one in mustard as the winner, a dashed fourth card for the parked model, and the scoring grid sketched underneath with its rule. Right, a single pilot box in mustard with scope, who, test, date, needs, and the model question at week 9. Arrows run from the tree to the candidates and from the winning candidate to the pilot.">
+        <defs>
+          <filter id="s5dSk" x="-3%" y="-3%" width="106%" height="106%"><feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="2" seed="67" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.4" xChannelSelector="R" yChannelSelector="G"/></filter>
+          <pattern id="s5dHc" patternUnits="userSpaceOnUse" width="7" height="7" patternTransform="rotate(-38)"><line x1="0" y1="0" x2="0" y2="7" stroke="#5B21B6" stroke-width="1" opacity=".5"/></pattern>
+          <marker id="s5dAr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M1 1 L9 5 L1 9" fill="none" stroke="#1E1B2E" stroke-width="1.6" stroke-linecap="round"/></marker>
+        </defs>
+        <style>
+          .s5dH { font: 800 12px Inter, sans-serif; fill: #1E1B2E; }
+          .s5dL { font: 600 12px Inter, sans-serif; fill: #1E1B2E; }
+          .s5dS { font: 400 11px Inter, sans-serif; fill: #4E4A66; }
+          .s5dB { font: 800 11px Inter, sans-serif; fill: #6B3F00; }
+          .s5dA { font: 700 11px Inter, sans-serif; fill: #5B21B6; letter-spacing: .05em; }
+          .s5dN { font: 400 12px Inter, sans-serif; fill: #4E4A66; }
+        </style>
+
+        <text class="s5dH" x="30" y="24">THE PAGE, THREE COLUMNS, LEFT TO RIGHT</text>
+
+        <g filter="url(#s5dSk)" fill="none" stroke="#1E1B2E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <!-- the page, the doodle anchor -->
+          <rect x="30" y="33" width="820" height="250" rx="4" transform="rotate(-0.2 440 158)" fill="#FFFFFF"/>
+          <!-- left column: the tree -->
+          <rect x="60" y="62" width="200" height="30" rx="4" transform="rotate(-0.5 160 77)" fill="#FBF1E0" stroke="#9A5B00"/>
+          <path d="M160 92 L160 106"/>
+          <rect x="46" y="106" width="60" height="30" rx="4" fill="url(#s5dHc)"/>
+          <rect x="130" y="106" width="60" height="30" rx="4" fill="url(#s5dHc)"/>
+          <rect x="214" y="106" width="60" height="30" rx="4" fill="url(#s5dHc)"/>
+          <path d="M59 136 L59 150 M93 136 L93 150 M143 136 L143 150 M177 136 L177 150 M227 136 L227 150 M261 136 L261 150" stroke="#CFC9E6"/>
+          <rect x="46" y="150" width="26" height="22" rx="3"/>
+          <rect x="80" y="150" width="26" height="22" rx="3"/>
+          <rect x="130" y="150" width="26" height="22" rx="3"/>
+          <rect x="164" y="150" width="26" height="22" rx="3"/>
+          <rect x="214" y="150" width="26" height="22" rx="3"/>
+          <rect x="248" y="150" width="26" height="22" rx="3"/>
+          <!-- arrow to the middle column -->
+          <path d="M290 120 L330 120" marker-end="url(#s5dAr)"/>
+          <!-- middle column: three candidate cards and the parked fourth -->
+          <rect x="340" y="56" width="200" height="40" rx="4" transform="rotate(-0.4 440 76)" fill="#F5F3FF"/>
+          <rect x="340" y="102" width="200" height="40" rx="4" transform="rotate(0.5 440 122)" fill="#FBF1E0" stroke="#9A5B00"/>
+          <rect x="340" y="148" width="200" height="40" rx="4" transform="rotate(-0.3 440 168)" fill="#F5F3FF"/>
+          <rect x="340" y="194" width="200" height="28" rx="4" transform="rotate(0.3 440 208)" fill="#FFFFFF" stroke="#CFC9E6" stroke-dasharray="5 4"/>
+          <!-- the grid under the cards -->
+          <rect x="340" y="230" width="200" height="34" rx="3" fill="#FFFFFF" stroke="#CFC9E6"/>
+          <path d="M390 230 L390 264 M440 230 L440 264 M490 230 L490 264" stroke="#CFC9E6" stroke-dasharray="3 3"/>
+          <!-- arrow to the pilot -->
+          <path d="M546 122 L600 130" marker-end="url(#s5dAr)"/>
+          <!-- right column: the pilot -->
+          <rect x="610" y="72" width="230" height="132" rx="6" transform="rotate(0.4 725 138)" fill="#FBF1E0" stroke="#9A5B00"/>
+        </g>
+
+        <text class="s5dA" x="46" y="56">1 TREE</text>
+        <text class="s5dB" x="70" y="81">outcome, their words</text>
+        <text class="s5dS" x="62" y="125">pain</text>
+        <text class="s5dS" x="146" y="125">pain</text>
+        <text class="s5dS" x="230" y="125">pain</text>
+        <text class="s5dS" x="46" y="190">solutions, and one assumption each</text>
+
+        <text class="s5dA" x="340" y="50">2 THREE, AND ONE PARKED</text>
+        <text class="s5dL" x="350" y="72">what · first step</text>
+        <text class="s5dS" x="350" y="88">who · needs</text>
+        <text class="s5dB" x="350" y="118">what · first step</text>
+        <text class="s5dS" x="350" y="134">who · needs</text>
+        <text class="s5dL" x="350" y="164">what · first step</text>
+        <text class="s5dS" x="350" y="180">who · needs</text>
+        <text class="s5dS" x="350" y="212">4 · the model, parked</text>
+        <text class="s5dS" x="350" y="251">I</text>
+        <text class="s5dS" x="400" y="251">C</text>
+        <text class="s5dS" x="450" y="251">E</text>
+        <text class="s5dS" x="498" y="251">rule</text>
+
+        <text class="s5dA" x="610" y="64">3 PILOT</text>
+        <text class="s5dB" x="622" y="96">scope: four outlets</text>
+        <text class="s5dB" x="622" y="116">who: Priya, the pharmacist</text>
+        <text class="s5dB" x="622" y="136">test: her count of calls</text>
+        <text class="s5dB" x="622" y="156">date: one slide, week 6</text>
+        <text class="s5dS" x="622" y="176">needs: a sheet, nothing more</text>
+        <text class="s5dS" x="622" y="192">then: the model question, wk 9</text>
+
+        <text class="s5dN" x="30" y="306">Left to right, as the meeting ran: her outcome picks the pains, the pains pick the three, the rule picks the one.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - everything mustard on the page traces back to a door 1 or door 6 answer, which is how you can tell the page is hers</figcaption>
+    </figure>
+
+    <div class="steps">
+      <div class="step">
+        <p><strong>Write the outcome in their words at the top.</strong> Not a goal you would set for them. The sentence they said when you asked how they would know it worked, with the number in it if they gave one. If the sentence you have is "predict", "AI" or "a model", you do not have the outcome yet, and the tree cannot start; write the question you will ask to get it instead.</p>
+        <div class="prompt-box good"><span class="label">★ Step 1 · the outcome, her words</span>OUTCOME (Adeline, door 6): fewer complaint calls about empty shelves.
+She counts them herself. She does not care what the accuracy number is.
+GUARD RAIL (my reading of door 1, to confirm with her): write-off no higher.
+An over-order costs expiry write-off, and head office measures her on it.</div>
+      </div>
+      <div class="step">
+        <p><strong>List the opportunities as they said them.</strong> One line each, their words, no diagnosis. Five to seven is normal for a 45-minute meeting. Mark the three that bear most directly on the outcome box; that mark is your first judgement, and you should be able to say why in one sentence per mark.</p>
+        <div class="prompt-box good"><span class="label">★ Step 2 · the pains, as said</span>1. Nobody records a stock-out anywhere. The only record is the call to me.  &lt;- strongest
+2. Singapore and Malaysia use different product codes; two outlets renamed.  &lt;- strong
+3. There are three versions of the stock spreadsheet going round.
+4. The spreadsheet is overwritten every Friday. Last week's stock is gone.
+5. Today the pharmacist looks at the shelf and WhatsApps the area manager.  &lt;- strong
+6. The area managers are on their phones, in the van.</div>
+      </div>
+      <div class="step">
+        <p><strong>Solutions under each of the three strongest.</strong> Cheapest first, dearest last, and a model only where it genuinely belongs. Under each, one line for the assumption that has to be true, because that line is what the first step will test.</p>
+        <div class="prompt-box good"><span class="label">★ Step 3 · solutions and the assumption under each</span>Under 1 (no record of a stock-out):
+  a. a daily log sheet in four outlets        assumes: someone writes a line the day it happens
+  b. keep every Friday count, stop overwriting assumes: managers will save a copy, not type over it
+  c. a model on three years of sales          assumes: sales predict empty shelves (the vendor's did not)
+Under 2 (codes differ):
+  a. one product master, an owner named        assumes: someone will own it; today nobody does
+Under 5 (the pharmacist is the warning):
+  a. a lead-time alert for the 40 products     assumes: the Friday count it reads is the right version
+  b. the pharmacist's check, kept as it is     assumes: it keeps catching most of them</div>
+      </div>
+      <div class="step">
+        <p><strong>Write the three candidates, four lines each, and park the model.</strong> What, first step, who, needs. One candidate per strong opportunity. The first step must be something a named person can do this week without asking for money. The model goes on a fourth line with the condition that would let you score it.</p>
+        <div class="prompt-box good"><span class="label">★ Step 4 · three candidates and a fourth that waits</span>C1  A daily stock-out log in four outlets, Johor first
+    first step: a one-line-per-empty-shelf sheet, designed with the Johor pharmacist
+    who: the pharmacist, Priya, me       needs: nothing
+C2  One product master for both countries, owner named
+    first step: Priya and I list the codes that differ, one afternoon
+    who: Priya, me                       needs: an owner she appoints
+C3  A rule-based alert: days of stock left under supplier lead time, 40 products
+    first step: the rule written on one page, checked against C1's log
+    who: me, one area manager            needs: lead times confirmed, POS export
+C4  A model of stock-outs, per outlet per product
+    NOT SCORED until eight weeks of C1's log exist, and C3's record to beat</div>
+      </div>
+      <div class="step">
+        <p><strong>Score the three, with the rule written above the grid.</strong> Impact, confidence, ease, 1 to 10. Write the combination rule first, then the digits, then check your own arithmetic. If your winner or your runner-up changes when you switch multiply for average, say so under the grid; that is the honest state of the choice.</p>
+        <div class="prompt-box good"><span class="label">★ Step 5 · the grid, rule first</span>RULE: I x C x E, each 1 to 10. (Some teams average. We multiply, because a weak leg should hurt.)
+
+                       I    C    E    I x C x E
+C1 stock-out log       8    9    9      648   &lt;- winner
+C2 product master      6    8    3      144
+C3 lead-time alert     7    4    6      168
+C4 model               not scored until eight weeks of log
+Averaged: 8.7 / 5.7 / 5.7. Same winner; C2 and C3 tie, so the rule decides second place.</div>
+      </div>
+      <div class="step">
+        <p><strong>Write the pilot in five lines.</strong> Scope, partners, test, date, and what it needs. Every line comes from door 5 or door 6. Mark each one with where it came from: her, or your guess to confirm. Session 6 sends the page within 24 hours, and the guesses are the questions in the covering note.</p>
+        <div class="prompt-box good"><span class="label">★ Step 6 · the pilot</span>PILOT: C1, a daily stock-out log in four outlets
+scope:    four outlets, Johor first                         [her: four first, never all 38]
+partners: the Johor pharmacist logs daily; Priya, 2 h a week [her]
+test:     her own count of complaint calls, empty shelves    [her]
+date:     one board slide in six weeks                       [ask if door 5 ran out of time]
+needs:    a sheet now; lead times for the week 4 alert       [ask: not in my notes]
+then:     week 9, eight weeks logged, the model question     [mine, say it out loud]</div>
+      </div>
+    </div>
+
+    <div class="callout tip">
+      <p><strong>The first project needs no budget and produces a fact she can see.</strong> That is the test of a first step, and it is stricter than it sounds. A fact she can see is a line in her own outlet's sheet on a day she remembers a call, not a chart you showed her. If the first step needs money, it is the second step; if it produces a prediction before it produces a record, it is last year's vendor again.</p>
+    </div>
+  </section>
+
+  <section class="section" id="exercise">
+    <div class="section-kicker">
+      <span class="klabel">Homework</span>
+      <h2>Before session 6</h2>
+      <span class="tag exercise">45 min</span>
+    </div>
+    <ol>
+      <li><strong>Build the tree for your real request.</strong> Their outcome at the top in their words, their pains as the row, solutions and one assumption under each of the three strongest. If a model is one of the solutions, write it as a leaf and not as the top box. If you cannot fill the top box, the homework is the question that fills it, and you ask it this week.</li>
+      <li><strong>Prune to three, park the model and score the three</strong> with the combination rule written above the grid. Run the grid a second time with the other rule and write one line on whether the winner or the runner-up moved.</li>
+      <li><strong>Write the baseline a model would have to beat,</strong> in one sentence a business person could apply by hand, and the base rate it would be judged against, even if the base rate is a rough count from their memory. If there is no record to count from, that record is your first project.</li>
+      <li><strong>Write the pilot in five lines</strong> (scope, partners, test, date, needs), mark every line that is your guess rather than their answer, and bring the page to session 6, printed, with your Six Doors sheet from session 1 and the data-state map from session 2.</li>
+    </ol>
+  </section>
+
+  <section class="section" id="quiz">
+    <div class="section-kicker">
+      <span class="klabel">Check yourself</span>
+      <h2>Three questions</h2>
+    </div>
+    <p>Clear all three and session 5 gets stamped in your passport.</p>
+
+    <div class="quiz-q" data-answer="2">
+      <p class="qtext">1 · She asked for a prediction of which outlets will run out of stock. Why is the winning project a daily stock-out log in four outlets and not a model?</p>
+      <button class="qopt" type="button">A · Because models are too expensive before the Q1 budget opens, and a log is cheaper to show the board</button>
+      <button class="qopt" type="button">B · Because the pharmacist would refuse to work with a model, so the log is a way to keep her on side</button>
+      <button class="qopt" type="button">C · Because a model that predicts stock-outs needs to have seen stock-outs, and nobody has ever recorded one; the only record is a complaint call, so the first project creates the label, and the model is parked with the condition that would let you score it</button>
+      <button class="qopt" type="button">D · Because three years of daily sales is not enough history for any model, so the log adds the missing years</button>
+      <p class="qwhy">The POS holds three years of daily sales, which is plenty of history for the wrong question; last year's vendor forecast sales and nobody used it. Stock-outs were never recorded and the spreadsheet is overwritten every Friday. The log, filled in by the pharmacist who offered, is the first record of the thing she wants fewer of.</p>
+    </div>
+
+    <div class="quiz-q" data-answer="0">
+      <p class="qtext">2 · On this grid, the product master scores 6, 8, 3 and the alert scores 7, 4, 6. What does that show about writing the ICE combination rule above the grid?</p>
+      <button class="qopt" type="button">A · Averaged, both come to 5.7 and tie; multiplied, the product master falls to 144 and the alert rises to 168, because multiplying punishes the weakest leg; whether to multiply or average is contested, so the rule you used has to be written down before the digits</button>
+      <button class="qopt" type="button">B · It shows the rule does not matter, because the winner at 648 is the same either way</button>
+      <button class="qopt" type="button">C · It shows averaging is the method and multiplying is a common mistake in summaries of the book</button>
+      <button class="qopt" type="button">D · It shows that ease should always be dropped from the score, because ease is the leg that caused the tie</button>
+      <p class="qwhy">The winner holds (648 multiplied, 8.7 averaged), but second place is decided by the rule alone. Some teams multiply and some average, and neither is wrong. A grid with its rule written above it is a page she can argue with; a ranking without one is a verdict she did not make.</p>
+    </div>
+
+    <div class="quiz-q" data-answer="3">
+      <p class="qtext">3 · Why is a rule-based alert, days of stock left under the supplier lead time, on the list of three at all?</p>
+      <button class="qopt" type="button">A · Because the board wants something that sounds like AI, and an alert can be presented as one</button>
+      <button class="qopt" type="button">B · Because rules are always more accurate than models on small chains of outlets</button>
+      <button class="qopt" type="button">C · Because it replaces the pharmacist's check, which is too slow for Thursday's van</button>
+      <button class="qopt" type="button">D · Because it is the non-ML solution made explicit, which Google's problem-framing guidance says to get right before building a model; any model later has to beat both the pharmacist looking at a shelf and this rule, on the stock-outs the log recorded</button>
+      <p class="qwhy">Five days of lead time in Singapore and nine in Malaysia set how far ahead any warning must see. A rule anyone can read is the baseline; a model that cannot beat it on eight weeks of logged stock-outs is not worth the POS export, and saying so is a finding, not a failure.</p>
+    </div>
+
+    <p class="quiz-score"></p>
+  </section>
+
+  <section class="section" id="official">
+    <div class="section-kicker">
+      <span class="klabel">Sources covered</span>
+      <h2>What this session teaches, and where it came from</h2>
+    </div>
+    <div class="covered">
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">Verify the current non-ML solution first; define how success is measured before building</span><span class="note">Google for Developers, "Introduction to Machine Learning Problem Framing", developers.google.com/machine-learning/problem-framing, accessed 2026-09-29; primary, read at source</span></div>
+      <div class="covered-row"><span class="status pill light">◐</span><span class="name">Opportunity solution tree: outcome, opportunities, solutions, assumption tests; weekly contact</span><span class="note">Teresa Torres, Continuous Discovery Habits, Product Talk, 2021; reported from summaries, and taught in depth in the Product Thinking course</span></div>
+      <div class="covered-row"><span class="status pill light">◐</span><span class="name">ICE: impact, confidence, ease, each 1 to 10</span><span class="note">Sean Ellis and Morgan Brown, Hacking Growth, Currency, 2017; reported, and whether the three are averaged or multiplied is contested, so the page says write down which</span></div>
+      <div class="covered-row"><span class="status pill light">◐</span><span class="name">Commitment as the test of a real partner</span><span class="note">Rob Fitzpatrick, The Mom Test, self-published, 2013; reported from consistent summaries, book not opened here</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">What the scientist-tuned order leaves out of the notes</span><span class="note">Session 3's bench run headlessly on the bank: eleven open questions in 45 minutes, 18 facts, no false belief, ending on the question about where a prediction is read; the lead-time and board-date questions are never reached</span></div>
+      <div class="covered-row"><span class="status pill light">◐</span><span class="name">Harbourline, Adeline Tan, Priya, the Johor pharmacist, the ICE digits, the timeline and "roughly six"</span><span class="note">Constructed. The 24 facts are printed in the bench's bank file and invented to be typical, not sourced; the ICE digits are the scientist's judgement, written down to be argued with; "roughly six stock-outs in eight weeks" is arithmetic on the constructed 30 a month, not a claim about any real pharmacy chain; the write-off guard rail is a reading of her cost, not a target she set</span></div>
+    </div>
+    <p class="mono" style="margin-top:14px">Every fact on this page, and its verification tier, is recorded in the course's source map.</p>
+  </section>
+
+  <section class="cheat" id="cheatsheet">
+    <h3>Session 5 cheat sheet <span>· pin this</span></h3>
+    <div class="grid-2">
+      <div class="cheat-item"><b>Outcome on top, her words</b><span>"Use AI" or "predict" on top means the tree is upside down. Turn it over before you branch.</span></div>
+      <div class="cheat-item"><b>Opportunities are a transcript</b><span>Pains as she said them. "No labelled data" is your diagnosis; "nobody records a stock-out" is her pain.</span></div>
+      <div class="cheat-item"><b>Three candidates, three pains</b><span>One per strong opportunity, four lines each: what, first step, who, needs.</span></div>
+      <div class="cheat-item"><b>Create the label first</b><span>A model of an event needs a record of the event. If nobody keeps one, keeping it is project one.</span></div>
+      <div class="cheat-item"><b>Write the rule above the grid</b><span>Multiply or average is contested. Write which, then the digits, then check the arithmetic.</span></div>
+      <div class="cheat-item"><b>Baseline, then model</b><span>Write the non-ML rule a model must beat, and the base rate it is judged against. Park the model with its condition.</span></div>
+    </div>
+  </section>
+
+  <div class="callout next">
+    <span class="nx-pill">Next session</span>
+    <p>Session 6 is the whole thing at full speed. You run the 45-minute meeting on the bench with your own Six Doors sheet and see what your questions get out of Adeline against the canon: door by door 46, tuned for a scientist 55, and the efficient interview most of us have run at 15 with five wrong beliefs in the notes, "forecast sales" among them. Then you write the one-page brief from tonight's page, in her words, with the model parked where she can see why, and send it within 24 hours, with the guesses marked as questions.</p>
+  </div>
+
+  <footer class="pagefoot">
+    <span>Session 5 of 6 · learn-asking-right-questions-as-ds-with-phoebe · by Phoebe Fu &nbsp;·&nbsp; 📚 <a href="https://phoebefu6.github.io/learn-with-phoebe/">Learn with Phoebe ↗</a></span>
+    <span><a href="04-teaching-while-you-ask.html">← Prev: Teaching while you ask</a> &nbsp;·&nbsp; <a href="06-the-mock-meeting-and-the-brief.html">Next: The mock meeting and the one-page brief →</a></span>
+  </footer>
+
+</main>
+
+<script src="../assets/app.js?v=1"></script>
+</body>
+</html>

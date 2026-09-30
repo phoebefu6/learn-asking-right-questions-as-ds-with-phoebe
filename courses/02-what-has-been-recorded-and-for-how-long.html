@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- social:start -->
+<meta name="description" content="Session 2 of 6. A model learns from history, so ask what history exists: which numbers a till recorded, which a person typed and overwrote, which were never written down at all, a five-rung maturity ladder asked as plain questions, the labels you cannot buy, the one key, and the can-this-be-learned map you send before any model.">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Learn with Phoebe">
+<meta property="og:title" content="What has been recorded, and for how long - learn asking the right questions as a data scientist with phoebe">
+<meta property="og:description" content="Session 2 of 6. Recorded, typed or absent; five rungs asked in plain words; the labels you cannot buy and the one key; the map you send first.">
+<meta property="og:url" content="https://phoebefu6.github.io/learn-asking-right-questions-as-ds-with-phoebe/courses/02-what-has-been-recorded-and-for-how-long.html">
+<meta property="og:image" content="https://phoebefu6.github.io/learn-asking-right-questions-as-ds-with-phoebe/assets/og-cover.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="What has been recorded, and for how long - learn asking the right questions as a data scientist with phoebe">
+<meta name="twitter:description" content="Session 2 of 6. What history exists, the five rungs, the labels you cannot buy, the map you send first.">
+<meta name="twitter:image" content="https://phoebefu6.github.io/learn-asking-right-questions-as-ds-with-phoebe/assets/og-cover.png">
+<!-- social:end -->
+<title>Session 2 · What has been recorded, and for how long - learn asking the right questions as a data scientist with phoebe</title>
+<link rel="stylesheet" href="../assets/style.css?v=1">
+</head>
+<body>
+
+<div class="toolbar">
+  <div class="wrap">
+    <span class="crumb"><a href="../index.html">learn-asking-right-questions-as-ds-with-phoebe</a> / Session 2 of 6</span>
+    <button class="btn" id="toggle-all" type="button">Expand all</button>
+    <button class="btn primary" id="zoom-toggle" type="button">Projector zoom: off</button>
+  </div>
+</div>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="eyebrow">Learn Asking the Right Questions as a Data Scientist with Phoebe · Session 2 of 6</div>
+    <h1>What has been <span class="accent">recorded</span>, and for how long</h1>
+    <p class="sub">Door 4, data state, is the door a scientist walks through without being asked, and the one where Harbourline hides its worst surprise. The till has three years of daily sales. The stock spreadsheet is overwritten every Friday, so last week's stock level does not exist anywhere. And nobody has ever written down a stock-out: the only record is a complaint call to Adeline. A model learns from history, so the question is never "what data do you have" but "what has been recorded, and for how long". Tonight is how to ask that in plain words: which numbers a machine recorded, which a person typed, which nobody wrote down, a five-rung ladder asked as questions rather than shown as a score, which box on her map could ever be a label, and who holds the only key. Session 1 opened the outcome door; <a href="01-the-gap-from-the-scientists-chair.html">it is here</a>, and the full corridor of doors is <a href="https://phoebefu6.github.io/learn-asking-right-questions-as-da-with-phoebe/courses/01-why-the-gap-and-the-six-doors.html">in the analyst's session 1 ↗</a>.</p>
+    <div class="chip-row">
+      <span class="chip level">🟡 Core</span>
+      <span class="chip audience">Data scientists, and anyone asked to predict something</span>
+      <span class="chip audience">No code. A pen.</span>
+      <span class="chip time">45 min</span>
+    </div>
+    <div class="agenda">
+      <span class="a1" style="flex:1">0-3 · Welcome</span>
+      <span class="a2" style="flex:4">3-18 · What was recorded, the ladder, the labels</span>
+      <span class="a3" style="flex:5">18-40 · Build-along: the can-this-be-learned map</span>
+      <span class="a4" style="flex:1">40-45 · Q&amp;A</span>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="section" id="intro">
+    <div class="section-kicker">
+      <span class="klabel">Part 0</span>
+      <h2>Where we start</h2>
+    </div>
+    <p class="lede">A scientist asked about data will ask about tables, features and labels, and a person who runs 38 pharmacies will hear an exam she did not revise for. The history Harbourline has is not a schema. It is a set of habits: a till that writes down every sale because it has to, outlet managers who type a stock count on Fridays over last week's, a pharmacist who notices an empty shelf and sends a WhatsApp, and a complaint call that reaches Adeline and goes no further. Every one of those is a plain question away. The three parts tonight are three plain questions: what has been written down and for how long, how steady the habit around it is, and which of it a model could ever learn the answer from. The build-along turns her answers into a map she can correct.</p>
+
+    <div class="legend">
+      <span class="pill">🎫 Clear all three quiz questions to stamp your passport</span>
+      <span class="pill">Live = presented in the 45 minutes</span>
+      <span class="pill">Self-study = the full depth, after class</span>
+      <span class="pill">★ Build-along = write it yourself</span>
+    </div>
+
+    <div class="callout win">
+      <p><strong>★ What you walk out with tonight.</strong> A one-page can-this-be-learned map for a prediction request you actually have: every source she named, marked recorded, typed or absent, marked feature, label or neither, with how far back it goes and whose login it sits behind, and the one line you send it with. If the label column is empty on every row, you will know before the first meeting ends that the first project is recording, not modelling. Session 3 puts the same facts on the bench: the missing stock history is the belief a single leading question writes into your notes as true.</p>
+    </div>
+  </section>
+
+  <section class="section" id="part-1">
+    <div class="section-kicker">
+      <span class="klabel">Part 1 · covers what history exists</span>
+      <h2>A model learns from history, so ask what history exists</h2>
+      <span class="tag concept">5 min live</span>
+    </div>
+    <p class="lede">Every prediction is an answer copied from the past: this outlet, this product, this week, and last time the pattern looked like this, the shelf went empty. So the first data-state question for a scientist is not which systems exist. It is which things were written down, by what, and since when. At Harbourline the answer comes in three shapes. Sales were recorded by the till, daily, for three years. Stock was typed by a person and rubbed out every week. Stock-outs, the thing she wants predicted, were never written down at all.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 340" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A hand-drawn three-year timeline with three rows. The top row, sales from the till, is a continuous hatched band from three years ago to today, because every day was recorded. The middle row, stock on hand, is a line of empty dashed boxes, one per Friday, each overwritten, with a single solid box at today labelled this Friday only. The bottom row, stock-outs, drawn in mustard because it is the thing to be predicted, is a scatter of small phones, each a complaint call, with no line or record underneath them.">
+        <defs>
+          <filter id="s2aSk" x="-3%" y="-3%" width="106%" height="106%"><feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="2" seed="24" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.4" xChannelSelector="R" yChannelSelector="G"/></filter>
+          <pattern id="s2aHc" patternUnits="userSpaceOnUse" width="7" height="7" patternTransform="rotate(-38)"><line x1="0" y1="0" x2="0" y2="7" stroke="#5B21B6" stroke-width="1" opacity=".5"/></pattern>
+          <marker id="s2aAr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M1 1 L9 5 L1 9" fill="none" stroke="#1E1B2E" stroke-width="1.6" stroke-linecap="round"/></marker>
+        </defs>
+        <style>
+          .s2aH { font: 800 12px Inter, sans-serif; fill: #1E1B2E; }
+          .s2aL { font: 600 12px Inter, sans-serif; fill: #1E1B2E; }
+          .s2aS { font: 400 11px Inter, sans-serif; fill: #4E4A66; }
+          .s2aB { font: 800 11px Inter, sans-serif; fill: #6B3F00; }
+          .s2aA { font: 700 11px Inter, sans-serif; fill: #5B21B6; letter-spacing: .04em; }
+          .s2aN { font: 400 12px Inter, sans-serif; fill: #4E4A66; }
+        </style>
+
+        <text class="s2aH" x="30" y="26">THREE YEARS OF HISTORY, AND WHAT IS ACTUALLY IN IT</text>
+        <text class="s2aS" x="30" y="42">one row recorded every day, one rubbed out every Friday, one never written down</text>
+
+        <g filter="url(#s2aSk)" fill="none" stroke="#1E1B2E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <!-- row 1: sales, recorded every day by the till -->
+          <rect x="220" y="68" width="630" height="32" rx="4" transform="rotate(-0.3 535 84)" fill="url(#s2aHc)"/>
+          <!-- row 2: stock, one Friday snapshot, every earlier one overwritten -->
+          <rect x="240" y="140" width="22" height="30" rx="3" stroke="#CFC9E6" stroke-dasharray="4 4"/>
+          <rect x="304" y="140" width="22" height="30" rx="3" stroke="#CFC9E6" stroke-dasharray="4 4"/>
+          <rect x="368" y="140" width="22" height="30" rx="3" stroke="#CFC9E6" stroke-dasharray="4 4"/>
+          <rect x="432" y="140" width="22" height="30" rx="3" stroke="#CFC9E6" stroke-dasharray="4 4"/>
+          <rect x="496" y="140" width="22" height="30" rx="3" stroke="#CFC9E6" stroke-dasharray="4 4"/>
+          <rect x="560" y="140" width="22" height="30" rx="3" stroke="#CFC9E6" stroke-dasharray="4 4"/>
+          <rect x="624" y="140" width="22" height="30" rx="3" stroke="#CFC9E6" stroke-dasharray="4 4"/>
+          <rect x="688" y="140" width="22" height="30" rx="3" stroke="#CFC9E6" stroke-dasharray="4 4"/>
+          <rect x="752" y="140" width="22" height="30" rx="3" stroke="#CFC9E6" stroke-dasharray="4 4"/>
+          <rect x="818" y="138" width="30" height="34" rx="3" transform="rotate(0.8 833 155)" fill="#FFFFFF"/>
+          <!-- row 3: stock-outs, a complaint call each, nothing underneath -->
+          <rect x="258" y="220" width="12" height="22" rx="3" transform="rotate(-1 264 231)" fill="#FBF1E0" stroke="#9A5B00"/>
+          <rect x="326" y="226" width="12" height="22" rx="3" transform="rotate(1 332 237)" fill="#FBF1E0" stroke="#9A5B00"/>
+          <rect x="378" y="218" width="12" height="22" rx="3" transform="rotate(-0.8 384 229)" fill="#FBF1E0" stroke="#9A5B00"/>
+          <rect x="452" y="224" width="12" height="22" rx="3" transform="rotate(0.8 458 235)" fill="#FBF1E0" stroke="#9A5B00"/>
+          <rect x="510" y="219" width="12" height="22" rx="3" transform="rotate(-1 516 230)" fill="#FBF1E0" stroke="#9A5B00"/>
+          <rect x="588" y="225" width="12" height="22" rx="3" transform="rotate(1 594 236)" fill="#FBF1E0" stroke="#9A5B00"/>
+          <rect x="646" y="220" width="12" height="22" rx="3" transform="rotate(-0.6 652 231)" fill="#FBF1E0" stroke="#9A5B00"/>
+          <rect x="720" y="226" width="12" height="22" rx="3" transform="rotate(0.9 726 237)" fill="#FBF1E0" stroke="#9A5B00"/>
+          <rect x="790" y="219" width="12" height="22" rx="3" transform="rotate(-0.9 796 230)" fill="#FBF1E0" stroke="#9A5B00"/>
+          <!-- the time axis -->
+          <path d="M220 284 L850 284" stroke="#4E4A66" stroke-width="1.6"/>
+          <path d="M220 278 L220 290 M430 278 L430 290 M640 278 L640 290 M850 278 L850 290" stroke="#4E4A66" stroke-width="1.6"/>
+        </g>
+
+        <text class="s2aL" x="30" y="80">Sales, by the till</text>
+        <text class="s2aS" x="30" y="95">recorded daily, three years</text>
+        <text class="s2aL" x="30" y="150">Stock on hand</text>
+        <text class="s2aS" x="30" y="165">typed Fridays, overwritten</text>
+        <text class="s2aB" x="30" y="232">Stock-outs</text>
+        <text class="s2aS" x="30" y="247">about 30 a month</text>
+        <text class="s2aS" x="30" y="262">a phone call, no record</text>
+
+        <text class="s2aS" x="848" y="130" text-anchor="end">this Friday only</text>
+        <text class="s2aS" x="240" y="188">every earlier Friday: typed over, gone</text>
+        <text class="s2aB" x="262" y="266">each call reaches Adeline, and is written down nowhere</text>
+
+        <text class="s2aA" x="220" y="304">3 YEARS AGO</text>
+        <text class="s2aA" x="430" y="304" text-anchor="middle">2 YEARS</text>
+        <text class="s2aA" x="640" y="304" text-anchor="middle">1 YEAR</text>
+        <text class="s2aA" x="850" y="304" text-anchor="end">TODAY</text>
+
+        <text class="s2aN" x="30" y="330">A model learns only from rows that exist. Of these three rows, only one has a past.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - the mustard row is the thing she wants predicted, and it is the one row with no history at all</figcaption>
+    </figure>
+
+    <details class="card" open>
+      <summary><span class="mode live">Live</span>Three shapes of history, and the questions that find them<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Start with the source you already expect, and ask it in her words. The bank's question g09 is <strong>"Which systems does one sale touch, and how far back do they go?"</strong>, and its teach-back goes straight after: "History is what a model learns from. Three years of daily sales is a lot; one year is not." She knows the answer without knowing why it matters: the till, the POS, per product per outlet, daily, three years back. She may add, because it annoys her, that the product codes are different in Singapore and Malaysia.</p>
+        <p>Then ask the question a scientist most needs and most often skips, g11: <strong>"Is there any record of past stock levels, or only of sales?"</strong> Say its teach-back out loud: "A model that predicts stock-outs needs to have seen stock-outs. If nobody recorded them, the first project is recording them." At Harbourline the answer is the one that changes the project. There is no stock history at all. Outlet managers type a count into a shared spreadsheet on Fridays, three versions of it are in circulation, and each Friday's count is typed over the last. Last week's stock level does not exist anywhere.</p>
+        <p>The third shape takes no question of its own, because it falls out of the second: nobody records a stock-out. A pharmacist sees an empty shelf and WhatsApps the area manager; a patient who found it empty calls, and the call reaches Adeline. That call is the only trace, roughly 30 a month across 38 outlets, and it is written down nowhere. So the three shapes are recorded by a machine, typed by a person and overwritten, and absent. Only the first has a past a model could learn from, and it is the wrong row.</p>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>Why three years of sales does not become a stock-out history<span class="mini">2 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>The tempting move is to reconstruct stock-outs from the sales. It fails for a reason you can explain to her in a sentence: <strong>a day with no sales means two different things</strong>. Either nobody came in wanting the product, or somebody did and the shelf was empty. The till writes the same zero for both. A model trained on sales learns what people bought, not what they would have bought, and the gap between the two is exactly the stock-out she is trying to stop.</p>
+        <p>Sales history is still worth having. It is a feature, and a strong one: it says how fast each of the 40 chronic-medication products moves in each outlet. It is not a label. The label, the row that says "this outlet, this product, this day, the shelf was empty", has to be written down by somebody on the day it happens, and nobody does. That sentence, said in the meeting, is the difference between promising a model and promising a log.</p>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>Why preparation eats the project, quoted as it stands<span class="mini">2 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Two sources are usually run together into one number, and they should not be. In 2014 Steve Lohr reported in <em>The New York Times</em> that data scientists spend 50 percent to 80 percent of their time collecting and preparing data before it can be explored. In 2016 CrowdFlower's data science survey reported that respondents spent 60 percent of their time cleaning and organising data and a further 19 percent collecting it. Different methods, different shapes of answer: one a range for collecting and preparing together, the other two separate figures. Quote whichever you use as it stands, and never the single "80 percent cleaning" figure that circulates as if one survey had measured it, because none did.</p>
+        <p>The reason behind both figures matters more than either number. Preparation time is mostly the cost of typed and absent data found late: reconciling three versions of a stock sheet, discovering in week three that the history you planned to train on was overwritten. For a scientist the worst case is sharper than for an analyst. An analyst with a missing history can report from today onward. A model with no labels cannot be trained at all. Every minute spent at door 4 asking "what was written down, and since when" is a minute not spent finding out after the kickoff.</p>
+      </div>
+    </details>
+
+    <div class="callout example">
+      <span class="ex-pill">Real world</span>
+      <p><strong>The zero on a Tuesday.</strong> A constructed case, and a pattern most demand teams meet. A scientist at Harbourline proposes to label a stock-out as "any day a product sells zero at an outlet where it usually sells". For a fast mover at a busy outlet that catches something. For a chronic medication at a small clinic, where a handful of patients each collect once a month, most days are zero whether the shelf is full or empty. The labels would be mostly quiet days, the model would learn that small outlets run out constantly, and the pharmacist who actually watches that shelf would stop reading it in a week. The question that prevents it costs one sentence: "When the shelf is empty, where is that written down?"</p>
+    </div>
+  </section>
+
+  <section class="section" id="part-2">
+    <div class="section-kicker">
+      <span class="klabel">Part 2 · covers the maturity ladder, for a model</span>
+      <h2>The five rungs, as questions</h2>
+      <span class="tag concept">5 min live</span>
+    </div>
+    <p class="lede">Once you know what was written down, the next thing is how steady the habit is: made the same way each time, written down as a method, checked by anyone. DAMA-DMBOK's data management maturity model gives five level names for that. She never hears the names. She hears five plain questions, one per rung, and you write the rung beside each source in your notes. The ladder is taught in depth in <a href="https://phoebefu6.github.io/learn-asking-right-questions-as-da-with-phoebe/courses/02-reading-their-data-state.html">the analyst's session 2 ↗</a>; tonight spends its minutes on one thing only, what a rung means for a model.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 346" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A hand-drawn ladder with five rungs, named from the bottom Initial or ad hoc, Repeatable, Defined, Managed and Optimized, the five DAMA-DMBOK level names. Beside each rung is the plain question that tests for it, from when the number is wrong who fixes it, up to has it got better on its own in the last year. A person stands at the foot. A mustard tag on the bottom rung marks where Harbourline's stock spreadsheet sits.">
+        <defs>
+          <filter id="s2bSk" x="-3%" y="-3%" width="106%" height="106%"><feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="2" seed="35" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.4" xChannelSelector="R" yChannelSelector="G"/></filter>
+          <pattern id="s2bHc" patternUnits="userSpaceOnUse" width="7" height="7" patternTransform="rotate(-38)"><line x1="0" y1="0" x2="0" y2="7" stroke="#5B21B6" stroke-width="1" opacity=".5"/></pattern>
+          <marker id="s2bAr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M1 1 L9 5 L1 9" fill="none" stroke="#1E1B2E" stroke-width="1.6" stroke-linecap="round"/></marker>
+        </defs>
+        <style>
+          .s2bH { font: 800 12px Inter, sans-serif; fill: #1E1B2E; }
+          .s2bL { font: 600 12px Inter, sans-serif; fill: #1E1B2E; }
+          .s2bS { font: 400 11px Inter, sans-serif; fill: #4E4A66; }
+          .s2bB { font: 800 11px Inter, sans-serif; fill: #6B3F00; }
+          .s2bV { font: 800 12px Inter, sans-serif; fill: #4C1D95; }
+          .s2bA { font: 700 11px Inter, sans-serif; fill: #5B21B6; letter-spacing: .04em; }
+          .s2bN { font: 400 12px Inter, sans-serif; fill: #4E4A66; }
+        </style>
+
+        <text class="s2bH" x="30" y="26">FIVE RUNGS, ONE PLAIN QUESTION EACH</text>
+        <text class="s2bS" x="30" y="42">a rung-1 source can be a hint for a model; it can never be the answer the model is trained to give</text>
+
+        <g filter="url(#s2bSk)" fill="none" stroke="#1E1B2E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <!-- the rails -->
+          <path d="M150 62 L146 304" stroke-width="3"/>
+          <path d="M236 62 L240 304" stroke-width="3"/>
+          <!-- five rungs, bottom is rung 1 -->
+          <path d="M148 288 L238 288" stroke-width="3"/>
+          <path d="M148 236 L238 236" stroke-width="3"/>
+          <path d="M149 184 L237 184" stroke-width="3"/>
+          <path d="M149 132 L237 132" stroke-width="3"/>
+          <path d="M150 80 L236 80" stroke-width="3"/>
+          <!-- the person at the foot -->
+          <circle cx="66" cy="222" r="12"/>
+          <path d="M44 262 C50 240 82 240 88 262"/>
+          <!-- the stock sheet, on the bottom rung -->
+          <rect x="142" y="294" width="100" height="22" rx="4" transform="rotate(-0.6 192 305)" fill="#FBF1E0" stroke="#9A5B00"/>
+          <!-- the question panels -->
+          <rect x="420" y="64" width="430" height="30" rx="6" transform="rotate(-0.3 635 79)" fill="#F5F3FF"/>
+          <rect x="420" y="116" width="430" height="30" rx="6" transform="rotate(0.3 635 131)" fill="#F5F3FF"/>
+          <rect x="420" y="168" width="430" height="30" rx="6" transform="rotate(-0.3 635 183)" fill="#F5F3FF"/>
+          <rect x="420" y="220" width="430" height="30" rx="6" transform="rotate(0.3 635 235)" fill="#F5F3FF"/>
+          <rect x="420" y="272" width="430" height="30" rx="6" transform="rotate(-0.3 635 287)" fill="#FBF1E0" stroke="#9A5B00"/>
+        </g>
+
+        <text class="s2bA" x="258" y="58">DAMA-DMBOK NAME</text>
+        <text class="s2bA" x="420" y="58">WHAT SHE HEARS (THE QUESTIONS ARE OURS)</text>
+
+        <text class="s2bV" x="258" y="84">5 Optimized</text>
+        <text class="s2bV" x="258" y="136">4 Managed</text>
+        <text class="s2bV" x="258" y="188">3 Defined</text>
+        <text class="s2bV" x="258" y="240">2 Repeatable</text>
+        <text class="s2bV" x="258" y="292">1 Initial / Ad hoc</text>
+
+        <text class="s2bS" x="432" y="83">"Has it got better on its own in the last year?"</text>
+        <text class="s2bS" x="432" y="135">"Does anyone check afterwards whether it was right?"</text>
+        <text class="s2bS" x="432" y="187">"Is any of it written down?"</text>
+        <text class="s2bS" x="432" y="239">"Does the same person do it the same way every week?"</text>
+        <text class="s2bB" x="432" y="291">"When the number is wrong, who fixes it, and how do they know?"</text>
+
+        <text class="s2bB" x="192" y="309" text-anchor="middle">stock sheet</text>
+        <text class="s2bS" x="66" y="194" text-anchor="middle">Adeline, asked</text>
+        <text class="s2bS" x="66" y="208" text-anchor="middle">five questions</text>
+
+        <text class="s2bN" x="30" y="336">The till records the same way daily and sits higher; the stock sheet is typed three ways and erased weekly.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - the mustard tag is where the stock sheet sits, written in your notes and never said to her as a number</figcaption>
+    </figure>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>Five rungs, asked as questions<span class="mini">2 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>DAMA-DMBOK, 2nd edition, chapter 15, names five levels of data management maturity: <strong>Initial/Ad hoc, Repeatable, Defined, Managed, Optimized</strong>. Five, not six: DMBOK has no level 0, and a "not started" level you may have met belongs to a different framework. The names are all that is borrowed. The question beside each rung is ours, written so a person who runs pharmacies can answer it about her own Friday.</p>
+        <p>Asked of Harbourline, the answers put the company between rung 1 and rung 2, and unevenly. The till does the same thing every day, because it has no choice, so sales sit at rung 2 at least. The stock sheet fails the rung-2 question: three versions are in circulation, so the same thing is not being done the same way. Nothing about the stock count is written down as a method, nobody checks it afterwards, and it is erased each Friday. The product master fails even the rung-1 question, because when a code is wrong nobody owns fixing it. The full assessment, with the practices behind each level, is a governance discipline; it is taught in <a href="https://phoebefu6.github.io/learn-governance-101-with-phoebe/">the Governance 101 course ↗</a>. In a discovery meeting the ladder is an interview aid and nothing more.</p>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>What the rung means for a model<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>A model uses history in two roles, and the rung matters differently for each. A <strong>feature</strong> is something the model looks at: last month's sales, the day of the week, the supplier's lead time. A noisy feature makes a weaker model. A <strong>label</strong> is the answer the model is trained to reproduce: on this day, at this outlet, this product ran out. A noisy label makes a model that is confidently wrong in the same way the label was, and nothing downstream can tell.</p>
+        <p>So a rung-1 source can be a feature, with care, and it can never be the training label. If the stock count is typed three ways, the model learns the three ways. The bank's question g07 carries exactly that as its teach-back: <strong>"Where do the stock numbers come from, step by step?"</strong>, then "A number typed by a person on a Friday behaves differently from one a till records. A model learns the typing habits too." Said out loud, it tells her why you care about a spreadsheet habit she had assumed was her problem, not yours.</p>
+        <p>Write the rung beside each source and <strong>never tell her the number</strong>. "Your stock data is a rung 1" is a grade, and a grade ends a conversation that was going well. What she hears is five questions that each made her notice something about her own shop; what you carry out is the one reading that matters for a scientist: which sources are steady enough to be a label, and whether any of them is the thing she wants predicted. At Harbourline none is.</p>
+      </div>
+    </details>
+
+    <div class="callout example">
+      <span class="ex-pill">Real world</span>
+      <p><strong>The two outlets that renamed their products.</strong> Constructed, and common. Asked the rung-2 question about product names, "does everyone do it the same way?", Adeline said yes, then paused: two outlets renamed products themselves last year, and nobody owns the product master. For an analyst that is a reconciling job. For a scientist it is worse, because a model trained per product sees two outlets whose history for a product stops dead one day and a new product with no history begins the next. It learns that products vanish. One rung question found the break in under a minute; no question about tables would have.</p>
+    </div>
+  </section>
+
+  <section class="section" id="part-3">
+    <div class="section-kicker">
+      <span class="klabel">Part 3 · covers labels, features and the one key</span>
+      <h2>Labels you cannot buy, and the one key</h2>
+      <span class="tag concept">5 min live</span>
+    </div>
+    <p class="lede">The last data-state facts sort every source she named into three bins: something a model could look at, the answer it could learn to give, or neither. At Harbourline the strongest signal for chronic demand is not in any system she controls: the loyalty app vendor holds each chronic patient's refill dates, and an export needs a contract clause. The product codes differ between the two countries and nobody owns the master that would join them. And one person, Kenneth, holds the only POS admin login. He is leaving in January, and she has not told the team.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 424" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The Harbourline can-this-be-learned map, hand-drawn as five rows. Each row is a source she named: POS sales from the till, with a small key for Kenneth's login; the stock spreadsheet; the complaint calls, in a dashed box because nothing is recorded; the loyalty app's refill dates behind a contract clause; and the product master with codes that differ between Singapore and Malaysia. Columns say whether each could be a feature, whether it could be the label, and how far back it goes. The label column is drawn in mustard, and no row in it says yes.">
+        <defs>
+          <filter id="s2cSk" x="-3%" y="-3%" width="106%" height="106%"><feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="2" seed="46" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.4" xChannelSelector="R" yChannelSelector="G"/></filter>
+          <pattern id="s2cHc" patternUnits="userSpaceOnUse" width="7" height="7" patternTransform="rotate(-38)"><line x1="0" y1="0" x2="0" y2="7" stroke="#5B21B6" stroke-width="1" opacity=".5"/></pattern>
+          <marker id="s2cAr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M1 1 L9 5 L1 9" fill="none" stroke="#1E1B2E" stroke-width="1.6" stroke-linecap="round"/></marker>
+        </defs>
+        <style>
+          .s2cH { font: 800 12px Inter, sans-serif; fill: #1E1B2E; }
+          .s2cL { font: 600 12px Inter, sans-serif; fill: #1E1B2E; }
+          .s2cS { font: 400 11px Inter, sans-serif; fill: #4E4A66; }
+          .s2cB { font: 800 11px Inter, sans-serif; fill: #6B3F00; }
+          .s2cA { font: 700 11px Inter, sans-serif; fill: #5B21B6; letter-spacing: .04em; }
+          .s2cN { font: 400 12px Inter, sans-serif; fill: #4E4A66; }
+        </style>
+
+        <text class="s2cH" x="30" y="26">WHICH BOX COULD TEACH A MODEL, AND WHICH COULD ONLY HELP IT</text>
+        <text class="s2cS" x="30" y="42">five sources she named; one column is the label, and nothing in it says yes</text>
+
+        <g filter="url(#s2cSk)" fill="none" stroke="#1E1B2E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <!-- the label column, the thing the figure is about -->
+          <rect x="520" y="56" width="170" height="336" rx="8" transform="rotate(0.4 605 224)" fill="#FBF1E0" stroke="#9A5B00"/>
+          <!-- five source boxes -->
+          <rect x="40" y="84" width="290" height="56" rx="6" transform="rotate(-0.5 185 112)" fill="#F5F3FF"/>
+          <rect x="40" y="146" width="290" height="56" rx="6" transform="rotate(0.4 185 174)" fill="#FFFFFF"/>
+          <rect x="40" y="208" width="290" height="56" rx="6" transform="rotate(-0.4 185 236)" fill="#FFFFFF" stroke-dasharray="6 5"/>
+          <rect x="40" y="270" width="290" height="56" rx="6" transform="rotate(0.5 185 298)" fill="#FFFFFF"/>
+          <rect x="40" y="332" width="290" height="56" rx="6" transform="rotate(-0.3 185 360)" fill="#FFFFFF"/>
+          <!-- the one key, on the POS -->
+          <circle cx="300" cy="127" r="5" fill="#FBF1E0" stroke="#9A5B00"/>
+          <path d="M305 127 L322 127 M314 127 L314 132 M319 127 L319 132" stroke="#9A5B00" stroke-width="2.4"/>
+          <!-- row rules in the other columns -->
+          <path d="M340 143 L510 143 M700 143 L850 143 M340 205 L510 205 M700 205 L850 205 M340 267 L510 267 M700 267 L850 267 M340 329 L510 329 M700 329 L850 329" stroke="#CFC9E6" stroke-width="1.2"/>
+        </g>
+
+        <text class="s2cA" x="48" y="74">SOURCE, IN HER WORDS</text>
+        <text class="s2cA" x="352" y="74">FEATURE?</text>
+        <text class="s2cB" x="532" y="74">LABEL?</text>
+        <text class="s2cA" x="712" y="74">HOW FAR BACK</text>
+
+        <text class="s2cL" x="52" y="101">POS sales, from the till</text>
+        <text class="s2cS" x="52" y="116">daily, per product per outlet</text>
+        <text class="s2cB" x="52" y="131">login: Kenneth only, leaves in Jan</text>
+        <text class="s2cL" x="352" y="116">yes: demand history</text>
+        <text class="s2cS" x="352" y="131">how fast it moves</text>
+        <text class="s2cB" x="532" y="116">no: it is sales</text>
+        <text class="s2cS" x="532" y="131">a zero means two things</text>
+        <text class="s2cL" x="712" y="116">3 years, daily</text>
+
+        <text class="s2cL" x="52" y="163">Stock spreadsheet</text>
+        <text class="s2cS" x="52" y="178">typed Fridays, three versions</text>
+        <text class="s2cS" x="52" y="193">overwritten every Friday</text>
+        <text class="s2cL" x="352" y="178">this week only</text>
+        <text class="s2cB" x="532" y="178">no: no past</text>
+        <text class="s2cS" x="532" y="193">last week is gone</text>
+        <text class="s2cL" x="712" y="178">one Friday</text>
+
+        <text class="s2cL" x="52" y="225">Complaint calls</text>
+        <text class="s2cS" x="52" y="240">about 30 a month, to Adeline</text>
+        <text class="s2cS" x="52" y="255">written down nowhere</text>
+        <text class="s2cL" x="352" y="240">no</text>
+        <text class="s2cB" x="532" y="240">only if logged</text>
+        <text class="s2cS" x="532" y="255">the day it happens</text>
+        <text class="s2cL" x="712" y="240">none</text>
+
+        <text class="s2cL" x="52" y="287">Loyalty app refill dates</text>
+        <text class="s2cS" x="52" y="302">strongest chronic-demand signal</text>
+        <text class="s2cS" x="52" y="317">export needs a contract clause</text>
+        <text class="s2cL" x="352" y="302">yes, after a clause</text>
+        <text class="s2cB" x="532" y="302">no</text>
+        <text class="s2cL" x="712" y="302">ask the vendor</text>
+
+        <text class="s2cL" x="52" y="349">Product master</text>
+        <text class="s2cS" x="52" y="364">codes differ, SG and MY</text>
+        <text class="s2cS" x="52" y="379">two outlets renamed; no owner</text>
+        <text class="s2cL" x="352" y="364">neither: the join</text>
+        <text class="s2cS" x="352" y="379">one code per product</text>
+        <text class="s2cB" x="532" y="364">no</text>
+        <text class="s2cL" x="712" y="364">nobody owns it</text>
+
+        <text class="s2cN" x="30" y="414">Every row is a feature, a join or nothing. No row is the label today, so the first project writes one down.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - the mustard column is the label, and the only row that could ever fill it is a complaint that nobody logs yet</figcaption>
+    </figure>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>The strongest signal sits behind a contract<span class="mini">2 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>For chronic medication, the best predictor of next week's demand is not last week's sales. It is when each regular patient is due back. Harbourline does not hold that. The bank's question g12 asks for it in her words: <strong>"What does the loyalty app know about your chronic patients, and who owns that data?"</strong> Teach-back: "Refill dates are the strongest signal there is for chronic demand, and owned means who can say yes to an export." Her answer is exact once the question is: the app vendor holds the refill dates, and an export needs a contract clause.</p>
+        <p>That is a label you cannot buy and a feature you cannot yet use, and both have a clock on them. The clause is a negotiation, not a login. Anything with Malaysian patient data also needs PDPA handling, and the head-office lawyer takes four weeks to answer anything. Write both into your notes as dates, not as data. A feature that arrives after the board meeting in six weeks is a feature for the second project, and saying so in the room is kinder than discovering it in week five.</p>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>The one key, asked by name<span class="mini">2 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Question g10 is short and has to be asked with a name in it: <strong>"Who can log in to the POS back office and pull an export?"</strong> Teach-back: "Access is the first blocker on most data projects, so I ask early and I ask by name." "IT can" is not an answer. "Kenneth can, and only Kenneth" is, and it is the answer that makes you ask what happens in January. For a scientist the stakes are specific: the three years of daily sales, the only history on the map with a past, sit behind one login.</p>
+        <p>The second half, that Kenneth is leaving and she has not told the team, does not come out on the first ask, whatever you ask. On the bench it sits behind the highest trust gate on her sheet, trust 3: she volunteers it only once several open questions with their reasons said aloud have shown her you are trying to help, not to audit. That is why door 4 is opened fourth. Ask it after the outcome, the Thursday decision and the pharmacist's WhatsApp, with the teach-backs in between, and you get the name, the date and the fact she has been carrying alone. Session 3 shows it as a number: the fact is worth 3 of the sheet's 68 points.</p>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>Codes that differ by country are a join, not a feature<span class="mini">2 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>The POS product codes differ between Singapore and Malaysia, two outlets renamed products themselves last year, and nobody owns the product master. None of that is a feature, and none of it is a label. It is the join: the one table that says "these five codes are the same chronic-medication product". Without it, a model for 40 products across 38 outlets is really a pile of separate small models, each with less history than it looks like it has, and the Malaysian outlets, where supplier lead time is nine days instead of five, are the ones where a prediction has to see furthest ahead.</p>
+        <p>An unowned source is not a gap in your notes to fill in later. It is the first thing to propose an owner for. Priya in finance can give two hours a week; the product master is exactly the size of job two hours a week can hold. Session 5 turns that into one of three candidate projects, alongside the stock-out log and a simple rule a model would later have to beat.</p>
+      </div>
+    </details>
+
+    <div class="tryrow" data-fn="wordcount" data-multiline="1" data-title="Write the label question for your own request" data-hint="For a prediction you have been asked for, write the plain question that finds out whether the thing to be predicted was ever written down, and the one sentence you would say after it about why you are asking. Two sentences, no word from a textbook." data-seed="" data-cta="Count it"></div>
+
+    <div class="callout example">
+      <span class="ex-pill">Real world</span>
+      <p><strong>The feature plan that waited for a lawyer.</strong> Constructed, and typical of any feature that lives with a vendor. A scientist who skipped g12 built a first feature list around refill dates, because they are the obvious signal, and put it in the kickoff deck. In week three the loyalty vendor asked for the contract clause, the Malaysian half needed the head-office lawyer, and the lawyer's four weeks ran past the board meeting. The deck had promised a model built on data nobody had permission to export. Asked in the first meeting, the same question would have moved refill dates to "later, after a clause", and the kickoff would have promised something she could actually approve.</p>
+    </div>
+  </section>
+
+  <section class="section" id="demo-1">
+    <div class="section-kicker">
+      <span class="klabel">Build-along</span>
+      <h2>Draw the can-this-be-learned map</h2>
+      <span class="tag demo">★ 22 min · everyone writes</span>
+    </div>
+    <p class="lede">One page, from answers a business person gave in plain words. Take the prediction request you brought to session 1, or Adeline's if you did not bring one, and build the map you will send her within a day of the meeting. For every box: recorded, typed or absent; feature, label or neither; how far back, and whose login it sits behind. Nothing on it is a schema, and every box is something she can correct.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 314" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A hand-drawn blank map template on a page: a header row reading box, origin, use, and how far back, then four rows. The first row is filled in mustard for the POS: recorded, feature, three years daily. The next rows are dashed and named only: stock sheet, complaint calls, source 4. In the margin to the right, five numbered questions guide the filling: every box she named, recorded typed or absent, feature label or neither, how far back and whose key, and which box is wrong.">
+        <defs>
+          <filter id="s2dSk" x="-3%" y="-3%" width="106%" height="106%"><feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="2" seed="57" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.4" xChannelSelector="R" yChannelSelector="G"/></filter>
+          <pattern id="s2dHc" patternUnits="userSpaceOnUse" width="7" height="7" patternTransform="rotate(-38)"><line x1="0" y1="0" x2="0" y2="7" stroke="#5B21B6" stroke-width="1" opacity=".5"/></pattern>
+          <marker id="s2dAr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M1 1 L9 5 L1 9" fill="none" stroke="#1E1B2E" stroke-width="1.6" stroke-linecap="round"/></marker>
+        </defs>
+        <style>
+          .s2dH { font: 800 12px Inter, sans-serif; fill: #1E1B2E; }
+          .s2dL { font: 600 12px Inter, sans-serif; fill: #1E1B2E; }
+          .s2dS { font: 400 11px Inter, sans-serif; fill: #4E4A66; }
+          .s2dB { font: 800 11px Inter, sans-serif; fill: #6B3F00; }
+          .s2dA { font: 700 11px Inter, sans-serif; fill: #5B21B6; letter-spacing: .04em; }
+          .s2dN { font: 400 12px Inter, sans-serif; fill: #4E4A66; }
+        </style>
+
+        <text class="s2dH" x="30" y="26">THE BLANK MAP, WITH THE FIVE QUESTIONS THAT FILL IT</text>
+
+        <g filter="url(#s2dSk)" fill="none" stroke="#1E1B2E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <!-- the page -->
+          <rect x="40" y="46" width="570" height="240" rx="4" transform="rotate(-0.4 325 166)" fill="#FFFFFF"/>
+          <!-- row 1 filled, to show the depth -->
+          <rect x="56" y="80" width="528" height="40" rx="5" transform="rotate(-0.3 320 100)" fill="#FBF1E0" stroke="#9A5B00"/>
+          <!-- rows 2 to 4, still to fill -->
+          <rect x="56" y="128" width="528" height="40" rx="5" transform="rotate(0.3 320 148)" stroke="#CFC9E6" stroke-dasharray="5 4"/>
+          <rect x="56" y="176" width="528" height="40" rx="5" transform="rotate(-0.3 320 196)" stroke="#CFC9E6" stroke-dasharray="5 4"/>
+          <rect x="56" y="224" width="528" height="40" rx="5" transform="rotate(0.3 320 244)" stroke="#CFC9E6" stroke-dasharray="5 4"/>
+          <!-- column rules -->
+          <path d="M214 60 L214 270 M342 60 L342 270 M470 60 L470 270" stroke="#CFC9E6" stroke-width="1.2"/>
+          <!-- margin rule -->
+          <path d="M628 46 L628 286" stroke="#CFC9E6"/>
+        </g>
+
+        <text class="s2dA" x="64" y="72">BOX</text>
+        <text class="s2dA" x="222" y="72">ORIGIN</text>
+        <text class="s2dA" x="350" y="72">USE</text>
+        <text class="s2dA" x="478" y="72">HOW FAR BACK</text>
+
+        <text class="s2dB" x="64" y="104">POS sales</text>
+        <text class="s2dS" x="222" y="104">recorded</text>
+        <text class="s2dS" x="350" y="104">feature</text>
+        <text class="s2dS" x="478" y="104">3 years, daily</text>
+
+        <text class="s2dS" x="64" y="152">stock sheet</text>
+        <text class="s2dS" x="64" y="200">complaint calls</text>
+        <text class="s2dS" x="64" y="248">source 4</text>
+
+        <text class="s2dA" x="640" y="66">IN THE MARGIN</text>
+        <text class="s2dL" x="640" y="92">1 Every box she named</text>
+        <text class="s2dL" x="640" y="120">2 Recorded, typed, absent?</text>
+        <text class="s2dL" x="640" y="148">3 Feature, label, neither?</text>
+        <text class="s2dL" x="640" y="176">4 How far back? Whose key?</text>
+        <text class="s2dB" x="640" y="204">5 "Which box is wrong?"</text>
+        <text class="s2dS" x="640" y="222">the line you send it with</text>
+
+        <text class="s2dN" x="30" y="304">If the label column is empty on every row, the first project is recording, not modelling.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - one row is filled to show the depth: an origin, a use, a horizon, and nothing she would have to ask about</figcaption>
+    </figure>
+
+    <div class="steps">
+      <div class="step">
+        <p><strong>List every box she named, in her words.</strong> Not the tables you would design; the places she says numbers live, plus the thing she wants predicted, even if she named it only as a complaint. Each line here becomes a row on the map.</p>
+        <div class="prompt-box good"><span class="label">★ Step 1 · the boxes Adeline named</span>1. The till (sales, per outlet)
+2. The stock sheet (the one the outlet managers fill in on Fridays)
+3. The complaint calls (the empty-shelf ones, to me)
+4. The loyalty app (the chronic patients)
+5. The product names (the ones two outlets changed)</div>
+      </div>
+      <div class="step">
+        <p><strong>One origin per box: recorded, typed, or absent.</strong> Beside each, write the question that found it, so you can repeat it next time and see which door it came out of. Say the teach-back first every time; it is the reason she answers step by step instead of "it's in the system".</p>
+        <div class="prompt-box good"><span class="label">★ Step 2 · origin per box, with the question that found it</span>The till           RECORDED  daily, per product per outlet. Found by: "which systems does one sale touch, and how far back do they go?"
+Stock sheet        TYPED     outlet managers, Fridays, 3 versions, overwritten. Found by: "where do the stock numbers come from, step by step?"
+Complaint calls    ABSENT    reach Adeline, written down nowhere. Found by: "is there any record of past stock levels, or only of sales?"
+Loyalty app        RECORDED  by the vendor, not by Harbourline. Found by: "what does the loyalty app know about your chronic patients?"
+Product names      TYPED     codes differ SG and MY; two outlets renamed. Found by: "does everyone do it the same way?"</div>
+      </div>
+      <div class="step">
+        <p><strong>Feature, label, or neither, with one reason each.</strong> A feature is something the model could look at. A label is the answer it would be trained to give, and it has to be recorded the same way every time. Most boxes are features or nothing. If no box is the label, write that down in capitals; it is the most important line on the page.</p>
+        <div class="prompt-box good"><span class="label">★ Step 3 · what each box could do for a model</span>The till           FEATURE   how fast each product moves. Not a label: a zero sale means no demand OR an empty shelf.
+Stock sheet        FEATURE   this week only. Not a label: last week's count no longer exists.
+Complaint calls    NEITHER   yet. It becomes the LABEL only if someone logs each one the day it happens.
+Loyalty app        FEATURE   the strongest one, refill dates. After a contract clause.
+Product names      NEITHER   it is the join that makes the other four line up.
+
+NO BOX IS THE LABEL TODAY.</div>
+      </div>
+      <div class="step">
+        <p><strong>How far back, and whose key.</strong> Two questions per box. The first tells you how much history there is to learn from. The second finds every single point of failure on the map, and at Harbourline one of them is leaving in January.</p>
+        <div class="prompt-box good"><span class="label">★ Step 4 · horizon and key</span>The till           3 years, daily.         Key: Kenneth, only him. Leaving in January; team not told.
+Stock sheet        one Friday.             Key: every outlet manager, each with their own version.
+Complaint calls    none.                   Key: Adeline's phone and memory.
+Loyalty app        ask the vendor.         Key: the vendor, via a contract clause. MY patient data: PDPA, lawyer 4 weeks.
+Product names      nobody owns it.         Key: nobody. First thing to propose an owner for.</div>
+      </div>
+      <div class="step">
+        <p><strong>Draw the map.</strong> One row per box, the three marks on each, the label column made obvious. A monospace sketch in an email is fine; a photo of a hand drawing is better, because it looks like something she is allowed to correct.</p>
+        <div class="prompt-box good"><span class="label">★ Step 5 · the map, as it goes in the email</span>+------------------+------------+-------------+--------------+----------------------+
+| Box              | Origin     | Could be    | How far back | Whose key            |
++------------------+------------+-------------+--------------+----------------------+
+| The till         | recorded   | feature     | 3 yrs, daily | Kenneth (leaves Jan) |
+| Stock sheet      | typed      | feature     | one Friday   | outlet managers      |
+| Complaint calls  | absent     | LABEL, if   | none         | Adeline              |
+|                  |            | logged      |              |                      |
+| Loyalty app      | vendor     | feature     | ask vendor   | vendor + clause      |
+| Product names    | typed      | the join    | -            | nobody               |
++------------------+------------+-------------+--------------+----------------------+</div>
+      </div>
+      <div class="step">
+        <p><strong>Write the one line you send with it.</strong> Not a summary, not a model proposal. One sentence that says what the map is and asks her to correct it, sent within a day while she still remembers what she told you.</p>
+        <div class="prompt-box good"><span class="label">★ Step 6 · the covering line</span>Hi Adeline, here is what I understood about what has been written down and for how long; which box is wrong?</div>
+        <div class="prompt-box bad"><span class="label">The same email, as it is usually sent</span>Hi Adeline, attached is our proposed feature set and modelling approach for the stock-out prediction engine, with a timeline to a first model in six weeks. Let me know if you have any questions.</div>
+      </div>
+    </div>
+
+    <div class="callout tip">
+      <p><strong>Send the map, not a model plan, first.</strong> A model plan says "I have started building"; a map says "I have started listening", and on a map with an empty label column it also says the truest thing you know, that there is nothing yet to train on. She can correct it on her phone in a minute. Session 5 uses the empty label column to pick the first joint project; session 6 folds the corrected map into the one-page brief.</p>
+    </div>
+  </section>
+
+  <section class="section" id="exercise">
+    <div class="section-kicker">
+      <span class="klabel">Homework</span>
+      <h2>Before session 3</h2>
+      <span class="tag exercise">30 min</span>
+    </div>
+    <ol>
+      <li><strong>Draw the map for your own request.</strong> Every box the requester named, recorded, typed or absent on each, feature, label or neither, how far back, and whose key. If you cannot fill a cell, that is the question you ask next.</li>
+      <li><strong>Find the label, or find that there is none.</strong> Write one sentence saying where the thing you were asked to predict is written down, by whom, and since when. If the answer is "nowhere", write what it would take to start recording it tomorrow.</li>
+      <li><strong>Write the rung beside each source.</strong> Use the five questions, not the five names. Then mark any source you had planned to use as a label, and check its rung: a rung-1 source is a hint, never a training label.</li>
+      <li><strong>Bring the map to session 3.</strong> The bench prices every fact on it, and you will see which boxes the fastest-looking meetings never fill, and which false belief they write in instead.</li>
+    </ol>
+  </section>
+
+  <section class="section" id="quiz">
+    <div class="section-kicker">
+      <span class="klabel">Check yourself</span>
+      <h2>Three questions</h2>
+    </div>
+    <p>Clear all three and session 2 gets stamped in your passport.</p>
+
+    <div class="quiz-q" data-answer="2">
+      <p class="qtext">1 · Harbourline has three years of daily sales, a stock sheet overwritten every Friday, and no record of any stock-out except a complaint call. Why does that make the first project recording rather than modelling?</p>
+      <button class="qopt" type="button">A · Because three years of sales is too little history for any model</button>
+      <button class="qopt" type="button">B · Because the POS product codes differ between the two countries</button>
+      <button class="qopt" type="button">C · Because a model that predicts stock-outs needs to have seen stock-outs, and none were written down; a zero in the sales means either no demand or an empty shelf, so the label has to be logged on the day it happens before anything can be trained</button>
+      <button class="qopt" type="button">D · Because the board wants a slide rather than a model</button>
+      <p class="qwhy">Sales are a feature, a strong one, and never the label. The only trace of a stock-out is a phone call to Adeline, so the row a model would learn from does not exist until somebody starts writing it down.</p>
+    </div>
+
+    <div class="quiz-q" data-answer="0">
+      <p class="qtext">2 · You place Harbourline's stock sheet on rung 1 of the five-rung ladder. Why does that number stay in your notes and never get said to her?</p>
+      <button class="qopt" type="button">A · Because a grade ends a conversation that was going well; she hears the five plain questions, which make her notice her own shop, and you carry out the reading that matters for a model: which sources are steady enough to be a label</button>
+      <button class="qopt" type="button">B · Because the ladder has a level 0 below rung 1 and she would be offended to be near it</button>
+      <button class="qopt" type="button">C · Because the rung is confidential under PDPA</button>
+      <button class="qopt" type="button">D · Because the rung only matters to the governance team, not to a scientist</button>
+      <p class="qwhy">DAMA-DMBOK names five levels, Initial/Ad hoc to Optimized, with no level 0; the questions are ours. For a scientist the rung decides one thing above all: a rung-1 source can be a feature with care and can never be the training label.</p>
+    </div>
+
+    <div class="quiz-q" data-answer="3">
+      <p class="qtext">3 · The loyalty app's refill dates are the strongest signal there is for chronic demand. Why do they go on the map as "later, after a clause" rather than into the first feature list?</p>
+      <button class="qopt" type="button">A · Because refill dates are too noisy to use as a feature</button>
+      <button class="qopt" type="button">B · Because Kenneth holds the loyalty app login and is leaving</button>
+      <button class="qopt" type="button">C · Because the vendor's data only goes back one Friday</button>
+      <button class="qopt" type="button">D · Because the vendor owns them and an export needs a contract clause, and Malaysian patient data also needs PDPA handling with a lawyer who takes four weeks; owned means who can say yes to an export, and that yes may arrive after the board meets in six weeks</button>
+      <p class="qwhy">Ownership is a contract, not a login. Asked in the first meeting with its teach-back, g12 turns a feature you cannot use yet into a dated task, instead of a promise in a kickoff deck that nobody has permission to keep.</p>
+    </div>
+
+    <p class="quiz-score"></p>
+  </section>
+
+  <section class="section" id="official">
+    <div class="section-kicker">
+      <span class="klabel">Sources covered</span>
+      <h2>What this session teaches, and where it came from</h2>
+    </div>
+    <div class="covered">
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">Five maturity level names: Initial/Ad hoc, Repeatable, Defined, Managed, Optimized</span><span class="note">DAMA International, DAMA-DMBOK, 2nd ed., Technics Publications, 2017, ch. 15; reported from summaries. DMBOK has no level 0. The interview question beside each rung is ours, not DAMA's; the ladder in depth is in <a href="https://phoebefu6.github.io/learn-asking-right-questions-as-da-with-phoebe/courses/02-reading-their-data-state.html">the analyst's session 2 ↗</a></span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">50 percent to 80 percent of time collecting and preparing data</span><span class="note">Steve Lohr, "For Big-Data Scientists, 'Janitor Work' Is Key Hurdle to Insights", The New York Times, 17 Aug 2014; quoted as a range, as printed</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">60 percent cleaning and organising, plus 19 percent collecting</span><span class="note">CrowdFlower, 2016 Data Science Report; two separate figures, never combined with Lohr's range into one number</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">Door 4, data state, in the Six Doors corridor</span><span class="note">Named here as one door; the corridor is drawn in full, with the question behind each door, in <a href="https://phoebefu6.github.io/learn-asking-right-questions-as-da-with-phoebe/courses/01-why-the-gap-and-the-six-doors.html">the analyst's session 1 ↗</a></span></div>
+      <div class="covered-row"><span class="status pill light">◐</span><span class="name">The one key: worth 3 of 68 points, behind trust 3</span><span class="note">Computed in session 3 on the constructed fact sheet. What is claimed is the mechanism, that the most sensitive fact comes out only after trust is earned, never the number as a fact about a real business</span></div>
+      <div class="covered-row"><span class="status pill light">◐</span><span class="name">Harbourline and Adeline Tan</span><span class="note">Constructed. The till, the Friday stock sheet, the complaint calls, the loyalty vendor, Kenneth and the PDPA lawyer are typical, not sourced; the zero-sales label and the lawyer's timeline are constructed stories; every value is printed in the bench's bank file</span></div>
+    </div>
+    <p class="mono" style="margin-top:14px">Every fact on this page, and its verification tier, is recorded in the course's source map.</p>
+  </section>
+
+  <section class="cheat" id="cheatsheet">
+    <h3>Session 2 cheat sheet <span>· pin this</span></h3>
+    <div class="grid-2">
+      <div class="cheat-item"><b>Ask what history exists</b><span>Not "what data do you have" but "what has been written down, and since when". A model learns only from rows that exist.</span></div>
+      <div class="cheat-item"><b>Recorded, typed, absent</b><span>A till records, a person types and overwrites, a complaint call is written down nowhere. Only recorded history has a past.</span></div>
+      <div class="cheat-item"><b>A zero means two things</b><span>No demand, or an empty shelf. Sales are a feature and never a stock-out label.</span></div>
+      <div class="cheat-item"><b>Five rungs, five questions</b><span>Who fixes it · same way each week · written down · checked afterwards · better on its own. Names are DMBOK's; no rung 0; never said to her.</span></div>
+      <div class="cheat-item"><b>Feature, label, neither</b><span>A rung-1 source can be a hint, never the training label. If no box is the label, the first project is recording.</span></div>
+      <div class="cheat-item"><b>Owners and the one key</b><span>Owned means who can say yes to an export. Ask logins by name. Send the map first: "which box is wrong?"</span></div>
+    </div>
+  </section>
+
+  <div class="callout next">
+    <span class="nx-pill">Next session</span>
+    <p>Session 3 puts every fact on tonight's map on the bench and prices it. The empty stock history is also the easiest belief in the room to get wrong: one leading question, "The stock history is in the POS system, correct?", takes a minute, gets a polite yes, and writes a false fact into your notes that costs more to build on than most true facts are worth. The fast-looking meeting records five of those and nets 15; the scientist-tuned order records none and nets 55. You also sort the whole question bank by kind, and run your own meeting against Adeline.</p>
+  </div>
+
+  <footer class="pagefoot">
+    <span>Session 2 of 6 · learn-asking-right-questions-as-ds-with-phoebe · by Phoebe Fu &nbsp;·&nbsp; 📚 <a href="https://phoebefu6.github.io/learn-with-phoebe/">Learn with Phoebe ↗</a></span>
+    <span><a href="01-the-gap-from-the-scientists-chair.html">← Prev: The gap, from the scientist's chair</a> &nbsp;·&nbsp; <a href="03-the-scientists-questions-and-the-bench.html">Next: The scientist's questions, and the bench →</a></span>
+  </footer>
+
+</main>
+
+<script src="../assets/app.js?v=1"></script>
+</body>
+</html>

@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- social:start -->
+<meta name="description" content="Session 3 of 6. The data scientist's question bank sorted into five kinds, and a discovery meeting simulated in your browser: one operations director with 24 hidden facts, 45 minutes, and five ways of asking. The efficient yes-or-no interview scores 15; the Six Doors in printed order score 46; tuned outcome first for a scientist, 55. Then you run the meeting yourself.">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Learn with Phoebe">
+<meta property="og:title" content="The scientist's questions, and the bench - learn asking the right questions as a data scientist with phoebe">
+<meta property="og:description" content="Session 3 of 6. Same person, same 45 minutes, five ways of asking. Asking what a wrong guess costs early is worth 9 points.">
+<meta property="og:url" content="https://phoebefu6.github.io/learn-asking-right-questions-as-ds-with-phoebe/courses/03-the-scientists-questions-and-the-bench.html">
+<meta property="og:image" content="https://phoebefu6.github.io/learn-asking-right-questions-as-ds-with-phoebe/assets/og-cover.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The scientist's questions, and the bench - learn asking the right questions as a data scientist with phoebe">
+<meta name="twitter:description" content="Session 3 of 6. Five ways of asking, counted live.">
+<meta name="twitter:image" content="https://phoebefu6.github.io/learn-asking-right-questions-as-ds-with-phoebe/assets/og-cover.png">
+<!-- social:end -->
+<title>Session 3 · The scientist's questions, and the bench - learn asking the right questions as a data scientist with phoebe</title>
+<link rel="stylesheet" href="../assets/style.css?v=1">
+</head>
+<body>
+
+<div class="toolbar">
+  <div class="wrap">
+    <span class="crumb"><a href="../index.html">learn-asking-right-questions-as-ds-with-phoebe</a> / Session 3 of 6</span>
+    <button class="btn" id="toggle-all" type="button">Expand all</button>
+    <button class="btn primary" id="zoom-toggle" type="button">Projector zoom: off</button>
+  </div>
+</div>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="eyebrow">Learn Asking the Right Questions as a Data Scientist with Phoebe · Session 3 of 6</div>
+    <h1>The scientist's questions, and the <span class="accent">bench</span></h1>
+    <p class="sub">Sessions 1 and 2 argued that the order of questions decides what you learn. Tonight the argument is replaced by a count. Adeline Tan sits in this page with a fact sheet you cannot see: 24 things that are true about Harbourline, worth 68 points, six of which she will only say once she trusts you. Her request is "Can we predict which outlets are going to run out of stock?" You have 45 minutes and a bank of 37 questions, sorted into five kinds. The page runs the same meeting five ways in front of you: the modelling opener most of us were trained to give, a shuffle, the Six Doors in printed order, the doors tuned outcome first for a scientist, and the fast yes-or-no interview that looks like the best meeting in the room. Then it hands you the chair.</p>
+    <div class="chip-row">
+      <span class="chip level">🔴 Bench night</span>
+      <span class="chip audience">Bring your Six Doors sheet from session 1</span>
+      <span class="chip audience">No code tonight, all clicking</span>
+      <span class="chip time">45 min</span>
+    </div>
+    <div class="agenda">
+      <span class="a1" style="flex:1">0-3 · Welcome</span>
+      <span class="a2" style="flex:4">3-17 · Five kinds, and the outcome door</span>
+      <span class="a3" style="flex:5">17-40 · The bench, then your own meeting</span>
+      <span class="a4" style="flex:1">40-45 · Q&amp;A</span>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="section" id="intro">
+    <div class="section-kicker">
+      <span class="klabel">Part 0</span>
+      <h2>Where we start</h2>
+    </div>
+    <p class="lede">A bench is a fixed person and a fixed clock, so that when two ways of asking get two different results the only thing that differed was the asking. The person is constructed: Harbourline is invented and so is Adeline, and every fact on her sheet, every minute cost and every trust gate is printed in a file you can open and change. What the bench claims is not a number about pharmacies. It is a mechanism, shown as an ordering you can reproduce: jargon costs twice, leading questions record beliefs that are wrong, and the facts a model most depends on come out only when you ask for the outcome before you ask for the data.</p>
+
+    <div class="legend">
+      <span class="pill">🎫 Clear all three quiz questions to stamp your passport</span>
+      <span class="pill">counted = computed from the printed bank, in your browser</span>
+      <span class="pill">constructed = the company, the person, the sheet</span>
+    </div>
+
+    <div class="callout win">
+      <p><strong>★ What you walk out with tonight.</strong> Your own question bank sorted into the five kinds, the counted answer to "what is the framework worth against a shuffle" (46 against 27.5, on this sheet), the reason asking what a wrong guess costs in the first ten minutes is worth 9 more points, the reason the fastest interview scores near the bottom, and one run of the meeting in your own hands with a score beside the presets.</p>
+    </div>
+  </section>
+
+  <section class="section" id="part-1">
+    <div class="section-kicker">
+      <span class="klabel">Part 1 · covers the five kinds, and the scientist's door</span>
+      <h2>Five kinds of question, one of which earns trust</h2>
+      <span class="tag concept">7 min live</span>
+    </div>
+    <p class="lede">Every question in the bank is one of five kinds, and Adeline answers each kind differently. The kinds are not about wording. They are about what comes back: a fact, nothing, a generic, a request to explain yourself, or an agreement with something you assumed. The scientist's door, outcome, holds the fact that decides what a model would even predict, and it is opened by one kind only.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 340" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Five hand-drawn question cards in a row, each with an arrow to what comes back. Open: what exactly runs out, returns two facts, stock-outs not sales and about 30 a month, and one notch of trust. Closed: is the van run weekly, returns yes and one small fact. Vague: what would you like AI to do for you, returns a generic cloud. Jargon: what is the class imbalance, returns a question mark and a notch of trust lost. Leading: so, forecast sales, right, returns the words I suppose so and a false belief written into a notebook.">
+        <defs>
+          <filter id="s3aSk" x="-3%" y="-3%" width="106%" height="106%"><feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="2" seed="53" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.4" xChannelSelector="R" yChannelSelector="G"/></filter>
+          <pattern id="s3aHc" patternUnits="userSpaceOnUse" width="7" height="7" patternTransform="rotate(-38)"><line x1="0" y1="0" x2="0" y2="7" stroke="#5B21B6" stroke-width="1" opacity=".5"/></pattern>
+          <marker id="s3aAr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M1 1 L9 5 L1 9" fill="none" stroke="#1E1B2E" stroke-width="1.6" stroke-linecap="round"/></marker>
+        </defs>
+        <style>
+          .s3aH { font: 800 12px Inter, sans-serif; fill: #1E1B2E; }
+          .s3aA { font: 700 11px Inter, sans-serif; fill: #5B21B6; }
+          .s3aL { font: 600 12px Inter, sans-serif; fill: #1E1B2E; }
+          .s3aS { font: 400 11px Inter, sans-serif; fill: #4E4A66; }
+          .s3aB { font: 800 11px Inter, sans-serif; fill: #6B3F00; }
+          .s3aR { font: 800 11px Inter, sans-serif; fill: #991B1B; }
+          .s3aV { font: 800 16px Inter, sans-serif; fill: #4C1D95; }
+          .s3aN { font: 400 12px Inter, sans-serif; fill: #4E4A66; }
+        </style>
+
+        <text class="s3aH" x="30" y="26">FIVE KINDS, AND WHAT COMES BACK</text>
+        <text class="s3aS" x="300" y="26">the kind is not the wording; it is what she can do with it</text>
+
+        <g filter="url(#s3aSk)" fill="none" stroke="#1E1B2E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <!-- five question cards, 150 wide, from x=40 with 20 gap -->
+          <rect x="40" y="60" width="150" height="70" rx="8" transform="rotate(-0.5 115 95)" fill="#FBF1E0" stroke="#9A5B00"/>
+          <rect x="210" y="60" width="150" height="70" rx="8" transform="rotate(0.4 285 95)" fill="#FFFFFF"/>
+          <rect x="380" y="60" width="150" height="70" rx="8" transform="rotate(-0.3 455 95)" fill="#FFFFFF"/>
+          <rect x="550" y="60" width="150" height="70" rx="8" transform="rotate(0.5 625 95)" fill="#F5F3FF" stroke="#4E4A66" stroke-dasharray="5 4"/>
+          <rect x="720" y="60" width="150" height="70" rx="8" transform="rotate(-0.4 795 95)" fill="#FEF2F2" stroke="#991B1B"/>
+          <!-- arrows down -->
+          <path d="M115 136 L115 166" marker-end="url(#s3aAr)"/>
+          <path d="M285 136 L285 166" marker-end="url(#s3aAr)"/>
+          <path d="M455 136 L455 166" marker-end="url(#s3aAr)"/>
+          <path d="M625 136 L625 166" marker-end="url(#s3aAr)"/>
+          <path d="M795 136 L795 166" marker-end="url(#s3aAr)"/>
+          <!-- open = two fact cards + trust notch -->
+          <rect x="42" y="176" width="150" height="26" rx="4" transform="rotate(-1 117 189)" fill="url(#s3aHc)"/>
+          <rect x="42" y="208" width="150" height="26" rx="4" transform="rotate(0.8 117 221)" fill="url(#s3aHc)"/>
+          <rect x="48" y="246" width="134" height="14" rx="7" fill="#FFFFFF" stroke="#CFC9E6"/>
+          <rect x="48" y="246" width="60" height="14" rx="7" fill="#5B21B6" stroke="#5B21B6"/>
+          <!-- closed = one small card -->
+          <rect x="240" y="176" width="90" height="26" rx="4" transform="rotate(-0.8 285 189)" fill="url(#s3aHc)"/>
+          <!-- vague = a cloud -->
+          <path d="M400 200 C392 184 414 174 426 182 C434 168 462 172 462 188 C480 188 482 208 466 210 L410 210 C398 210 394 204 400 200 Z" fill="#FFFFFF" stroke="#4E4A66" stroke-dasharray="4 3"/>
+          <!-- jargon = question mark + trust notch lost -->
+          <circle cx="625" cy="192" r="18" fill="#FFFFFF" stroke="#4E4A66"/>
+          <rect x="558" y="246" width="134" height="14" rx="7" fill="#FFFFFF" stroke="#CFC9E6"/>
+          <rect x="558" y="246" width="30" height="14" rx="7" fill="#CFC9E6" stroke="#CFC9E6"/>
+          <!-- leading = a notebook with a wrong line (wrong-way panel) -->
+          <rect x="740" y="176" width="110" height="70" rx="4" transform="rotate(1 795 211)" fill="#FFFFFF" stroke="#991B1B"/>
+          <path d="M752 196 L838 196 M752 212 L838 212 M752 228 L838 228" stroke="#CFC9E6"/>
+          <path d="M752 212 L838 212" stroke="#991B1B" stroke-width="3"/>
+        </g>
+
+        <text class="s3aB" x="52" y="80">OPEN</text>
+        <text class="s3aS" x="52" y="98">"What exactly runs</text>
+        <text class="s3aS" x="52" y="112">out? Which products?"</text>
+        <text class="s3aS" x="52" y="193">stock-outs, not sales</text>
+        <text class="s3aS" x="52" y="225">about 30 a month</text>
+        <text class="s3aS" x="52" y="276">trust, one notch up</text>
+
+        <text class="s3aA" x="222" y="80">CLOSED</text>
+        <text class="s3aS" x="222" y="98">"Is the van run</text>
+        <text class="s3aS" x="222" y="112">weekly?"</text>
+        <text class="s3aL" x="266" y="194">"yes"</text>
+        <text class="s3aS" x="222" y="226">one fact at most,</text>
+        <text class="s3aS" x="222" y="240">nothing you did not ask</text>
+
+        <text class="s3aA" x="392" y="80">VAGUE</text>
+        <text class="s3aS" x="392" y="98">"What would you like</text>
+        <text class="s3aS" x="392" y="112">AI to do for you?"</text>
+        <text class="s3aS" x="410" y="198">"you tell me"</text>
+        <text class="s3aS" x="392" y="232">a generic, and three</text>
+        <text class="s3aS" x="392" y="246">minutes gone</text>
+
+        <text class="s3aH" x="562" y="80">JARGON</text>
+        <text class="s3aS" x="562" y="98">"What is the class</text>
+        <text class="s3aS" x="562" y="112">imbalance?"</text>
+        <text class="s3aV" x="625" y="198" text-anchor="middle">?</text>
+        <text class="s3aL" x="562" y="226">"sorry, what do</text>
+        <text class="s3aL" x="562" y="241">you mean?"</text>
+        <text class="s3aS" x="562" y="278">five minutes, not three</text>
+
+        <text class="s3aR" x="732" y="80">LEADING</text>
+        <text class="s3aS" x="732" y="98">"So, forecast</text>
+        <text class="s3aS" x="732" y="112">sales, right?"</text>
+        <text class="s3aS" x="756" y="191">"I suppose so."</text>
+        <text class="s3aR" x="732" y="264">"sales" is in your</text>
+        <text class="s3aR" x="732" y="278">notes. It is wrong.</text>
+
+        <text class="s3aN" x="30" y="318">Only the first kind moves the trust meter up, and six of the 24 facts on her sheet are behind that meter.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - the two right-hand cards cost more than they look: one in minutes and trust, one in a model built for the wrong target</figcaption>
+    </figure>
+
+    <details class="card" open>
+      <summary><span class="mode live">Live</span>What each kind gets back, and what it costs<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p><strong>Open.</strong> About the past or the present, answerable by anyone who runs the business. "What exactly runs out? Which products, which outlets, and how do you find out it happened?" It costs three to five minutes, it uncovers the facts behind its door, and it earns a point of trust, which is the currency the sensitive facts are priced in. Every open question in the bank carries a teach-back line.</p>
+        <p><strong>Closed.</strong> Yes or no. "Is the van run weekly?" One or two minutes, one fact at most, and only the fact you already had the shape of. Cheap, and useful for confirming, but a meeting made of them learns nothing you did not walk in expecting.</p>
+        <p><strong>Vague.</strong> "What would you like AI to do for you?" It sounds open. It is not, because it hands the design problem back to the person who came to you with it, and what comes back is a generic. Three minutes for a sentence you could have written yourself, and on the bench it reaches no fact at all.</p>
+        <p><strong>Jargon.</strong> "What is the class imbalance on the positive label?" She has to ask what you mean, so it costs the question plus an explanation, five minutes rather than three, and she is a little less sure you understand her outlets. On the bench that is a point of trust lost, and it is the only kind that loses one. The irony is that it is a good question: it is the base rate, asked in a language she does not speak.</p>
+        <p><strong>Leading.</strong> "So you want to forecast sales, right?" She says "I suppose so", because the question told her the expected answer and she is being polite. Nothing true came back. Something false went into your notes, and it costs later, when you train a model on the wrong target. On the bench a leading question records a belief with a cost attached, and the fast interview records five of them.</p>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>The scientist's door is outcome, and here is its bank<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>A scientist's output is a prediction somebody acts on. The facts that decide whether it is worth building are the exact target, how often it happens today, and what each wrong guess costs, and they live behind door 1. On Adeline's sheet the single most valuable fact, worth 5 of 68, is that the thing going wrong is a stock-out of one of about 40 chronic-medication products at outlet level, not sales. The next two are that it happens about 30 times a month across 38 outlets, found only as complaint calls, and that a missed stock-out and an over-order cost different amounts: a patient lost and a complaint on one side, expiry write-off she is measured on the other.</p>
+        <p>The three open questions that open that door, each with its teach-back line, word for word from the bank:</p>
+        <ul>
+          <li><strong>"What exactly runs out? Which products, which outlets, and how do you find out it happened?"</strong> Teach-back: "I need the exact thing that goes wrong before I can promise to predict it. Sales and stock-outs are different questions with different data."</li>
+          <li><strong>"Roughly how often does it happen in a month, across all the outlets?"</strong> Teach-back: "How often it happens is the first number any prediction is judged against. If it is rare, a model that says 'never' looks accurate and is useless."</li>
+          <li><strong>"When it happens, what does it cost you? And what does it cost when an outlet orders too much?"</strong> Teach-back: "A wrong guess in each direction costs something different, and the model has to be built to the ratio between them, not to a single accuracy number."</li>
+        </ul>
+        <p>Asked first, the first and third put 12 points in your notes by minute 9 and take trust to 2. The first alone returns the target and the base rate together, because she is already talking about complaint calls. The door is widest for this role because every modelling decision later, the label, the threshold, the evaluation, is a guess until these three answers exist.</p>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>The whole bank, by kind<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Thirty-seven questions: twenty open (two to four per door), four vague, five jargon, five leading, three closed. The open ones are the sheet you built in session 1 with Adeline's answers already attached. The others are there because they are what gets asked in real meetings, and the bench needs them to show what they cost. The five jargon questions are all real modelling questions: labelled ground truth, class imbalance, a feature store, precision or recall, a rolling backtest. Every one is printed with its kind, its minute cost and the facts it reaches in the bank file the page loads; the widget below draws its buttons from that file, so what you click is what it counts.</p>
+      </div>
+    </details>
+
+    <table class="clean">
+      <tr><th>Kind</th><th>In the bank</th><th>Minutes</th><th>What comes back</th><th>Trust</th></tr>
+      <tr><td><strong>Open</strong></td><td>20</td><td>3 to 5</td><td>The facts behind its door, when trust is high enough for them</td><td>+1</td></tr>
+      <tr><td>Closed</td><td>3</td><td>1 to 2</td><td>One fact at most</td><td>0</td></tr>
+      <tr><td>Vague</td><td>4</td><td>3 to 4</td><td>A generic; at most one low-value fact</td><td>0</td></tr>
+      <tr><td>Jargon</td><td>5</td><td>5</td><td>"Sorry, what do you mean?"</td><td><strong>-1</strong></td></tr>
+      <tr><td>Leading</td><td>5</td><td>1 to 2</td><td>"I suppose so", and a false belief with a cost of 2 to 4</td><td>0</td></tr>
+    </table>
+
+    <div class="callout example">
+      <span class="ex-pill">Real world</span>
+      <p><strong>The forecast nobody opened.</strong> A constructed case, like all of Harbourline, with a shape many teams will recognise. Adeline mentions it only once she trusts you: a vendor sold them an "AI demand forecast" last year. It forecast sales. Nobody used it, because sales were never the problem. The vendor's model may well have been accurate. It answered a question nobody at the outlets was asking, and the first outcome question on the sheet would have found that out in five minutes.</p>
+    </div>
+
+    <div class="tryrow" data-fn="wordcount" data-multiline="1" data-title="Write your own outcome question" data-hint="Take a prediction request you were handed this quarter. Write the one open question that would pin down the exact thing that goes wrong, then the teach-back sentence you would say after it, in words the requester already uses." data-seed="" data-cta="Count it"></div>
+  </section>
+
+  <section class="section" id="bench">
+    <div class="section-kicker">
+      <span class="klabel">Build-along · the bench</span>
+      <h2>Five ways of asking, counted in front of you</h2>
+      <span class="tag demo">★ 23 min · the main event</span>
+    </div>
+    <p class="lede">Work down the five presets in order. For each, read the verdict line, then the seven counters, then the transcript underneath: what you asked, what she said, what it was worth, and where trust stood. Say out loud what changed before moving to the next. Stop longest on the pair in the middle, the printed order and the tuned one, and find the minute where they part. The last preset is the anti-lever, the interview that looks most efficient, and the bench shows what it costs. Then the lower half of the widget gives you the chair: same person, same 45 minutes, your choice of questions, scored beside the presets.</p>
+
+    <div id="ask-bench"></div>
+
+    <div class="callout tip">
+      <p><strong>Read it in this order.</strong> Net value, then false beliefs, then doors opened, then the "after 20 minutes" counter. Net value is what you can build on. False beliefs are what you will build wrong. Doors opened is whether you can write a brief at all. The 20-minute counter is what is in your notes if she gets called away, which happens, and for a scientist it answers a sharper question: do you know the target and the cost of each error yet, or only the data?</p>
+    </div>
+  </section>
+
+  <section class="section" id="part-2">
+    <div class="section-kicker">
+      <span class="klabel">Part 2 · covers what the bench finds</span>
+      <h2>Same person, five answers</h2>
+      <span class="tag concept">5 min live</span>
+    </div>
+    <p class="lede">The bench above computes these live; the numbers here are the ones it produces on the printed bank, checked in node and identical in the browser, written down so they can be argued with after class. Change a value in the bank file and they move. The ordering does not.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Five horizontal bars, one per way of asking, showing net value out of 68: the efficient yes-or-no interview 15, the technical opener 10, any order at all 27.5 as a mean with a range from 0 to 46, Six Doors in printed order 46, Six Doors tuned outcome first for a scientist 55. A dashed line at 61 marks the ceiling an optimizer reaches with the fact sheet visible. A second, thinner bar on each row shows the value after 20 minutes: minus 5, 0, 13, 20, 24. The tuned order gains 9 over the printed order.">
+        <defs>
+          <filter id="s3bSk" x="-3%" y="-3%" width="106%" height="106%"><feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="2" seed="59" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.4" xChannelSelector="R" yChannelSelector="G"/></filter>
+          <pattern id="s3bHc" patternUnits="userSpaceOnUse" width="7" height="7" patternTransform="rotate(-38)"><line x1="0" y1="0" x2="0" y2="7" stroke="#5B21B6" stroke-width="1" opacity=".5"/></pattern>
+          <marker id="s3bAr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M1 1 L9 5 L1 9" fill="none" stroke="#1E1B2E" stroke-width="1.6" stroke-linecap="round"/></marker>
+        </defs>
+        <style>
+          .s3bH { font: 800 12px Inter, sans-serif; fill: #1E1B2E; }
+          .s3bL { font: 600 12px Inter, sans-serif; fill: #1E1B2E; }
+          .s3bS { font: 400 11px Inter, sans-serif; fill: #4E4A66; }
+          .s3bB { font: 800 11px Inter, sans-serif; fill: #6B3F00; }
+          .s3bA { font: 700 11px Inter, sans-serif; fill: #5B21B6; }
+          .s3bV { font: 800 16px Inter, sans-serif; fill: #4C1D95; }
+          .s3bN { font: 400 12px Inter, sans-serif; fill: #4E4A66; }
+        </style>
+
+        <text class="s3bH" x="30" y="26">NET VALUE OUT OF 68, FIVE WAYS OF ASKING THE SAME PERSON</text>
+        <text class="s3bS" x="30" y="44">wide bar = net value after 45 minutes · thin bar = what was in your notes after 20 · scale: 8 px per point, from x = 230</text>
+
+        <g filter="url(#s3bSk)" fill="none" stroke="#1E1B2E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <!-- clock doodle -->
+          <circle cx="842" cy="30" r="12" fill="#FFFFFF"/>
+          <path d="M842 30 L842 22 M842 30 L848 33"/>
+          <path d="M230 56 L230 330" stroke="#CFC9E6"/>
+          <!-- ceiling at 61: x = 230 + 61*8 = 718 -->
+          <path d="M718 56 L718 330" stroke="#5B21B6" stroke-dasharray="6 5"/>
+          <!-- row 1 fast: 15 -> 120px; early -5 -> 40px stub to the left -->
+          <rect x="230" y="66" width="120" height="22" rx="3" fill="url(#s3bHc)"/>
+          <rect x="190" y="92" width="40" height="6" rx="3" fill="#4E4A66" stroke="#4E4A66"/>
+          <!-- row 2 jargon: 10 -> 80; early 0 -->
+          <rect x="230" y="118" width="80" height="22" rx="3" fill="url(#s3bHc)"/>
+          <!-- row 3 random: 27.5 -> 220; range 0..46 -> 230..598; early 13.0 -> 104 -->
+          <rect x="230" y="170" width="220" height="22" rx="3" fill="url(#s3bHc)"/>
+          <path d="M232 181 L598 181" stroke="#4E4A66"/>
+          <path d="M598 175 L598 187" stroke="#4E4A66"/>
+          <rect x="230" y="196" width="104" height="6" rx="3" fill="#5B21B6" stroke="#5B21B6"/>
+          <!-- row 4 sixdoors: 46 -> 368; early 20 -> 160 -->
+          <rect x="230" y="222" width="368" height="22" rx="3" fill="#F5F3FF"/>
+          <rect x="230" y="248" width="160" height="6" rx="3" fill="#5B21B6" stroke="#5B21B6"/>
+          <!-- row 5 role: 55 -> 440; early 24 -> 192 -->
+          <rect x="230" y="274" width="440" height="22" rx="3" fill="#9A5B00" stroke="#9A5B00"/>
+          <rect x="230" y="300" width="192" height="6" rx="3" fill="#5B21B6" stroke="#5B21B6"/>
+          <!-- the gap of 9 between printed and tuned -->
+          <path d="M598 262 L668 262" stroke="#9A5B00" marker-end="url(#s3bAr)"/>
+        </g>
+
+        <text class="s3bL" x="220" y="82" text-anchor="end">The efficient interview</text>
+        <text class="s3bV" x="358" y="83">15</text>
+        <text class="s3bS" x="386" y="82">raw 31, 5 false beliefs cost 16 · after 20 min: -5</text>
+        <text class="s3bL" x="220" y="134" text-anchor="end">The technical opener</text>
+        <text class="s3bV" x="318" y="135">10</text>
+        <text class="s3bS" x="346" y="134">4 facts, 3 doors · after 20 min: 0</text>
+        <text class="s3bL" x="220" y="186" text-anchor="end">Any order at all</text>
+        <text class="s3bV" x="608" y="187">27.5</text>
+        <text class="s3bS" x="652" y="186">mean of 200</text>
+        <text class="s3bS" x="608" y="203">range 0 to 46</text>
+        <text class="s3bS" x="342" y="211">after 20 min: 13</text>
+        <text class="s3bL" x="220" y="238" text-anchor="end">Six Doors, in order</text>
+        <text class="s3bV" x="606" y="239">46</text>
+        <text class="s3bS" x="398" y="258">after 20 min: 20</text>
+        <text class="s3bL" x="220" y="290" text-anchor="end">Tuned, outcome first</text>
+        <text class="s3bV" x="678" y="291">55</text>
+        <text class="s3bB" x="636" y="256">+9</text>
+        <text class="s3bS" x="430" y="310">after 20 min: 24</text>
+
+        <text class="s3bA" x="726" y="70">the ceiling, 61</text>
+        <text class="s3bS" x="726" y="86">an optimizer that can</text>
+        <text class="s3bS" x="726" y="100">read her sheet</text>
+
+        <text class="s3bB" x="230" y="346">Outcome first: 9 more than the printed order, and 24 in your notes by minute 20 instead of 20.</text>
+        <text class="s3bN" x="30" y="378">Same person, same clock. The way of asking alone decided whether the scientist left with 10 points or 55.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - the gap that matters is between the two bottom bars: the same questions, with the cost question moved from thirteenth to second</figcaption>
+    </figure>
+
+    <table class="clean">
+      <tr><th>Way of asking</th><th>Net value</th><th>After 20 min</th><th>Facts</th><th>Doors</th><th>False beliefs</th><th>Questions</th></tr>
+      <tr><td><strong>The efficient interview</strong> (leading and closed first)</td><td><strong>15</strong></td><td><strong>-5</strong></td><td>11</td><td>6</td><td><strong>5</strong></td><td>16</td></tr>
+      <tr><td>The technical opener (five modelling questions first)</td><td>10</td><td>0</td><td>4</td><td>3</td><td>0</td><td>10</td></tr>
+      <tr><td>Any order at all (mean of 200 shuffles)</td><td>27.5</td><td>13.0</td><td>12.0</td><td>5.5</td><td>2.4</td><td>14.1</td></tr>
+      <tr><td>Six Doors, door by door</td><td>46</td><td>20</td><td>15</td><td>6</td><td>0</td><td>11</td></tr>
+      <tr><td>Six Doors, tuned for a scientist (outcome first)</td><td><strong>55</strong></td><td><strong>24</strong></td><td>18</td><td>6</td><td>0</td><td>11</td></tr>
+      <tr><td>Ceiling: an optimizer that can read the sheet</td><td>61</td><td>33</td><td></td><td></td><td></td><td></td></tr>
+    </table>
+    <p class="mono" style="margin-top:6px">All counted from the printed bank, in node and in the browser, with the same result. Random is a mean over 200 seeded shuffles; its best single draw is 46 and its worst is 0.</p>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>Finding 1: asking what a wrong guess costs, early, is worth 9 points<span class="mini">2 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Six Doors in printed order gets 46 of 68 with no false beliefs and every door opened. Tuning the order outcome first gets 55, a gain of 9, the largest role gain of the four sibling courses. The two orders open with the same question and part at the second. The printed order asks how often it happens, which returns only 2 new points because the first answer already mentioned the complaint calls. The tuned order asks what each wrong guess costs, and gets the fact that a missed stock-out and an over-order are not the same size.</p>
+        <p>In the printed list the cost question sits thirteenth, and the 45 minutes run out after the eleventh question is asked. So does her own test of success: the question "how would you know it worked?" costs 4 minutes and the printed order reaches it with 3 left. The tuned order asks it at minute 31 and hears that she counts the complaint calls herself and does not care what the accuracy number is. A printed order spends its first minutes well. It simply reaches "what does a wrong guess cost" too late, and for a scientist that is the question the whole model is built to.</p>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>Finding 2: a shuffle is not neutral, it is a spread<span class="mini">2 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Two hundred shuffles of the same bank average 27.5 and range from 0 to 46. The average is the meeting most people run when they have a good list and no order: some of the jargon lands early and costs trust, a leading question or two gets recorded, and a door stays shut. The best draw of two hundred only equals the printed order; none reaches the tuned one. The spread is the argument for an order at all. A method that scores 46 every time is worth more than one that scores 46 on its best day and 0 on its worst, and the bad days are the ones with the board in six weeks.</p>
+        <p>The ceiling, 61, is printed so the framework can be read honestly. It is an order found by a search that is allowed to read her fact sheet, which nobody in a real meeting can. Optimal against a known answer is not the same thing as good; the tuned framework is the thing you can do on Tuesday, blind, and get 55.</p>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>Finding 3: jargon costs twice, and the second cost is the one that matters<span class="mini">2 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Five modelling questions in a row spend 25 of the 45 minutes and take trust to -3. The obvious cost is the minutes. The one that matters is what happens next. The first jargon question, "Do you have labelled ground truth for stock-out events?", is the right question: there is no stock history at all, because the spreadsheet is overwritten every Friday. She cannot answer it in that language. When the plain version comes later, "Is there any record of past stock levels, or only of sales?", trust is still too low and she does not volunteer it. The technical opener ends with 4 facts, 3 doors, and two sensitive facts unsaid: the missing stock history, and that the one IT person with the POS login is leaving in January.</p>
+        <p>The technical opener is not wrong because the questions are bad. Every one of them needs an answer before a model ships. It is wrong because they were asked of the wrong person, first, and the most important of them, whether the target was ever recorded, is the one that got lost.</p>
+      </div>
+    </details>
+
+    <div class="callout example">
+      <span class="ex-pill">Real world</span>
+      <p><strong>The model that said "never".</strong> A constructed case with a common shape. A team is asked to predict a rare event, trains before anyone asks how often it happens, and reports a high accuracy score. The model has learned to predict that the event never happens, which is right almost every day and useless on the days that matter. Google's machine learning problem-framing guidance puts the fix where the bench puts it: define the success metric before building. Here that is her complaint-call count, and the base-rate question that makes a "never" model visible is the second question on the outcome door.</p>
+    </div>
+  </section>
+
+  <section class="section" id="part-3">
+    <div class="section-kicker">
+      <span class="klabel">Part 3 · covers the anti-lever</span>
+      <h2>The efficient interview records the wrong target</h2>
+      <span class="tag concept">4 min live</span>
+    </div>
+    <p class="lede">Sixteen questions in 44 minutes, eight answers in the first ten. It opens every one of the six doors, and it feels like the best-run meeting in the building. On the bench it scores 15, below a shuffle, because five of the things in your notes are things she agreed to rather than things that are true, and the first of them is the target itself.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A hand-drawn chain. A leading question, so you want to forecast sales, right, leads to the words I suppose so, which lead to a line in a notebook, target equals sales, which leads six weeks later to a build: a sales forecast per outlet, costing 4 points, and the same thing a vendor already sold them last year that nobody used. Below it, the truth from her sheet: the thing that goes wrong is a stock-out of one of about 40 chronic-medication products at outlet level, not sales. Beside it, the open version: what exactly runs out, which gets the target and about 30 a month in one answer.">
+        <defs>
+          <filter id="s3cSk" x="-3%" y="-3%" width="106%" height="106%"><feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="2" seed="61" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.4" xChannelSelector="R" yChannelSelector="G"/></filter>
+          <pattern id="s3cHc" patternUnits="userSpaceOnUse" width="7" height="7" patternTransform="rotate(-38)"><line x1="0" y1="0" x2="0" y2="7" stroke="#5B21B6" stroke-width="1" opacity=".5"/></pattern>
+          <marker id="s3cAr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M1 1 L9 5 L1 9" fill="none" stroke="#1E1B2E" stroke-width="1.6" stroke-linecap="round"/></marker>
+        </defs>
+        <style>
+          .s3cH { font: 800 12px Inter, sans-serif; fill: #1E1B2E; }
+          .s3cL { font: 600 12px Inter, sans-serif; fill: #1E1B2E; }
+          .s3cS { font: 400 11px Inter, sans-serif; fill: #4E4A66; }
+          .s3cB { font: 800 11px Inter, sans-serif; fill: #6B3F00; }
+          .s3cA { font: 700 11px Inter, sans-serif; fill: #5B21B6; }
+          .s3cR { font: 800 12px Inter, sans-serif; fill: #991B1B; }
+          .s3cV { font: 800 18px Inter, sans-serif; fill: #991B1B; }
+          .s3cN { font: 400 12px Inter, sans-serif; fill: #4E4A66; }
+        </style>
+
+        <text class="s3cH" x="30" y="26">ONE LEADING QUESTION, SIX WEEKS LATER</text>
+
+        <g filter="url(#s3cSk)" fill="none" stroke="#1E1B2E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <!-- the question (wrong-way) -->
+          <rect x="30" y="56" width="190" height="60" rx="8" transform="rotate(-0.5 125 86)" fill="#FEF2F2" stroke="#991B1B"/>
+          <path d="M226 86 L262 86" marker-end="url(#s3cAr)"/>
+          <!-- her answer -->
+          <rect x="270" y="62" width="120" height="48" rx="24" fill="#FFFFFF"/>
+          <path d="M396 86 L424 86" marker-end="url(#s3cAr)"/>
+          <!-- the notebook -->
+          <rect x="432" y="52" width="150" height="68" rx="4" transform="rotate(0.6 507 86)" fill="#FFFFFF"/>
+          <path d="M444 74 L570 74 M444 92 L570 92 M444 110 L570 110" stroke="#CFC9E6"/>
+          <path d="M444 92 L570 92" stroke="#991B1B" stroke-width="3"/>
+          <path d="M588 86 L622 86" marker-end="url(#s3cAr)"/>
+          <!-- the wrong build (wrong-way panel) -->
+          <rect x="630" y="48" width="220" height="80" rx="8" transform="rotate(-0.4 740 88)" fill="#FEF2F2" stroke="#991B1B"/>
+          <!-- the truth, below -->
+          <path d="M30 156 L850 156" stroke="#CFC9E6" stroke-dasharray="6 5"/>
+          <rect x="30" y="172" width="410" height="84" rx="8" transform="rotate(0.4 235 214)" fill="#FBF1E0" stroke="#9A5B00"/>
+          <rect x="460" y="172" width="390" height="84" rx="8" transform="rotate(-0.5 655 214)" fill="#F5F3FF"/>
+        </g>
+
+        <text class="s3cR" x="42" y="76">LEADING</text>
+        <text class="s3cS" x="42" y="94">"So you want to forecast</text>
+        <text class="s3cS" x="42" y="108">sales, right?"</text>
+        <text class="s3cL" x="330" y="90" text-anchor="middle">"I suppose so."</text>
+        <text class="s3cS" x="448" y="70">outlet prediction notes</text>
+        <text class="s3cR" x="448" y="106">target = sales</text>
+        <text class="s3cS" x="642" y="70">week six: a sales forecast per</text>
+        <text class="s3cS" x="642" y="85">outlet, the same model a vendor</text>
+        <text class="s3cS" x="642" y="100">sold them last year.</text>
+        <text class="s3cV" x="642" y="120">-4</text>
+        <text class="s3cS" x="668" y="119">and no fewer empty shelves</text>
+
+        <text class="s3cB" x="42" y="192">WHAT WAS TRUE, ON HER SHEET</text>
+        <text class="s3cS" x="42" y="210">a stock-out of one of about 40 chronic-medication products,</text>
+        <text class="s3cS" x="42" y="225">at outlet level. Not sales. A patient turns up and the shelf</text>
+        <text class="s3cS" x="42" y="240">is empty. Sales were never the problem.</text>
+        <text class="s3cA" x="472" y="192">THE OPEN VERSION, 5 MINUTES</text>
+        <text class="s3cS" x="472" y="210">"What exactly runs out? Which products, which outlets,</text>
+        <text class="s3cS" x="472" y="225">and how do you find out it happened?"</text>
+        <text class="s3cS" x="472" y="240">gets the target and about 30 a month, in one answer</text>
+
+        <text class="s3cN" x="30" y="292">She was not lying. The question told her the answer you wanted. The cost lands on you, six weeks later.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - the red line in the notebook is the only thing the fast interview produces quickly, and it is the target</figcaption>
+    </figure>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>Why "I suppose so" is worse than silence<span class="mini">2 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>A closed question that gets a "no" has taught you something. A leading question almost never gets a "no", because it carries its expected answer and the person across the table is being courteous, busy, or both. Rob Fitzpatrick's rules for customer conversations, as reported, apply without change: ask about specifics in the past, not opinions about the future, and treat agreement as the weakest kind of data. What comes back from a leading question is not information about her outlets; it is information about how agreeable she is, filed as if it were the first thing.</p>
+        <p>The bench prices each false belief at what building on it wastes. "The target is sales" costs 4: a model for a question nobody asked, and the second one Harbourline has paid for. "Daily predictions" costs 3: the van runs on Thursday, and a daily score changes nothing between runs. "Stock history is in the POS" costs 4: there is no stock history at all, and you find out when the training set will not join. "Optimise for accuracy" costs 3, because the two errors cost different amounts and she measures neither by accuracy. "The model replaces the pharmacist's check" costs 2, because the pharmacist looking at a shelf is the baseline any model has to beat, not the thing it removes. Five leading questions in six minutes, and the meeting stands at minus 16 before the first true fact.</p>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>The honest nuance: when a closed question is right<span class="mini">2 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Closed questions are not the villain; leading ones are. "Is the van run weekly?" is closed and gets a real fact for one minute, and the bench scores it so. The rule is about sequence: confirm with a closed question after an open one has shown you the shape of the answer, never before. And the anti-lever carries its own limit: a fast interview that asked only closed questions, no leading ones, would score higher than 15 and lower than the framework, because it would still learn nothing it did not walk in expecting. Note also that the fast interview opens all six doors. A door count on its own would call it a good meeting, which is why the counters are read net value first. The bench does not pretend that speed is the sin. Assuming is.</p>
+      </div>
+    </details>
+
+    <div class="callout example">
+      <span class="ex-pill">Real world</span>
+      <p><strong>The scoping call that went perfectly.</strong> A constructed case with a familiar shape. A scientist runs a tight 40-minute scoping call with an operations head: sixteen questions, every one answered, a modelling plan by lunchtime. Sales forecast, daily, trained on the POS history, tuned for accuracy. Six weeks later there is no stock history to train on, the Thursday van makes the daily score pointless, and the plan is the one a vendor delivered last year. The operations head, asked why she agreed to all of it, says what people say: "You seemed to know what you wanted. I assumed you knew." The fix costs nothing but the sequence: ask for the outcome first, confirm second, never assume out loud.</p>
+    </div>
+  </section>
+
+  <section class="section" id="exercise">
+    <div class="section-kicker">
+      <span class="klabel">Homework</span>
+      <h2>Before session 4</h2>
+      <span class="tag exercise">30 min</span>
+    </div>
+    <ol>
+      <li><strong>Run your own meeting twice</strong> in the lower half of the bench: once with your session 1 sheet in your hand, once without. Write down the two scores, the minute at which you asked what a wrong guess costs, and which doors you left shut the second time.</li>
+      <li><strong>Sort your last real scoping call.</strong> Take the notes from a prediction request you actually scoped and mark each question you asked with its kind. Count the leading ones, and check whether the target in your notes was something she said or something you proposed.</li>
+      <li><strong>Change one number in the bank file</strong> and re-run. Double the cost of every false belief, or move the cost question to the end of the tuned order. Write one sentence on what moved and what did not; the ordering should survive, and if it does not, you have found the assumption the bench rests on.</li>
+      <li><strong>Bring your teach-back lines</strong> from your sheet, the three outcome ones first. Session 4 rewrites them for a person who has never seen a confusion matrix, and picks the one concept per meeting worth explaining properly.</li>
+    </ol>
+  </section>
+
+  <section class="section" id="quiz">
+    <div class="section-kicker">
+      <span class="klabel">Check yourself</span>
+      <h2>Three questions</h2>
+    </div>
+    <p>Clear all three and session 3 gets stamped in your passport.</p>
+
+    <div class="quiz-q" data-answer="1">
+      <p class="qtext">1 · The efficient interview asks 16 questions, uncovers 11 facts and opens all six doors. Why does it score 15, below a shuffle?</p>
+      <button class="qopt" type="button">A · Because closed questions cost more minutes than open ones</button>
+      <button class="qopt" type="button">B · Because five of its questions were leading: each got an "I suppose so" and recorded a false belief with a cost, starting with "the target is sales", so the true facts it finds, worth 31, lose 16 to beliefs a model would be built on</button>
+      <button class="qopt" type="button">C · Because the bench penalises any meeting with more than ten questions</button>
+      <button class="qopt" type="button">D · Because the operations director refuses to answer yes-or-no questions</button>
+      <p class="qwhy">Raw value 31 would be a middling meeting. The 16 points of false beliefs are the cost of building on sales, daily, stock history in the POS, accuracy, and replacing the pharmacist, none of which is true. It opens every door, which is why net value is read before doors. Speed is not the defect. Assuming out loud is.</p>
+    </div>
+
+    <div class="quiz-q" data-answer="2">
+      <p class="qtext">2 · The Six Doors in printed order score 46; tuned outcome first for a scientist, 55. Both open with the same question. Where do the 9 points come from?</p>
+      <button class="qopt" type="button">A · The tuned order asks more questions in the same 45 minutes</button>
+      <button class="qopt" type="button">B · The tuned order skips the data door</button>
+      <button class="qopt" type="button">C · The tuned order asks what each wrong guess costs second, while the printed order has it thirteenth and the clock runs out after eleven; the tuned order also reaches her own test of success, the complaint-call count, which the printed order never asks</button>
+      <button class="qopt" type="button">D · The tuned order uses more leading questions</button>
+      <p class="qwhy">Both orders ask eleven questions and record no false beliefs. The printed order spends its second question on the base rate the first answer already gave, and never reaches the cost of each error or the success test. For a scientist those are the two answers a model is built and judged against.</p>
+    </div>
+
+    <div class="quiz-q" data-answer="0">
+      <p class="qtext">3 · The technical opener asks "Do you have labelled ground truth for stock-out events?" first. It is the right question. Why does the meeting end with 4 facts and 3 doors?</p>
+      <button class="qopt" type="button">A · Because it was asked of the wrong person, in the wrong language, first: five jargon questions cost 25 minutes and took trust to -3, so when the plain version came later she did not volunteer that there is no stock history at all</button>
+      <button class="qopt" type="button">B · Because labelled ground truth is not needed to predict stock-outs</button>
+      <button class="qopt" type="button">C · Because five questions is too few for a 45-minute meeting</button>
+      <button class="qopt" type="button">D · Because modelling questions should never be asked on a project</button>
+      <p class="qwhy">The plain version is "Is there any record of past stock levels, or only of sales?" Asked early, with trust above zero, it gets the answer that decides whether there is a model at all: the spreadsheet is overwritten every Friday, so the first project may be recording stock-outs, not predicting them.</p>
+    </div>
+
+    <p class="quiz-score"></p>
+  </section>
+
+  <section class="section" id="official">
+    <div class="section-kicker">
+      <span class="klabel">Sources covered</span>
+      <h2>What this session teaches, and where it came from</h2>
+    </div>
+    <div class="covered">
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">Every count on the bench</span><span class="note">Computed in the browser from the printed bank file, and verified headlessly in node before any page quoted a number; the two agree to the point</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">Define the success metric before building</span><span class="note">Google for Developers, "Introduction to Machine Learning Problem Framing", developers.google.com/machine-learning/problem-framing, accessed 2026-09-29</span></div>
+      <div class="covered-row"><span class="status pill light">◐</span><span class="name">Ask about specifics in the past; agreement is weak data</span><span class="note">Rob Fitzpatrick, The Mom Test, self-published, 2013; reported from consistent summaries. The leading-question mechanism on the bench is his observation made countable</span></div>
+      <div class="covered-row"><span class="status pill light">◐</span><span class="name">Harbourline, Adeline Tan, and every value on her sheet</span><span class="note">Constructed to be typical. The bench claims the ordering and the mechanism, never the numbers as facts about any real business; change the bank and re-run</span></div>
+      <div class="covered-row"><span class="status pill light">◐</span><span class="name">The largest role gain of the four siblings</span><span class="note">Counted on each sibling course's own bank. The banks differ, so the comparison is between orders on constructed sheets, not between roles in the world</span></div>
+    </div>
+    <p class="mono" style="margin-top:14px">Every fact on this page, and its verification tier, is recorded in the course's source map.</p>
+  </section>
+
+  <section class="cheat" id="cheatsheet">
+    <h3>Session 3 cheat sheet <span>· pin this</span></h3>
+    <div class="grid-2">
+      <div class="cheat-item"><b>Five kinds</b><span>Open, closed, vague, jargon, leading. Only open earns trust; only jargon loses it; only leading records a belief that is wrong.</span></div>
+      <div class="cheat-item"><b>The bench, on this sheet</b><span>Fast 15 · jargon 10 · shuffle 27.5 (0 to 46) · Six Doors 46 · outcome first 55 · ceiling 61.</span></div>
+      <div class="cheat-item"><b>Outcome door, three questions</b><span>What exactly goes wrong, how often, and what each wrong guess costs. Before any data question.</span></div>
+      <div class="cheat-item"><b>The cost question, second</b><span>Moving it from thirteenth to second is worth 9 points, and 24 in your notes by minute 20.</span></div>
+      <div class="cheat-item"><b>Read net, then false, then doors</b><span>The fast interview opens all six doors and still scores 15. Doors alone flatter it.</span></div>
+      <div class="cheat-item"><b>Plain before technical</b><span>"Any record of past stock levels?" gets the answer. "Labelled ground truth?" gets "sorry, what do you mean?"</span></div>
+    </div>
+  </section>
+
+  <div class="callout next">
+    <span class="nx-pill">Next session</span>
+    <p>Every open question on the bench carried a second sentence, and she learned something from each. Session 4 is about that sentence: the curse of knowledge that makes yours too technical, the one concept per meeting worth explaining properly, and your teach-back lines rewritten for a person who has never seen a confusion matrix. By the end of a good scoping meeting she should be able to explain to her own board why a model that says "never" can look accurate and be useless, and it should be your sentence she uses.</p>
+  </div>
+
+  <footer class="pagefoot">
+    <span>Session 3 of 6 · learn-asking-right-questions-as-ds-with-phoebe · by Phoebe Fu &nbsp;·&nbsp; 📚 <a href="https://phoebefu6.github.io/learn-with-phoebe/">Learn with Phoebe ↗</a></span>
+    <span><a href="02-what-has-been-recorded-and-for-how-long.html">← Prev: What has been recorded, and for how long</a> &nbsp;·&nbsp; <a href="04-teaching-while-you-ask.html">Next: Teaching while you ask →</a></span>
+  </footer>
+
+</main>
+
+<script src="../assets/asking-bank-ds.js?v=1"></script>
+<script src="../assets/asking-live.js?v=1"></script>
+<script src="../assets/app.js?v=1"></script>
+</body>
+</html>

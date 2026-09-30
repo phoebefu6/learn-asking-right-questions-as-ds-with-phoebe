@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- social:start -->
+<meta name="description" content="Session 1 of 6. Why an operations director and a data scientist can agree on the word predict and leave with two different projects, the outcome door a scientist opens first and widest, and the teach-back line that makes every question a small lesson.">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Learn with Phoebe">
+<meta property="og:title" content="The gap, from the scientist's chair - learn asking the right questions as a data scientist with phoebe">
+<meta property="og:description" content="Session 1 of 6. Two tunes behind the word predict, the three facts behind the outcome door, and the one sentence that turns a question into a lesson.">
+<meta property="og:url" content="https://phoebefu6.github.io/learn-asking-right-questions-as-ds-with-phoebe/courses/01-the-gap-from-the-scientists-chair.html">
+<meta property="og:image" content="https://phoebefu6.github.io/learn-asking-right-questions-as-ds-with-phoebe/assets/og-cover.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The gap, from the scientist's chair - learn asking the right questions as a data scientist with phoebe">
+<meta name="twitter:description" content="Session 1 of 6. The word predict, the outcome door, the teach-back line.">
+<meta name="twitter:image" content="https://phoebefu6.github.io/learn-asking-right-questions-as-ds-with-phoebe/assets/og-cover.png">
+<!-- social:end -->
+<title>Session 1 · The gap, from the scientist's chair - learn asking the right questions as a data scientist with phoebe</title>
+<link rel="stylesheet" href="../assets/style.css?v=1">
+</head>
+<body>
+
+<div class="toolbar">
+  <div class="wrap">
+    <span class="crumb"><a href="../index.html">learn-asking-right-questions-as-ds-with-phoebe</a> / Session 1 of 6</span>
+    <button class="btn" id="toggle-all" type="button">Expand all</button>
+    <button class="btn primary" id="zoom-toggle" type="button">Projector zoom: off</button>
+  </div>
+</div>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="eyebrow">Learn Asking the Right Questions as a Data Scientist with Phoebe · Session 1 of 6</div>
+    <h1>The gap, from the <span class="accent">scientist's chair</span></h1>
+    <p class="sub">An operations director asks whether you can predict which outlets are going to run out of stock. A data scientist hears a classification problem and starts asking about labels and class balance. Six weeks later there is a model, it scores well on a holdout, and nobody acts on it, because what she wanted was fewer complaint calls about empty chronic-medication shelves, the model predicted something slightly different, and the history it needed was never recorded. Neither of them was careless. They used the same word for different things. Tonight is about noticing that in the room: why the word "predict" opens a gap every time, the door a scientist should open first and widest, and the one sentence that lets her learn how prediction work thinks while she is answering you.</p>
+    <div class="chip-row">
+      <span class="chip level">🟡 Core</span>
+      <span class="chip audience">Data scientists, and anyone asked to predict something</span>
+      <span class="chip audience">No code. A pen.</span>
+      <span class="chip time">45 min</span>
+    </div>
+    <div class="agenda">
+      <span class="a1" style="flex:1">0-3 · Welcome</span>
+      <span class="a2" style="flex:4">3-18 · Two tunes, the outcome door, the teach-back</span>
+      <span class="a3" style="flex:5">18-40 · Build-along: your Six Doors sheet</span>
+      <span class="a4" style="flex:1">40-45 · Q&amp;A</span>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="section" id="intro">
+    <div class="section-kicker">
+      <span class="klabel">Part 0</span>
+      <h2>Where we start</h2>
+    </div>
+    <p class="lede">A prediction is only worth something when a person does something different because of it, and most predictions that go unused were lost in the first meeting, before anyone opened a notebook. The running case for all six sessions is Harbourline, an invented chain of 38 pharmacy and clinic outlets across Singapore and Malaysia, and its operations director Adeline Tan. She has never heard the words target variable and does not need to. She has a request: "The board keeps asking about AI. Can we predict which outlets are going to run out of stock?" You have 45 minutes with her. Everything in the six sessions is about what you ask in those minutes, and in what order.</p>
+
+    <div class="legend">
+      <span class="pill">🎫 Clear all three quiz questions to stamp your passport</span>
+      <span class="pill">Live = presented in the 45 minutes</span>
+      <span class="pill">Self-study = the full depth, after class</span>
+      <span class="pill">★ Build-along = write it yourself</span>
+    </div>
+
+    <div class="callout win">
+      <p><strong>★ What you walk out with tonight.</strong> A one-page Six Doors sheet for a prediction request you actually have on your desk, with the outcome door opened widest: the exact target, how often it happens today, and what each kind of wrong guess costs. Two open questions behind every other door, a plain teach-back line attached to each one, and the order you will walk them in. Session 3 puts that sheet in front of Adeline and counts what it gets out of her.</p>
+    </div>
+  </section>
+
+  <section class="section" id="part-1">
+    <div class="section-kicker">
+      <span class="klabel">Part 1 · covers why the gap opens</span>
+      <h2>Two tunes, and the word predict</h2>
+      <span class="tag concept">5 min live</span>
+    </div>
+    <p class="lede">In 1990 a Stanford psychology student, Elizabeth Newton, split people into tappers and listeners. Tappers picked a well-known song and tapped its rhythm on a table; listeners had to name it. Before tapping, tappers guessed listeners would get about half. Listeners got 3 of 120. The tapper hears the whole melody behind every knock and cannot switch it off. In a prediction meeting the knock is one word, "predict", and each side hears a different song behind it.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 336" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Two hand-drawn panels. On the left, the operations director's tune: an empty chronic-medication shelf and a phone ringing with a complaint call; to her, predict means stop getting caught. On the right, the data scientist's tune: a table with one row per outlet per day and a column of probabilities still to be filled; to him, predict means a probability per outlet per day. Both panels point down to one speech box, can we predict it. Along the bottom, what got built last year when nobody asked which tune: a vendor's AI demand forecast that forecast sales, which nobody used.">
+        <defs>
+          <filter id="s1aSk" x="-3%" y="-3%" width="106%" height="106%"><feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="2" seed="13" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.4" xChannelSelector="R" yChannelSelector="G"/></filter>
+          <pattern id="s1aHc" patternUnits="userSpaceOnUse" width="7" height="7" patternTransform="rotate(-38)"><line x1="0" y1="0" x2="0" y2="7" stroke="#5B21B6" stroke-width="1" opacity=".5"/></pattern>
+          <marker id="s1aAr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M1 1 L9 5 L1 9" fill="none" stroke="#1E1B2E" stroke-width="1.6" stroke-linecap="round"/></marker>
+        </defs>
+        <style>
+          .s1aH { font: 800 12px Inter, sans-serif; fill: #1E1B2E; }
+          .s1aL { font: 600 12px Inter, sans-serif; fill: #1E1B2E; }
+          .s1aS { font: 400 11px Inter, sans-serif; fill: #4E4A66; }
+          .s1aB { font: 800 11px Inter, sans-serif; fill: #6B3F00; }
+          .s1aA { font: 700 11px Inter, sans-serif; fill: #5B21B6; letter-spacing: .04em; }
+        </style>
+
+        <text class="s1aH" x="30" y="26">ONE WORD, TWO TUNES</text>
+        <text class="s1aS" x="200" y="26">she hears the empty shelf behind "predict"; he hears a probability column</text>
+
+        <g filter="url(#s1aSk)" fill="none" stroke="#1E1B2E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <!-- her panel, the thing that matters -->
+          <rect x="30" y="44" width="380" height="160" rx="10" transform="rotate(-0.4 220 124)" fill="#FBF1E0" stroke="#9A5B00"/>
+          <!-- the empty shelf -->
+          <rect x="50" y="78" width="150" height="92" rx="3" transform="rotate(0.6 125 124)" fill="#FFFFFF"/>
+          <path d="M52 110 L198 110 M52 140 L198 140"/>
+          <path d="M60 104 L60 92 M72 104 L72 94" stroke="#CFC9E6"/>
+          <!-- the phone, ringing -->
+          <rect x="236" y="86" width="34" height="58" rx="6" transform="rotate(-0.8 253 115)" fill="#FFFFFF"/>
+          <path d="M246 134 L260 134"/>
+          <path d="M278 92 C284 98 284 106 278 112 M226 92 C220 98 220 106 226 112" stroke="#9A5B00"/>
+          <!-- his panel -->
+          <rect x="470" y="44" width="380" height="160" rx="10" transform="rotate(0.4 660 124)" fill="#F5F3FF"/>
+          <!-- the table of probabilities -->
+          <rect x="490" y="78" width="240" height="96" rx="3" transform="rotate(-0.3 610 126)" fill="#FFFFFF"/>
+          <path d="M490 102 L730 102 M490 126 L730 126 M490 150 L730 150" stroke="#CFC9E6"/>
+          <path d="M580 80 L580 172 M650 80 L650 172" stroke="#CFC9E6"/>
+          <!-- the scientist -->
+          <circle cx="792" cy="98" r="14"/>
+          <path d="M768 150 C774 124 810 124 816 150"/>
+          <!-- the one word, and where it goes -->
+          <rect x="330" y="222" width="220" height="34" rx="8" transform="rotate(0.5 440 239)" fill="#FFFFFF"/>
+          <path d="M328 239 C290 239 262 230 250 210" marker-end="url(#s1aAr)"/>
+          <path d="M552 239 C590 239 618 230 630 210" marker-end="url(#s1aAr)"/>
+          <!-- what got built -->
+          <rect x="30" y="272" width="820" height="46" rx="8" transform="rotate(-0.2 440 295)" fill="url(#s1aHc)"/>
+        </g>
+
+        <text class="s1aB" x="46" y="66">HER TUNE</text>
+        <text class="s1aS" x="125" y="128" text-anchor="middle">empty</text>
+        <text class="s1aS" x="253" y="162" text-anchor="middle">complaint call</text>
+        <text class="s1aS" x="296" y="104">to her, predict</text>
+        <text class="s1aS" x="296" y="119">means: stop</text>
+        <text class="s1aS" x="296" y="134">getting caught</text>
+        <text class="s1aS" x="46" y="194">an empty chronic-med shelf, a patient walks out</text>
+
+        <text class="s1aA" x="486" y="66">HIS TUNE</text>
+        <text class="s1aA" x="500" y="96">outlet</text>
+        <text class="s1aA" x="590" y="96">day</text>
+        <text class="s1aA" x="660" y="96">p(out)</text>
+        <text class="s1aS" x="500" y="119">outlet 07</text>
+        <text class="s1aS" x="590" y="119">Mon</text>
+        <text class="s1aS" x="660" y="119">?</text>
+        <text class="s1aS" x="500" y="143">outlet 12</text>
+        <text class="s1aS" x="590" y="143">Tue</text>
+        <text class="s1aS" x="660" y="143">?</text>
+        <text class="s1aS" x="500" y="167">outlet 31</text>
+        <text class="s1aS" x="590" y="167">Wed</text>
+        <text class="s1aS" x="660" y="167">?</text>
+        <text class="s1aS" x="792" y="168" text-anchor="middle">the scientist</text>
+        <text class="s1aS" x="486" y="194">to him: a probability per outlet per day</text>
+
+        <text class="s1aL" x="440" y="244" text-anchor="middle">"Can we predict it?"</text>
+
+        <text class="s1aB" x="46" y="290">WHAT GOT BUILT LAST YEAR, WHEN NOBODY ASKED WHICH TUNE</text>
+        <text class="s1aS" x="46" y="308">a vendor's "AI demand forecast". It forecast sales. Nobody used it, because sales were never the problem.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - the same word lands on an empty shelf on one side of the table and on a probability column on the other</figcaption>
+    </figure>
+
+    <details class="card" open>
+      <summary><span class="mode live">Live</span>The tune in your head, heard from the scientist's side<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Newton's tappers were not bad at tapping. They could not <em>un-know</em> the song while they tapped, so they judged the listener's chances from inside their own experience. Camerer, Loewenstein and Weber had named this a year earlier: the curse of knowledge, the finding that better-informed people cannot fully set their information aside when predicting what less-informed people will understand.</p>
+        <p>A data scientist carries a very loud tune. "Predict" arrives with a whole melody attached: a target variable, a row per outlet per day, a probability, a threshold, a score on held-out data. Adeline's tune is just as loud and completely different. To her, "predict" means "stop getting caught by empty shelves": a patient on chronic medication turns up, the shelf is empty, the patient goes to a competitor and the complaint comes to her. She has no reason to say which product, how often, or what an over-order costs, because inside her tune those are obvious.</p>
+        <p>So the scientist fills the silence with his own tune, and the model gets built to it. The gap is not closed by teaching her the vocabulary. It is closed by <strong>questions that make her tune audible</strong>: what exactly runs out, how often, and what each kind of mistake costs, asked in words that need no translation, with the reason for asking said out loud.</p>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>Why "AI" is the loudest knock in the room<span class="mini">2 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Her request starts with the board: "The board keeps asking about AI." Behind that sentence, on her side of the table, sit two different projects. The board wants the word AI on a slide. She wants fewer calls. A scientist who hears only the first builds something impressive for a board meeting; one who hears only the second might solve it with a spreadsheet and leave her with nothing to show upward.</p>
+        <p>Neither is wrong, but they are different builds with different tests, and she will not separate them for you unless you ask. The professional move is to name both out loud early ("it sounds like there is a board question and an operations question; can we take the operations one first?") and let her choose which one the first project serves. Session 5 comes back to this when the three candidate projects are drawn, because one of them is usually not a model at all.</p>
+      </div>
+    </details>
+
+    <div class="callout example">
+      <span class="ex-pill">Real world</span>
+      <p><strong>The forecast that forecast the wrong thing.</strong> A constructed case, but a shape every scientist will recognise. Last year a vendor sold Harbourline an "AI demand forecast". It forecast sales, per product, per outlet, and by the vendor's own measures it was fine. Nobody used it, because sales were never the problem: the problem was a shelf that is empty on the day a chronic patient comes in, and a sales forecast does not say that. The vendor heard "predict" and built the loudest tune in their own head. Adeline mentions this only once she trusts you, and only if you ask whether she has tried anything like this before.</p>
+    </div>
+  </section>
+
+  <section class="section" id="part-2">
+    <div class="section-kicker">
+      <span class="klabel">Part 2 · covers the widest door</span>
+      <h2>The outcome door, opened widest</h2>
+      <span class="tag concept">6 min live</span>
+    </div>
+    <p class="lede">Every discovery meeting walks the same corridor of six doors: Outcome · Decision · Current way · Data state · Constraints · Success and partnership. The corridor, with the question that opens each door, is drawn once, in <a href="https://phoebefu6.github.io/learn-asking-right-questions-as-da-with-phoebe/courses/01-why-the-gap-and-the-six-doors.html">session 1 of the analyst's sibling ↗</a>; read it there. What differs for a scientist is which door opens widest. Your output is a prediction somebody acts on, and the three facts that decide whether it is worth building at all sit behind door 1: the exact target, how often it happens today, and what each kind of wrong guess costs.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 332" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A hand-drawn door, numbered 1 and labelled outcome, standing open with a person in the doorway. Three arrows lead from it to three cards. Card one, the exact target: a stock-out of one of about 40 chronic-medication products, per outlet, not sales. Card two, how often it happens today: roughly 30 a month across 38 outlets, known only as complaint calls. Card three, what each wrong guess costs: a missed stock-out loses a patient and sends a complaint upward, an over-order becomes expiry write-off, which she is measured on. To the right, five smaller doors numbered 2 to 6 stand shut.">
+        <defs>
+          <filter id="s1bSk" x="-3%" y="-3%" width="106%" height="106%"><feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="2" seed="29" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.4" xChannelSelector="R" yChannelSelector="G"/></filter>
+          <pattern id="s1bHc" patternUnits="userSpaceOnUse" width="7" height="7" patternTransform="rotate(-38)"><line x1="0" y1="0" x2="0" y2="7" stroke="#5B21B6" stroke-width="1" opacity=".5"/></pattern>
+          <marker id="s1bAr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M1 1 L9 5 L1 9" fill="none" stroke="#1E1B2E" stroke-width="1.6" stroke-linecap="round"/></marker>
+        </defs>
+        <style>
+          .s1bH { font: 800 12px Inter, sans-serif; fill: #1E1B2E; }
+          .s1bL { font: 600 12px Inter, sans-serif; fill: #1E1B2E; }
+          .s1bS { font: 400 11px Inter, sans-serif; fill: #4E4A66; }
+          .s1bB { font: 800 11px Inter, sans-serif; fill: #6B3F00; }
+          .s1bW { font: 800 12px Inter, sans-serif; fill: #FFFFFF; }
+          .s1bA { font: 700 11px Inter, sans-serif; fill: #5B21B6; letter-spacing: .04em; }
+          .s1bN { font: 400 12px Inter, sans-serif; fill: #4E4A66; }
+        </style>
+
+        <text class="s1bH" x="30" y="26">DOOR 1, OPENED WIDEST: WHAT IS BEHIND IT</text>
+        <text class="s1bS" x="330" y="26">three facts no model can be scoped without, all of them hers</text>
+
+        <g filter="url(#s1bSk)" fill="none" stroke="#1E1B2E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <!-- floor -->
+          <path d="M30 290 L850 290" stroke-width="3"/>
+          <!-- the open door: frame and swung leaf -->
+          <rect x="40" y="60" width="150" height="230" rx="4" transform="rotate(-0.3 115 175)" fill="#FBF1E0" stroke="#9A5B00"/>
+          <path d="M40 60 L14 78 L14 274 L40 290" fill="#FFFFFF"/>
+          <circle cx="22" cy="178" r="3" fill="#1E1B2E"/>
+          <circle cx="115" cy="84" r="11" fill="#9A5B00" stroke="#9A5B00"/>
+          <!-- you, in the doorway -->
+          <circle cx="115" cy="222" r="12"/>
+          <path d="M95 262 C101 244 129 244 135 262"/>
+          <!-- arrows to the three facts -->
+          <path d="M194 96 L214 96" marker-end="url(#s1bAr)"/>
+          <path d="M194 172 L214 172" marker-end="url(#s1bAr)"/>
+          <path d="M194 248 L214 248" marker-end="url(#s1bAr)"/>
+          <!-- the three cards -->
+          <rect x="220" y="64" width="330" height="64" rx="8" transform="rotate(-0.5 385 96)" fill="#FFFFFF"/>
+          <rect x="220" y="140" width="330" height="64" rx="8" transform="rotate(0.4 385 172)" fill="#FFFFFF"/>
+          <rect x="220" y="216" width="330" height="64" rx="8" transform="rotate(-0.3 385 248)" fill="#FFFFFF"/>
+          <!-- the five shut doors -->
+          <rect x="590" y="150" width="44" height="140" rx="3" transform="rotate(0.4 612 220)" fill="#F5F3FF"/>
+          <rect x="642" y="150" width="44" height="140" rx="3" transform="rotate(-0.4 664 220)" fill="#F5F3FF"/>
+          <rect x="694" y="150" width="44" height="140" rx="3" transform="rotate(0.3 716 220)" fill="url(#s1bHc)"/>
+          <rect x="746" y="150" width="44" height="140" rx="3" transform="rotate(-0.5 768 220)" fill="#F5F3FF"/>
+          <rect x="798" y="150" width="44" height="140" rx="3" transform="rotate(0.5 820 220)" fill="#F5F3FF"/>
+          <circle cx="612" cy="170" r="10" fill="#5B21B6" stroke="#5B21B6"/>
+          <circle cx="664" cy="170" r="10" fill="#5B21B6" stroke="#5B21B6"/>
+          <circle cx="716" cy="170" r="10" fill="#5B21B6" stroke="#5B21B6"/>
+          <circle cx="768" cy="170" r="10" fill="#5B21B6" stroke="#5B21B6"/>
+          <circle cx="820" cy="170" r="10" fill="#5B21B6" stroke="#5B21B6"/>
+        </g>
+
+        <text class="s1bW" x="115" y="88" text-anchor="middle">1</text>
+        <text class="s1bB" x="115" y="116" text-anchor="middle">Outcome</text>
+        <text class="s1bS" x="115" y="134" text-anchor="middle">what to predict,</text>
+        <text class="s1bS" x="115" y="149" text-anchor="middle">and what a wrong</text>
+        <text class="s1bS" x="115" y="164" text-anchor="middle">guess costs</text>
+        <text class="s1bS" x="115" y="282" text-anchor="middle">you</text>
+
+        <text class="s1bL" x="236" y="86">1 · The exact target</text>
+        <text class="s1bS" x="236" y="104">a stock-out of one of about 40 chronic-med</text>
+        <text class="s1bS" x="236" y="119">products, per outlet. Not sales.</text>
+        <text class="s1bL" x="236" y="162">2 · How often it happens today</text>
+        <text class="s1bS" x="236" y="180">roughly 30 a month across the 38 outlets,</text>
+        <text class="s1bS" x="236" y="195">known only as complaint calls</text>
+        <text class="s1bL" x="236" y="238">3 · What each wrong guess costs</text>
+        <text class="s1bS" x="236" y="256">missed: a patient lost, a complaint upward</text>
+        <text class="s1bS" x="236" y="271">over-ordered: expiry write-off, her measure</text>
+
+        <text class="s1bA" x="590" y="80">THE OTHER FIVE, IN ORDER</text>
+        <text class="s1bS" x="590" y="98">2 Decision · 3 Current way</text>
+        <text class="s1bS" x="590" y="113">4 Data state · 5 Constraints</text>
+        <text class="s1bS" x="590" y="128">6 Success and partnership</text>
+        <text class="s1bW" x="612" y="174" text-anchor="middle">2</text>
+        <text class="s1bW" x="664" y="174" text-anchor="middle">3</text>
+        <text class="s1bW" x="716" y="174" text-anchor="middle">4</text>
+        <text class="s1bW" x="768" y="174" text-anchor="middle">5</text>
+        <text class="s1bW" x="820" y="174" text-anchor="middle">6</text>
+
+        <text class="s1bN" x="30" y="316">No model can be scoped without all three. Door 4, data state, only tells you whether they were ever recorded.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - the hatched door is where most scientists start; the open one is where the three scoping facts live</figcaption>
+    </figure>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>The exact target: stock-outs, not sales<span class="mini">2 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>The first fact is the thing that goes wrong, named precisely enough that you could tell whether it happened yesterday. At Harbourline it is a stock-out of one of about 40 chronic-medication products at outlet level: a patient turns up and the shelf is empty. Not sales, not demand in general, not every product in the shop. That sentence already scopes the model to about 40 products across 38 outlets, and it rules out the vendor's forecast before you have seen a row of data.</p>
+        <p>The question that gets it is plain: "What exactly runs out? Which products, which outlets, and how do you find out it happened?" The last clause matters most. How she finds out is how the target is recorded, and at Harbourline the answer is that nobody records a stock-out anywhere. The only record is the complaint call. You have just learned that your label does not exist yet, in the words of a person who has never heard the word label.</p>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>The base rate: how often, and why you ask it early<span class="mini">2 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>The second fact is how often it happens today. Adeline's answer is roughly 30 a month across the 38 outlets, and she knows because each one becomes a complaint call to her. Do the arithmetic on the constructed sheet: about 40 products in 38 outlets is 1,520 outlet-product pairs, and 30 a month is about seven a week. In any given week, well over 99 percent of pairs do not run out. A model that answers "never" to every one of them is right more than 99 percent of the time and useless every time.</p>
+        <p>That is why the base rate is asked early, before anyone mentions accuracy. It is the first number any prediction is judged against, and on a rare event it tells you in advance that a single accuracy figure will flatter whatever you build. It also tells you what a real improvement looks like: fewer of her 30 calls, not a higher score.</p>
+        <p>Douglas Hubbard's definition of measurement is the reason this belongs at door 1 rather than in the model review: a measurement is <em>a quantitatively expressed reduction of uncertainty based on one or more observations</em>. The uncertainty here is hers, about which shelves will be empty next week. A prediction that does not reduce it has measured nothing, however well it scores.</p>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>Two wrong guesses, two different bills<span class="mini">2 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>The third fact is what each kind of wrong guess costs, and the two are never the same size. At Harbourline a missed stock-out costs a patient a trip to a competitor and costs Adeline a complaint to head office. An over-order costs expiry write-off on medication that sits too long, and head office measures her on write-off. A model that flags every outlet every week would stop the stock-outs and wreck the number she is judged by.</p>
+        <p>You do not need the cost matrix as a formal object in the first meeting, and she should never hear the word. You need the two bills in her words, and ideally which one she would rather pay more of. "When it happens, what does it cost you? And what does it cost when an outlet orders too much?" Treating the ratio between those costs as a design decision in its own right is the subject of <a href="https://phoebefu6.github.io/learn-decision-intelligence-with-phoebe/">Decision Intelligence ↗</a>; here the job is only to get both numbers onto your sheet before anyone says "optimise for accuracy".</p>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>The non-ML answer first, and success defined before building<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Google's machine learning problem-framing course gives two pieces of advice that belong in the first meeting, not the project plan: check whether a non-ML solution solves the problem before building a model, and define the success metrics before building. Both are outcome-door questions, and both come back with facts that change the project.</p>
+        <p>The non-ML solution at Harbourline already exists. Today the pharmacist looks at the shelf and WhatsApps the area manager, and that catches most of them. Any model has to beat a person looking at a shelf, so the current way is not a nuisance to be replaced; it is the baseline you are measured against, and it is door 3. The success metric exists too, in her words: the complaint calls about empty shelves go down, and she counts them herself. She does not care what the accuracy number is. Agreeing that test in the first meeting is what stops a later argument about precision and recall that she cannot follow and should not have to.</p>
+        <p>Sharpening a question once it has been handed to you, and recognising when no column in any system answers it, is taught in <a href="https://phoebefu6.github.io/learn-data-thinking-with-phoebe/">Data Thinking ↗</a>. The skill here comes one step earlier: getting the question out of a person who did not know she was asking it.</p>
+      </div>
+    </details>
+
+    <div class="callout example">
+      <span class="ex-pill">Real world</span>
+      <p><strong>A base rate made of phone calls.</strong> Still the constructed case. Adeline's 30 a month is the only count of stock-outs Harbourline has, and it is a count of complaints. Whether every empty shelf becomes a call, or only the ones where a patient was angry enough to ring, is a question to ask her, not an assumption to build on. Either way, the finding changes the first project: a pharmacist in Johor has offered to log stock-outs every day if someone gives her a sheet, and a model that must learn from stock-outs has to start with somebody writing them down.</p>
+    </div>
+
+    <div class="callout tip">
+      <p><strong>Open door 1 widest, then walk the rest in order.</strong> Session 3 counts what the order is worth on the bench: the same questions in any order at all average 27.5 points (anywhere from 0 to 46), the doors in their printed order score 46, and the doors tuned outcome first for a scientist score 55. The claim is the ordering and the mechanism, never the numbers as facts about a real business.</p>
+    </div>
+  </section>
+
+  <section class="section" id="part-3">
+    <div class="section-kicker">
+      <span class="klabel">Part 3 · covers the teach-back line</span>
+      <h2>The teach-back line for a scientist</h2>
+      <span class="tag concept">4 min live</span>
+    </div>
+    <p class="lede">Every open question in the bank comes with a second sentence: a plain statement of why you are asking it. Said out loud, it does three things. It turns the question into a reason rather than an interrogation, it earns a little trust, and it teaches her one true thing about how prediction work is decided. By the end of 45 minutes she understands why accuracy is the wrong test for a rare event, without ever having seen the word.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 296" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A hand-drawn exchange. On the left the scientist's speech bubble in two parts: the question, roughly how often does it happen in a month across all the outlets, and underneath it the teach-back, how often it happens is the first number any prediction is judged against, and if it is rare a model that says never looks accurate and is useless. Three arrows leave the bubble: one to a fact that comes back, roughly 30 a month, each one a complaint call, nobody records a stock-out anywhere else; one to a lesson that stays with her, rare events make never look accurate; and one to a trust meter rising a notch.">
+        <defs>
+          <filter id="s1cSk" x="-3%" y="-3%" width="106%" height="106%"><feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="2" seed="37" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.4" xChannelSelector="R" yChannelSelector="G"/></filter>
+          <pattern id="s1cHc" patternUnits="userSpaceOnUse" width="7" height="7" patternTransform="rotate(-38)"><line x1="0" y1="0" x2="0" y2="7" stroke="#5B21B6" stroke-width="1" opacity=".5"/></pattern>
+          <marker id="s1cAr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M1 1 L9 5 L1 9" fill="none" stroke="#1E1B2E" stroke-width="1.6" stroke-linecap="round"/></marker>
+        </defs>
+        <style>
+          .s1cH { font: 800 12px Inter, sans-serif; fill: #1E1B2E; }
+          .s1cL { font: 600 11.5px Inter, sans-serif; fill: #1E1B2E; }
+          .s1cS { font: 400 11px Inter, sans-serif; fill: #4E4A66; }
+          .s1cB { font: 800 11px Inter, sans-serif; fill: #6B3F00; }
+          .s1cN { font: 400 12px Inter, sans-serif; fill: #4E4A66; }
+        </style>
+
+        <text class="s1cH" x="30" y="26">ONE QUESTION, TWO SENTENCES, THREE THINGS BACK</text>
+
+        <g filter="url(#s1cSk)" fill="none" stroke="#1E1B2E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <!-- the scientist's bubble, two-part -->
+          <path d="M40 56 L440 56 L440 204 L120 204 L96 226 L100 204 L40 204 Z" fill="#FFFFFF"/>
+          <path d="M52 126 L428 126" stroke="#CFC9E6" stroke-dasharray="5 4"/>
+          <!-- arrows out -->
+          <path d="M446 90 C470 90 474 84 494 84" marker-end="url(#s1cAr)"/>
+          <path d="M446 170 C470 170 474 176 494 176" marker-end="url(#s1cAr)"/>
+          <path d="M446 214 C470 214 480 240 494 240" marker-end="url(#s1cAr)"/>
+          <!-- the fact that comes back, with her phone -->
+          <rect x="500" y="52" width="350" height="78" rx="8" transform="rotate(-0.4 675 91)" fill="#F5F3FF"/>
+          <rect x="818" y="64" width="22" height="38" rx="4" fill="#FFFFFF"/>
+          <path d="M824 96 L834 96"/>
+          <!-- the lesson that stays -->
+          <rect x="500" y="150" width="350" height="52" rx="8" transform="rotate(0.5 675 176)" fill="#FBF1E0" stroke="#9A5B00"/>
+          <!-- trust meter -->
+          <rect x="500" y="232" width="200" height="16" rx="8" fill="#FFFFFF" stroke="#CFC9E6"/>
+          <rect x="500" y="232" width="60" height="16" rx="8" fill="url(#s1cHc)"/>
+          <rect x="560" y="232" width="40" height="16" rx="8" fill="#5B21B6" stroke="#5B21B6"/>
+        </g>
+
+        <text class="s1cB" x="52" y="78">THE QUESTION</text>
+        <text class="s1cL" x="52" y="96">"Roughly how often does it happen in a month,</text>
+        <text class="s1cL" x="52" y="112">across all the outlets?"</text>
+        <text class="s1cB" x="52" y="146">THE TEACH-BACK</text>
+        <text class="s1cS" x="52" y="162">"How often it happens is the first number any</text>
+        <text class="s1cS" x="52" y="177">prediction is judged against. If it is rare, a model that</text>
+        <text class="s1cS" x="52" y="192">says 'never' looks accurate and is useless."</text>
+
+        <text class="s1cL" x="514" y="72">A fact comes back</text>
+        <text class="s1cS" x="514" y="88">"Roughly 30 a month. I know, because each</text>
+        <text class="s1cS" x="514" y="102">one becomes a complaint call to me. Nobody</text>
+        <text class="s1cS" x="514" y="116">records a stock-out anywhere else."</text>
+        <text class="s1cB" x="514" y="170">A lesson stays with her</text>
+        <text class="s1cS" x="514" y="188">rare events make "never" look accurate</text>
+        <text class="s1cS" x="712" y="244">trust, one notch up</text>
+
+        <text class="s1cN" x="30" y="280">The fact is for your notes. The lesson is for her, and it is why accuracy will not end up as her test.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - the mustard box is the part of the meeting that outlives it</figcaption>
+    </figure>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>Three lines for the outcome door<span class="mini">2 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>A teach-back line is <strong>plain</strong> (no word she would have to ask about, so "how often" not "base rate", "a wrong guess" not "a false positive"), <strong>true</strong> (a real principle of the craft, not a pleasantry) and <strong>one sentence</strong>, or two short ones at most, because a paragraph is a lecture and she stops answering.</p>
+        <p>The three outcome questions in the bank each carry one, and they are worth learning word for word. Before "What exactly runs out?": "I need the exact thing that goes wrong before I can promise to predict it. Sales and stock-outs are different questions with different data." Before "Roughly how often does it happen in a month?": "How often it happens is the first number any prediction is judged against. If it is rare, a model that says 'never' looks accurate and is useless." Before "What does it cost you, and what does it cost when an outlet orders too much?": "A wrong guess in each direction costs something different, and the model has to be built to the ratio between them, not to a single accuracy number."</p>
+        <p>Between them, those three sentences teach her the target, the base rate and the cost ratio, the three ideas a scientist most needs a sponsor to understand, and none of them uses a word from a textbook. Session 4 builds more of these and shows how to pick the one concept per meeting worth explaining properly.</p>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>Five kinds of question, and the one that writes a wrong target into your notes<span class="mini">2 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Session 3 sorts every question in the bank into five kinds. <strong>Open</strong> questions about the past or present uncover facts and earn trust. <strong>Closed</strong> yes-or-no questions are cheap and get one fact at most. <strong>Vague</strong> ones ("what would you like AI to do for you?") cost minutes and bring back a generic. <strong>Jargon</strong> costs twice: "what is the class imbalance on the positive label?" gets nothing, and she is a little less sure you understand pharmacies. <strong>Leading</strong> questions are the dangerous kind. "So you want to forecast sales, right?" gets a polite yes, and "the target is sales" goes into your notes and later into your build. The fast yes-or-no run on the bench leaves five false beliefs like that behind it.</p>
+        <p>The trust is not decoration. Six of the 24 facts on Adeline's sheet only come out once some trust exists, including how often stock-outs happen and that the stock spreadsheet is overwritten every Friday. The most sensitive one needs the most trust of all, and it decides whether anything you build survives the quarter; session 3 shows which it is and what it takes to hear it.</p>
+      </div>
+    </details>
+
+    <div class="callout example">
+      <span class="ex-pill">Real world</span>
+      <p><strong>The test she already had.</strong> Constructed, like every Harbourline scene. Asked "how would you know it worked?" early, with the line "if we agree on the test now, neither of us argues about it later", Adeline answers at once: the complaint calls about empty shelves go down, and she counts them herself. Asked late, after twenty minutes of precision, recall and thresholds, the same question tends to get "whatever you think is best", and the project ends up judged on a number she never chose.</p>
+    </div>
+
+    <div class="tryrow" data-fn="wordcount" data-multiline="1" data-title="Write one teach-back line" data-hint="Pick a question you asked a stakeholder about a prediction this month. Write the sentence you should have said before it: why you were asking, in words they already know. One sentence, no word from a textbook." data-seed="" data-cta="Count it"></div>
+  </section>
+
+  <section class="section" id="demo-1">
+    <div class="section-kicker">
+      <span class="klabel">Build-along</span>
+      <h2>Your Six Doors sheet, for "can we predict it"</h2>
+      <span class="tag demo">★ 22 min · everyone writes</span>
+    </div>
+    <p class="lede">One page, six rows, the outcome row written widest. Take a real prediction request from your own inbox, or use Adeline's if you do not have one, and build the sheet you will carry into the meeting. Every line is written before the meeting; the meeting is for listening.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A hand-drawn one-page sheet. At the top, the request as received in the business person's own words: can we predict which outlets are going to run out of stock. Below, six rows, one per door, each with two short open questions and a teach-back line. In the margin, a mustard tick marks the outcome row as the door a scientist opens first and widest, and a pen rests beside the page.">
+        <defs>
+          <filter id="s1dSk" x="-3%" y="-3%" width="106%" height="106%"><feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="2" seed="43" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.4" xChannelSelector="R" yChannelSelector="G"/></filter>
+          <pattern id="s1dHc" patternUnits="userSpaceOnUse" width="7" height="7" patternTransform="rotate(-38)"><line x1="0" y1="0" x2="0" y2="7" stroke="#5B21B6" stroke-width="1" opacity=".5"/></pattern>
+          <marker id="s1dAr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M1 1 L9 5 L1 9" fill="none" stroke="#1E1B2E" stroke-width="1.6" stroke-linecap="round"/></marker>
+        </defs>
+        <style>
+          .s1dH { font: 800 12px Inter, sans-serif; fill: #1E1B2E; }
+          .s1dL { font: 700 11px Inter, sans-serif; fill: #1E1B2E; }
+          .s1dS { font: 400 11px Inter, sans-serif; fill: #4E4A66; }
+          .s1dB { font: 800 11px Inter, sans-serif; fill: #6B3F00; }
+          .s1dA { font: 700 11px Inter, sans-serif; fill: #5B21B6; letter-spacing: .05em; }
+        </style>
+
+        <text class="s1dH" x="30" y="26">THE SHEET, ONE PAGE, WRITTEN BEFORE THE MEETING</text>
+
+        <g filter="url(#s1dSk)" fill="none" stroke="#1E1B2E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <!-- the page -->
+          <rect x="60" y="44" width="620" height="236" rx="4" transform="rotate(-0.4 370 162)" fill="#FFFFFF"/>
+          <!-- request box -->
+          <rect x="76" y="56" width="588" height="28" rx="4" fill="url(#s1dHc)"/>
+          <!-- the outcome row, widest -->
+          <rect x="76" y="118" width="588" height="24" rx="3" fill="#FBF1E0" stroke="#9A5B00"/>
+          <!-- six rows -->
+          <path d="M76 116 L664 116 M76 142 L664 142 M76 168 L664 168 M76 194 L664 194 M76 220 L664 220 M76 246 L664 246 M76 272 L664 272" stroke="#CFC9E6"/>
+          <!-- column rules -->
+          <path d="M190 94 L190 272 M430 94 L430 272" stroke="#CFC9E6" stroke-dasharray="4 4"/>
+          <!-- the mark on the outcome row -->
+          <path d="M40 126 L52 138 L70 114" stroke="#9A5B00" stroke-width="3"/>
+          <!-- the pen -->
+          <path d="M728 150 L790 70 L800 78 L738 158 Z" fill="#FFFFFF"/>
+          <path d="M728 150 L724 164 L738 158"/>
+        </g>
+
+        <text class="s1dS" x="86" y="75">in her words: "can we predict which outlets are going to run out of stock?"</text>
+        <text class="s1dA" x="84" y="108">DOOR</text>
+        <text class="s1dA" x="200" y="108">TWO OPEN QUESTIONS</text>
+        <text class="s1dA" x="440" y="108">TEACH-BACK, ONE LINE EACH</text>
+        <text class="s1dB" x="84" y="134">1 Outcome</text>
+        <text class="s1dS" x="200" y="134">what runs out, how often, cost?</text>
+        <text class="s1dS" x="440" y="134">rare makes "never" look right</text>
+        <text class="s1dL" x="84" y="160">2 Decision</text>
+        <text class="s1dS" x="200" y="160">what would you do? which day?</text>
+        <text class="s1dS" x="440" y="160">no action, no pay-off</text>
+        <text class="s1dL" x="84" y="186">3 Current way</text>
+        <text class="s1dS" x="200" y="186">how do you catch it today?</text>
+        <text class="s1dS" x="440" y="186">today is the baseline to beat</text>
+        <text class="s1dL" x="84" y="212">4 Data state</text>
+        <text class="s1dS" x="200" y="212">any record of past stock?</text>
+        <text class="s1dS" x="440" y="212">it must have seen stock-outs</text>
+        <text class="s1dL" x="84" y="238">5 Constraints</text>
+        <text class="s1dS" x="200" y="238">what is off? where is it read?</text>
+        <text class="s1dS" x="440" y="238">limits first, then a yes</text>
+        <text class="s1dL" x="84" y="264">6 Success</text>
+        <text class="s1dS" x="200" y="264">how would you know? who logs?</text>
+        <text class="s1dS" x="440" y="264">your call count is the test</text>
+
+        <text class="s1dB" x="712" y="216">the mark: outcome,</text>
+        <text class="s1dB" x="712" y="232">the door a scientist</text>
+        <text class="s1dB" x="712" y="248">opens first and widest</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - the outcome row carries three questions, not two, because it holds the three facts no model can be scoped without</figcaption>
+    </figure>
+
+    <div class="steps">
+      <div class="step">
+        <p><strong>Write the request as it was received, in their words.</strong> Not your translation into a modelling problem. If it arrived as "can we predict it", write "can we predict it". You will want this sentence back at the end of the meeting, to see how far the real request was from it.</p>
+        <div class="prompt-box good"><span class="label">★ Step 1 · the request</span>Request, verbatim: "The board keeps asking about AI. Can we predict which outlets are going to run out of stock? We keep getting caught."
+From: Adeline Tan, operations director
+Note to self: two projects may be hiding in here, a board slide and fewer calls</div>
+      </div>
+      <div class="step">
+        <p><strong>Write the outcome row first, and give it three questions.</strong> The exact target, how often, and what each wrong guess costs. Past or present tense, nothing with "would you", nothing she can answer with yes, and no word she would have to ask about.</p>
+        <div class="prompt-box good"><span class="label">★ Step 2 · door 1, outcome, three questions</span>What exactly runs out? Which products, which outlets, and how do you find out it happened?
+Roughly how often does it happen in a month, across all the outlets?
+When it happens, what does it cost you? And what does it cost when an outlet orders too much?</div>
+        <div class="prompt-box bad"><span class="label">The same door, as it is usually opened</span>What is the class imbalance on the positive label?
+Do you need precision or recall optimised, and at what threshold?</div>
+      </div>
+      <div class="step">
+        <p><strong>Two open questions behind each of the other five doors, each with its teach-back line.</strong> Plain, true, one sentence. Read each pair aloud once; if the second sentence has a word she would have to ask about, change the word.</p>
+        <div class="prompt-box good"><span class="label">★ Step 3 · two pairs, doors 2 and 3</span>Q: If you knew a week ahead, what would you actually do differently?
+Why I am asking: A prediction only pays for itself if there is an action on the other side of it. I am asking for the action first.
+
+Q: How do you catch stock-outs today, before they happen?
+Why I am asking: Whatever you do today is the baseline any model has to beat. I write it down before I build anything.</div>
+      </div>
+      <div class="step">
+        <p><strong>Mark the order you will walk.</strong> For a scientist, door 1 is opened first and widest: your output is a prediction somebody acts on, and the target, the base rate and the two costs are the facts you cannot build without. Then the action, then today's baseline, and only then the data. Session 3 measures what that order is worth. If you are an analyst, an engineer or building with AI, the sibling for your role marks a different door.</p>
+        <div class="prompt-box good"><span class="label">★ Step 4 · the order for tonight</span>1 Outcome (widest, three questions)  -&gt;  2 Decision  -&gt;  3 Current way  -&gt;  4 Data state  -&gt;  6 Success  -&gt;  5 Constraints
+Budget: 45 minutes. About ten open questions fit. The sheet has thirteen; the last three are spares.</div>
+      </div>
+      <div class="step">
+        <p><strong>Rehearse the opener against Adeline.</strong> Her first line is on the page. Say your first question out loud, with its teach-back. If it took more than twenty seconds, it is two questions; split it.</p>
+        <div class="prompt-box good"><span class="label">★ Step 5 · the first thirty seconds</span>Adeline: "Thanks for coming. The board keeps asking about AI. Can we predict which outlets are going to run out of stock? We keep getting caught."
+You: "Before we get to prediction, can I ask what exactly runs out? Which products, which outlets, and how do you find out it happened? I need the exact thing that goes wrong before I can promise to predict it. Sales and stock-outs are different questions with different data."</div>
+      </div>
+    </div>
+
+    <div class="callout tip">
+      <p><strong>Keep the sheet after the meeting.</strong> Session 2 fills in the data-state row properly, session 5 turns her answers into three candidate projects, and session 6 turns the filled-in sheet into the one-page brief you send her within 24 hours. The same page carries all of it.</p>
+    </div>
+  </section>
+
+  <section class="section" id="exercise">
+    <div class="section-kicker">
+      <span class="klabel">Homework</span>
+      <h2>Before session 2</h2>
+      <span class="tag exercise">30 min</span>
+    </div>
+    <ol>
+      <li><strong>Finish the sheet</strong> for your real request: three outcome questions, ten more behind the other doors, a teach-back line on each, and the order marked. Bring it printed; session 3 puts it on the bench.</li>
+      <li><strong>Write the three outcome facts as you guess them.</strong> For your request, write the target, the base rate and the two costs you currently believe. Mark each one "heard from them" or "assumed by me". Most people find all three are assumed.</li>
+      <li><strong>Re-read a model you shipped that nobody used.</strong> Write down what it predicted, and then what the person who asked for it actually wanted to stop happening. If those are two different sentences, write which question would have caught it.</li>
+      <li><strong>Find the baseline.</strong> For your request, find out how the thing is caught today without any model: who looks at what, and how often it works. Session 2 starts from what has been recorded, and the current way is usually where the only record lives.</li>
+    </ol>
+  </section>
+
+  <section class="section" id="quiz">
+    <div class="section-kicker">
+      <span class="klabel">Check yourself</span>
+      <h2>Three questions</h2>
+    </div>
+    <p>Clear all three and session 1 gets stamped in your passport.</p>
+
+    <div class="quiz-q" data-answer="1">
+      <p class="qtext">1 · Why is "predict" a trap word in a first meeting?</p>
+      <button class="qopt" type="button">A · Because business people do not believe in prediction</button>
+      <button class="qopt" type="button">B · Because each side hears its own tune behind it: to her it means "stop getting caught by empty shelves", to the scientist a target variable and a probability per row, and unless you ask what exactly goes wrong, the model gets built to the scientist's tune, like last year's forecast of sales that nobody used</button>
+      <button class="qopt" type="button">C · Because the word should be replaced with "forecast" in every meeting</button>
+      <button class="qopt" type="button">D · Because a prediction cannot be made without three years of data</button>
+      <p class="qwhy">The curse of knowledge runs both ways. Neither side is careless and neither notices, which is why the outcome door is opened with plain questions rather than trusted to a shared word.</p>
+    </div>
+
+    <div class="quiz-q" data-answer="3">
+      <p class="qtext">2 · Which three facts sit behind the outcome door for a scientist?</p>
+      <button class="qopt" type="button">A · The data source, the refresh schedule and the owner of the login</button>
+      <button class="qopt" type="button">B · The budget, the deadline and the device the prediction is read on</button>
+      <button class="qopt" type="button">C · The algorithm, the feature list and the accuracy target</button>
+      <button class="qopt" type="button">D · The exact target (a stock-out of one of about 40 chronic-medication products, per outlet, not sales), how often it happens today (roughly 30 a month, known only as complaint calls), and what each kind of wrong guess costs (a lost patient and a complaint, against expiry write-off she is measured on)</button>
+      <p class="qwhy">Without all three, no model can be scoped: you do not know what to predict, what it will be judged against, or which mistake to lean away from. Data sources and budgets matter too, but they sit behind later doors.</p>
+    </div>
+
+    <div class="quiz-q" data-answer="0">
+      <p class="qtext">3 · Why is the base rate asked early, before anyone mentions accuracy?</p>
+      <button class="qopt" type="button">A · Because it is the first number any prediction is judged against, and on a rare event a model that always says "never" looks accurate and is useless; knowing it early stops a single accuracy figure from becoming the test, and points at her own count of calls instead</button>
+      <button class="qopt" type="button">B · Because it tells you which algorithm to use</button>
+      <button class="qopt" type="button">C · Because it is the easiest question and warms her up</button>
+      <button class="qopt" type="button">D · Because the base rate never changes, so it only needs asking once</button>
+      <p class="qwhy">On the constructed sheet, about seven stock-outs a week across roughly 1,520 outlet-product pairs means well over 99 percent of pairs never run out in a given week. "Never" scores brilliantly and catches nothing.</p>
+    </div>
+
+    <p class="quiz-score"></p>
+  </section>
+
+  <section class="section" id="official">
+    <div class="section-kicker">
+      <span class="klabel">Sources covered</span>
+      <h2>What this session teaches, and where it came from</h2>
+    </div>
+    <div class="covered">
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">Tappers and listeners, about 50 percent predicted, 3 of 120 named</span><span class="note">Elizabeth Newton, "The Rocky Road from Actions to Intentions", PhD dissertation, Stanford, 1990; figures as reported in Chip Heath and Dan Heath, Made to Stick, Random House, 2007, ch. 1. The dissertation itself was not read at source</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">The curse of knowledge, the term</span><span class="note">Camerer, Loewenstein and Weber, "The Curse of Knowledge in Economic Settings", Journal of Political Economy 97(5), 1989</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">Try the non-ML solution first; define success metrics before building</span><span class="note">Google for Developers, "Introduction to Machine Learning Problem Framing", developers.google.com/machine-learning/problem-framing, accessed 2026-09-29; read at source</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">Measurement as a reduction of uncertainty</span><span class="note">Douglas W. Hubbard, How to Measure Anything, 3rd ed., Wiley, 2014; definition reported as it appears across summaries, book not opened here</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">The Six Doors corridor</span><span class="note">Named here in one line; drawn in full, with the question behind each door, in <a href="https://phoebefu6.github.io/learn-asking-right-questions-as-da-with-phoebe/courses/01-why-the-gap-and-the-six-doors.html">the analyst's session 1 ↗</a></span></div>
+      <div class="covered-row"><span class="status pill light">◐</span><span class="name">Bench numbers: 27.5 (0 to 46), 46, 55</span><span class="note">Computed in session 3 on the constructed fact sheet. What is claimed is the ordering and the mechanism, never the numbers as facts about a real business</span></div>
+      <div class="covered-row"><span class="status pill light">◐</span><span class="name">Harbourline and Adeline Tan</span><span class="note">Constructed. Every fact on her sheet, including the 30 calls a month, the 40 products and the vendor forecast, is printed in the bench's bank file and is invented to be typical, not sourced; the weekly arithmetic is done on those invented numbers</span></div>
+    </div>
+    <p class="mono" style="margin-top:14px">Every fact on this page, and its verification tier, is recorded in the course's source map.</p>
+  </section>
+
+  <section class="cheat" id="cheatsheet">
+    <h3>Session 1 cheat sheet <span>· pin this</span></h3>
+    <div class="grid-2">
+      <div class="cheat-item"><b>Two tunes</b><span>To her, predict means "stop getting caught". To you, a probability per row. Neither can switch theirs off.</span></div>
+      <div class="cheat-item"><b>Door 1, widest</b><span>The scientist's door is outcome. Open it first, give it three questions, then walk the rest in order.</span></div>
+      <div class="cheat-item"><b>The exact target</b><span>Name the thing that goes wrong precisely enough to tell if it happened yesterday. Stock-outs, not sales.</span></div>
+      <div class="cheat-item"><b>The base rate, early</b><span>How often it happens is the first number a prediction is judged against. Rare makes "never" look accurate.</span></div>
+      <div class="cheat-item"><b>Two bills</b><span>A missed event and a false alarm never cost the same. Get both in her words before anyone says accuracy.</span></div>
+      <div class="cheat-item"><b>The teach-back line</b><span>Plain, true, one sentence, before the question. Trust goes up, and she learns one real thing.</span></div>
+    </div>
+  </section>
+
+  <div class="callout next">
+    <span class="nx-pill">Next session</span>
+    <p>Door 4 is where a scientist feels at home and where Harbourline hides its worst surprise. Session 2 is a ladder of plain questions about what has been recorded, and for how long: three years of daily sales in the till, product codes that differ between the two countries, and a stock spreadsheet that is overwritten every Friday, so last week's stock level does not exist anywhere. A model that predicts stock-outs needs to have seen stock-outs, and you draw the map that shows her why the first project may be recording them.</p>
+  </div>
+
+  <footer class="pagefoot">
+    <span>Session 1 of 6 · learn-asking-right-questions-as-ds-with-phoebe · by Phoebe Fu &nbsp;·&nbsp; 📚 <a href="https://phoebefu6.github.io/learn-with-phoebe/">Learn with Phoebe ↗</a></span>
+    <span><a href="../index.html">← Course home</a> &nbsp;·&nbsp; <a href="02-what-has-been-recorded-and-for-how-long.html">Next: What has been recorded, and for how long →</a></span>
+  </footer>
+
+</main>
+
+<script src="../assets/app.js?v=1"></script>
+</body>
+</html>
